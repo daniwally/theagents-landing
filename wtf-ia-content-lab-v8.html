@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    width: 1500px;
+    height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: #0A0A0F;
+    color: white;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .grid-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+  }
+
+  /* Outer WTF wrapper - the strategic layer */
+  .wtf-layer {
+    position: absolute;
+    top: 140px;
+    left: 40px;
+    right: 40px;
+    bottom: 90px;
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .wtf-layer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(139,92,246,0.04) 0%, transparent 70%);
+  }
+
+  /* Corner labels for WTF layer */
+  .wtf-corner {
+    position: absolute;
+    z-index: 3;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.12);
+  }
+  .wtf-corner.tl { top: 148px; left: 56px; }
+  .wtf-corner.tr { top: 148px; right: 56px; }
+  .wtf-corner.bl { bottom: 98px; left: 56px; }
+  .wtf-corner.br { bottom: 98px; right: 56px; }
+
+  /* Human expertise bars on sides */
+  .human-bar {
+    position: absolute;
+    z-index: 2;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: 100;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+  }
+  .human-bar.left {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .human-bar.right {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  canvas#lines {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1500px;
+    height: 1080px;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+
+  .header h1 {
+    font-weight: 900;
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .header h1 .accent {
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header .subtitle {
+    font-weight: 100;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 6px;
+  }
+
+  .header .right-block {
+    text-align: right;
+  }
+
+  .tagline {
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 6px;
+  }
+
+  .tagline-sub {
+    font-weight: 300;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    max-width: 280px;
+    line-height: 1.5;
+  }
+
+  /* Top strategic bar */
+  .strategic-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 12px 0;
+    margin: 8px 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-shrink: 0;
+  }
+
+  .strat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .strat-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(255,200,0,0.08);
+    border: 1px solid rgba(255,200,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .strat-text .strat-label {
+    font-weight: 700;
+    font-size: 10px;
+    color: rgba(255,200,0,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .strat-text .strat-desc {
+    font-weight: 300;
+    font-size: 8px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 1px;
+  }
+
+  .flow {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex: 1;
+    gap: 8px;
+    min-height: 0;
+    padding: 8px 20px;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .node-wrap { position: relative; }
+
+  .dot-right {
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  .dot-left {
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  .dot-blue { background: #00B4FF; box-shadow: 0 0 6px rgba(0,180,255,0.8); }
+  .dot-purple { background: #8B5CF6; box-shadow: 0 0 6px rgba(139,92,246,0.8); }
+  .dot-green { background: #10B981; box-shadow: 0 0 6px rgba(16,185,129,0.8); }
+  .dot-gold { background: #FFC800; box-shadow: 0 0 6px rgba(255,200,0,0.8); }
+
+  /* Input nodes - now with WTF strategic overlay */
+  .input-node {
+    background: rgba(0,180,255,0.05);
+    border: 1px solid rgba(0,180,255,0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 210px;
+  }
+
+  .input-node .icon { font-size: 10px; font-weight: 700; margin-bottom: 3px; color: rgba(0,180,255,0.4); letter-spacing: 1px; }
+
+  .input-node .label {
+    font-weight: 600;
+    font-size: 11px;
+    color: #00B4FF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .input-node .desc {
+    font-weight: 300;
+    font-size: 9px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+
+  /* WTF Decision nodes - the human layer */
+  .wtf-node {
+    background: rgba(255,200,0,0.05);
+    border: 1px solid rgba(255,200,0,0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 170px;
+  }
+
+  .wtf-node .label {
+    font-weight: 700;
+    font-size: 10px;
+    color: rgba(255,200,0,0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .wtf-node .desc {
+    font-weight: 300;
+    font-size: 8px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+
+  .wtf-node .human-badge {
+    margin-top: 4px;
+    font-size: 7px;
+    font-weight: 700;
+    color: rgba(255,200,0,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Mid nodes - AI tools */
+  .mid-node {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: 170px;
+  }
+
+  .mid-node .label {
+    font-weight: 600;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .mid-node .desc {
+    font-weight: 300;
+    font-size: 8px;
+    color: rgba(255,255,255,0.25);
+    margin-top: 2px;
+  }
+
+  .mid-node .ai-badge {
+    margin-top: 3px;
+    font-size: 7px;
+    font-weight: 600;
+    color: rgba(139,92,246,0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Hub - empty for WTF OS logo */
+  .hub-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 200px;
+    gap: 12px;
+  }
+
+  .hub-core {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(139,92,246,0.2), rgba(0,180,255,0.1), transparent 70%);
+    border: 2px solid rgba(139,92,246,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 50px rgba(139,92,246,0.1), 0 0 100px rgba(0,180,255,0.05);
+  }
+
+  .hub-core::after {
+    content: '';
+    position: absolute;
+    width: 195px;
+    height: 195px;
+    border-radius: 50%;
+    border: 1px solid rgba(139,92,246,0.1);
+  }
+
+  /* Output nodes */
+  .output-node {
+    background: rgba(16,185,129,0.05);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 220px;
+  }
+
+  .output-node .label {
+    font-weight: 600;
+    font-size: 11px;
+    color: #10B981;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .output-node .desc {
+    font-weight: 300;
+    font-size: 9px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+
+  .output-node .metric {
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #10B981;
+    display: inline-block;
+  }
+
+  .output-node .metric-label {
+    font-weight: 300;
+    font-size: 8px;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .bottom-bar .left { display: flex; gap: 30px; }
+
+  .stat-item { text-align: center; }
+
+  .stat-item .val {
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat-item .lbl {
+    font-weight: 300;
+    font-size: 8px;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .legend-label {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+</style>
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+
+  <!-- WTF strategic wrapper -->
+  <div class="wtf-layer"></div>
+  <div class="wtf-corner tl">WTF Strategic Layer</div>
+  <div class="wtf-corner tr">15 años de experiencia</div>
+  <div class="wtf-corner bl">Criterio · Oficio · Calle</div>
+  <div class="wtf-corner br">Brief Destroyers</div>
+
+  <div class="human-bar left">Dirección Creativa Humana</div>
+  <div class="human-bar right">Control Estratégico Humano</div>
+
+  <canvas id="lines" width="1500" height="1080"></canvas>
+
+  <div class="content">
+    <div class="header">
+      <div>
+        <h1><span class="accent">IA</span> CONTENT LAB</h1>
+        <div class="subtitle">La IA es el motor. WTF es el piloto.</div>
+      </div>
+      <div class="right-block">
+        <div class="tagline">La tecnología multiplica. El criterio decide.</div>
+        <div class="tagline-sub">Un sistema donde cada decisión estratégica y creativa pasa por manos con 15 años de experiencia real.</div>
+      </div>
+    </div>
+
+    <!-- Strategic bar - WTF human expertise -->
+    <div class="strategic-bar">
+      <div class="strat-item">
+        <div class="strat-icon">DC</div>
+        <div class="strat-text">
+          <div class="strat-label">Dirección Creativa</div>
+          <div class="strat-desc">Criterio que la IA no tiene</div>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-icon">EM</div>
+        <div class="strat-text">
+          <div class="strat-label">Estrategia de Marca</div>
+          <div class="strat-desc">15 años de calle y resultados</div>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-icon">CA</div>
+        <div class="strat-text">
+          <div class="strat-label">Células Autónomas</div>
+          <div class="strat-desc">Equipos con carácter y velocidad</div>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-icon">RI</div>
+        <div class="strat-text">
+          <div class="strat-label">Reinterpretación</div>
+          <div class="strat-desc">El brief se destruye y se reconstruye</div>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-icon">RP</div>
+        <div class="strat-text">
+          <div class="strat-label">Resultados Probados</div>
+          <div class="strat-desc">Motorola, Absolut, Honda, +20 marcas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <!-- INPUTS -->
+      <div class="col" id="col-input">
+        <div class="node-wrap"><div class="input-node" data-conn="input">
+          <div class="icon">01</div>
+          <div class="label">Brief & Objetivos</div>
+          <div class="desc">Lo que el cliente cree que necesita</div>
+        </div><div class="dot-right dot-blue"></div></div>
+
+        <div class="node-wrap"><div class="input-node" data-conn="input">
+          <div class="icon">02</div>
+          <div class="label">Assets de Marca</div>
+          <div class="desc">Identidad, guidelines, referencias</div>
+        </div><div class="dot-right dot-blue"></div></div>
+
+        <div class="node-wrap"><div class="input-node" data-conn="input">
+          <div class="icon">03</div>
+          <div class="label">Universo Visual</div>
+          <div class="desc">Estética, mood, territorio</div>
+        </div><div class="dot-right dot-blue"></div></div>
+
+        <div class="node-wrap"><div class="input-node" data-conn="input">
+          <div class="icon">04</div>
+          <div class="label">Narrativa</div>
+          <div class="desc">Voz, mensajes, concepto</div>
+        </div><div class="dot-right dot-blue"></div></div>
+
+        <div class="node-wrap"><div class="input-node" data-conn="input">
+          <div class="icon">05</div>
+          <div class="label">Data & Señales</div>
+          <div class="desc">Performance, mercado, cultura</div>
+        </div><div class="dot-right dot-blue"></div></div>
+      </div>
+
+      <!-- WTF HUMAN DECISIONS - the differentiator -->
+      <div class="col" id="col-wtf-l">
+        <div class="node-wrap"><div class="dot-left dot-blue"></div><div class="wtf-node" data-conn="wtfL">
+          <div class="label">Destruir el Brief</div>
+          <div class="desc">Reinterpretar lo que realmente necesita la marca</div>
+          <div class="human-badge">● DECISIÓN HUMANA</div>
+        </div><div class="dot-right dot-gold"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-blue"></div><div class="wtf-node" data-conn="wtfL">
+          <div class="label">Dirección Creativa</div>
+          <div class="desc">Definir el territorio, la emoción, el ángulo</div>
+          <div class="human-badge">● DECISIÓN HUMANA</div>
+        </div><div class="dot-right dot-gold"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-blue"></div><div class="wtf-node" data-conn="wtfL">
+          <div class="label">Criterio de Marca</div>
+          <div class="desc">Lo que funciona vs lo que está de moda</div>
+          <div class="human-badge">● DECISIÓN HUMANA</div>
+        </div><div class="dot-right dot-gold"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-blue"></div><div class="wtf-node" data-conn="wtfL">
+          <div class="label">Estrategia de Canales</div>
+          <div class="desc">Dónde, cuándo, cómo, para quién</div>
+          <div class="human-badge">● DECISIÓN HUMANA</div>
+        </div><div class="dot-right dot-gold"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-blue"></div><div class="wtf-node" data-conn="wtfL">
+          <div class="label">Curaduría Final</div>
+          <div class="desc">Seleccionar, elevar, descartar</div>
+          <div class="human-badge">● DECISIÓN HUMANA</div>
+        </div><div class="dot-right dot-gold"></div></div>
+      </div>
+
+      <!-- HUB - empty for WTF OS -->
+      <div class="hub-col" id="col-hub">
+        <div class="hub-core" id="hub-core">
+        </div>
+      </div>
+
+      <!-- AI TOOLS - the multiplier -->
+      <div class="col" id="col-ai">
+        <div class="node-wrap"><div class="dot-left dot-purple"></div><div class="mid-node" data-conn="ai">
+          <div class="label">Image Gen</div>
+          <div class="desc">Piezas visuales a escala</div>
+          <div class="ai-badge">● IA MULTIPLICA</div>
+        </div><div class="dot-right dot-green"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-purple"></div><div class="mid-node" data-conn="ai">
+          <div class="label">Video & Motion</div>
+          <div class="desc">Clips, reels, spots</div>
+          <div class="ai-badge">● IA MULTIPLICA</div>
+        </div><div class="dot-right dot-green"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-purple"></div><div class="mid-node" data-conn="ai">
+          <div class="label">Copy & Adaptación</div>
+          <div class="desc">Textos por canal y audiencia</div>
+          <div class="ai-badge">● IA MULTIPLICA</div>
+        </div><div class="dot-right dot-green"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-purple"></div><div class="mid-node" data-conn="ai">
+          <div class="label">Format Scaling</div>
+          <div class="desc">1 pieza → 50 versiones</div>
+          <div class="ai-badge">● IA MULTIPLICA</div>
+        </div><div class="dot-right dot-green"></div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-purple"></div><div class="mid-node" data-conn="ai">
+          <div class="label">Performance Data</div>
+          <div class="desc">Señales en tiempo real</div>
+          <div class="ai-badge">● IA MULTIPLICA</div>
+        </div><div class="dot-right dot-green"></div></div>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="col" id="col-output">
+        <div class="node-wrap"><div class="dot-left dot-green"></div><div class="output-node" data-conn="output">
+          <div class="label">Campañas 360°</div>
+          <div class="desc">Con criterio, no solo volumen</div>
+          <div class="metric">10x <span class="metric-label">Direcciones creativas</span></div>
+        </div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-green"></div><div class="output-node" data-conn="output">
+          <div class="label">Content at Scale</div>
+          <div class="desc">Cada pieza pensada, no generada</div>
+          <div class="metric">100+ <span class="metric-label">Piezas curadas</span></div>
+        </div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-green"></div><div class="output-node" data-conn="output">
+          <div class="label">Producción Amplificada</div>
+          <div class="desc">Velocidad con craft</div>
+          <div class="metric">3x <span class="metric-label">Más rápido</span></div>
+        </div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-green"></div><div class="output-node" data-conn="output">
+          <div class="label">Aprendizaje Continuo</div>
+          <div class="desc">Cada ciclo mejora el sistema</div>
+          <div class="metric">∞ <span class="metric-label">Loop estratégico</span></div>
+        </div></div>
+
+        <div class="node-wrap"><div class="dot-left dot-green"></div><div class="output-node" data-conn="output">
+          <div class="label">Presencia Global</div>
+          <div class="desc">Adaptación cultural y lingüística</div>
+          <div class="metric">Multi <span class="metric-label">Mercado</span></div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="left">
+        <div class="stat-item">
+          <div class="val">10x</div>
+          <div class="lbl">Velocidad</div>
+        </div>
+        <div class="stat-item">
+          <div class="val">↓70%</div>
+          <div class="lbl">Costo / pieza</div>
+        </div>
+        <div class="stat-item">
+          <div class="val">100%</div>
+          <div class="lbl">On Brand</div>
+        </div>
+        <div class="stat-item">
+          <div class="val">15</div>
+          <div class="lbl">Años de calle</div>
+        </div>
+      </div>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(255,200,0,0.6);"></div>
+          <div class="legend-label">Decisión humana WTF</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(139,92,246,0.6);"></div>
+          <div class="legend-label">IA Amplificación</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(16,185,129,0.6);"></div>
+          <div class="legend-label">Output</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const canvas = document.getElementById('lines');
+        const ctx = canvas.getContext('2d');
+        
+        function getDots(colId, side) {
+          const col = document.getElementById(colId);
+          const dots = col.querySelectorAll(side === 'right' ? '.dot-right' : '.dot-left');
+          return Array.from(dots).map(d => {
+            const r = d.getBoundingClientRect();
+            return { x: r.left + r.width/2, y: r.top + r.height/2 };
+          });
+        }
+
+        function getHubCenter() {
+          const hub = document.getElementById('hub-core');
+          const r = hub.getBoundingClientRect();
+          return { x: r.left + r.width/2, y: r.top + r.height/2, radius: r.width/2 };
+        }
+
+        function drawCurve(from, to, color1, color2, opacity, width) {
+          const cp = (to.x - from.x) * 0.4;
+          const grad = ctx.createLinearGradient(from.x, from.y, to.x, to.y);
+          grad.addColorStop(0, color1);
+          grad.addColorStop(1, color2);
+          ctx.beginPath();
+          ctx.moveTo(from.x, from.y);
+          ctx.bezierCurveTo(from.x + cp, from.y, to.x - cp, to.y, to.x, to.y);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = width || 1.5;
+          ctx.globalAlpha = opacity;
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+
+        const inputR = getDots('col-input', 'right');
+        const wtfLL = getDots('col-wtf-l', 'left');
+        const wtfLR = getDots('col-wtf-l', 'right');
+        const aiL = getDots('col-ai', 'left');
+        const aiR = getDots('col-ai', 'right');
+        const outputL = getDots('col-output', 'left');
+        const hub = getHubCenter();
+
+        // Input → WTF Human (1-to-1)
+        for (let i = 0; i < Math.min(inputR.length, wtfLL.length); i++) {
+          drawCurve(inputR[i], wtfLL[i], 'rgba(0,180,255,0.5)', 'rgba(255,200,0,0.3)', 0.5, 1.5);
+        }
+
+        // WTF Human → Hub (gold lines - the key decisions)
+        for (let i = 0; i < wtfLR.length; i++) {
+          const from = wtfLR[i];
+          const angle = Math.atan2(from.y - hub.y, from.x - hub.x);
+          const to = { x: hub.x + Math.cos(angle) * (hub.radius + 15), y: hub.y + Math.sin(angle) * (hub.radius + 15) };
+          drawCurve(from, to, 'rgba(255,200,0,0.5)', 'rgba(139,92,246,0.3)', 0.6, 2);
+        }
+
+        // Hub → AI Tools
+        for (let i = 0; i < aiL.length; i++) {
+          const to = aiL[i];
+          const angle = Math.atan2(to.y - hub.y, to.x - hub.x);
+          const from = { x: hub.x + Math.cos(angle) * (hub.radius + 15), y: hub.y + Math.sin(angle) * (hub.radius + 15) };
+          drawCurve(from, to, 'rgba(139,92,246,0.4)', 'rgba(139,92,246,0.2)', 0.5, 1.5);
+        }
+
+        // AI Tools → Output (1-to-1)
+        for (let i = 0; i < Math.min(aiR.length, outputL.length); i++) {
+          drawCurve(aiR[i], outputL[i], 'rgba(16,185,129,0.4)', 'rgba(16,185,129,0.2)', 0.5, 1.5);
+        }
+
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    width: 1920px;
+    height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: #0A0A0F;
+    color: white;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Subtle grid background */
+  .grid-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+  }
+
+  /* Glow orbs */
+  .glow-1 {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,180,255,0.12) 0%, transparent 70%);
+    top: -100px; left: 200px;
+    z-index: 0;
+  }
+  .glow-2 {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+    bottom: -150px; right: 100px;
+    z-index: 0;
+  }
+  .glow-3 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);
+    top: 300px; left: 800px;
+    z-index: 0;
+  }
+
+  svg.connections {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 50px 60px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .header h1 {
+    font-weight: 900;
+    font-size: 38px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .header h1 .accent {
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header .subtitle {
+    font-weight: 100;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 8px;
+  }
+
+  .badge {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    border-radius: 100px;
+  }
+
+  /* Main flow layout */
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 700px;
+    gap: 30px;
+  }
+
+  /* Column styles */
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  /* Input nodes */
+  .input-node {
+    background: rgba(0,180,255,0.06);
+    border: 1px solid rgba(0,180,255,0.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    width: 240px;
+    position: relative;
+  }
+
+  .input-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    width: 8px;
+    height: 8px;
+    background: #00B4FF;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(0,180,255,0.6);
+  }
+
+  .input-node .icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .input-node .label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #00B4FF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .input-node .desc {
+    font-weight: 300;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* Central hub */
+  .hub {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hub-core {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(139,92,246,0.3), rgba(0,180,255,0.15), transparent 70%);
+    border: 2px solid rgba(139,92,246,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 60px rgba(139,92,246,0.15), 0 0 120px rgba(0,180,255,0.08);
+  }
+
+  .hub-core::after {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 1px solid rgba(139,92,246,0.15);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.2; }
+  }
+
+  .hub-core .hub-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .hub-core .hub-label {
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hub-core .hub-sub {
+    font-weight: 300;
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* Process nodes around hub */
+  .process-ring {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 320px;
+  }
+
+  .process-tag {
+    background: rgba(139,92,246,0.08);
+    border: 1px solid rgba(139,92,246,0.2);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(139,92,246,0.8);
+  }
+
+  /* Output nodes */
+  .output-node {
+    background: rgba(16,185,129,0.06);
+    border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    width: 260px;
+    position: relative;
+  }
+
+  .output-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(16,185,129,0.6);
+  }
+
+  .output-node .label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #10B981;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .output-node .desc {
+    font-weight: 300;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  .output-node .metric {
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #10B981;
+  }
+
+  .output-node .metric-label {
+    font-weight: 300;
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Middle process columns */
+  .mid-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .mid-node {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 14px 18px;
+    width: 200px;
+    position: relative;
+  }
+
+  .mid-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  .mid-node::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  .mid-node .label {
+    font-weight: 600;
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .mid-node .desc {
+    font-weight: 300;
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 3px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+    right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .bottom-bar .left {
+    display: flex;
+    gap: 30px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item .val {
+    font-weight: 900;
+    font-size: 28px;
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat-item .lbl {
+    font-weight: 300;
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  .logo-area {
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* Flow arrows area */
+  .arrow-label {
+    position: absolute;
+    font-weight: 100;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="glow-3"></div>
+
+  <!-- Connection lines -->
+  <svg class="connections" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#00B4FF;stop-opacity:0.5"/>
+        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.3"/>
+      </linearGradient>
+      <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.3"/>
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    
+    <!-- Input to Mid connections -->
+    <path d="M 308 220 C 400 220, 420 200, 480 200" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.6"/>
+    <path d="M 308 310 C 400 310, 420 260, 480 260" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.6"/>
+    <path d="M 308 400 C 400 400, 420 320, 480 320" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.6"/>
+    <path d="M 308 490 C 400 490, 420 440, 480 440" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.6"/>
+    <path d="M 308 580 C 400 580, 420 500, 480 500" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.6"/>
+    <path d="M 308 670 C 400 670, 420 560, 480 560" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.6"/>
+
+    <!-- Mid to Hub connections -->
+    <path d="M 690 200 C 780 200, 780 350, 830 370" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 690 260 C 780 260, 780 360, 830 380" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 690 320 C 770 320, 770 370, 830 390" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 690 440 C 770 440, 770 400, 830 400" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 690 500 C 770 500, 770 410, 830 410" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 690 560 C 780 560, 780 420, 830 420" stroke="url(#grad-blue)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+
+    <!-- Hub to Mid-right connections -->
+    <path d="M 1090 370 C 1140 370, 1160 200, 1210 200" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1090 380 C 1140 380, 1160 280, 1210 280" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1090 390 C 1140 390, 1160 360, 1210 360" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1090 410 C 1140 410, 1160 440, 1210 440" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1090 420 C 1140 420, 1160 520, 1210 520" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1090 430 C 1140 430, 1160 600, 1210 600" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+
+    <!-- Mid-right to Output connections -->
+    <path d="M 1420 200 C 1500 200, 1520 230, 1580 230" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1420 280 C 1500 280, 1520 330, 1580 330" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1420 360 C 1500 360, 1520 430, 1580 430" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1420 440 C 1500 440, 1520 530, 1580 530" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1420 520 C 1500 520, 1520 630, 1580 630" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+    <path d="M 1420 600 C 1500 600, 1520 730, 1580 730" stroke="url(#grad-purple)" fill="none" stroke-width="1.5" filter="url(#glow)" opacity="0.5"/>
+
+    <!-- Floating particles -->
+    <circle cx="450" cy="300" r="2" fill="#00B4FF" opacity="0.4"/>
+    <circle cx="750" cy="250" r="1.5" fill="#8B5CF6" opacity="0.3"/>
+    <circle cx="1150" cy="500" r="2" fill="#10B981" opacity="0.3"/>
+    <circle cx="1350" cy="350" r="1.5" fill="#8B5CF6" opacity="0.4"/>
+    <circle cx="550" cy="500" r="1" fill="#00B4FF" opacity="0.3"/>
+    <circle cx="1500" cy="600" r="2" fill="#10B981" opacity="0.3"/>
+  </svg>
+
+  <div class="content">
+    <div class="header">
+      <div>
+        <h1><span class="accent">IA</span> CONTENT LAB</h1>
+        <div class="subtitle">Sistema creativo amplificado por inteligencia artificial</div>
+      </div>
+      <div class="badge">Brief Destroyers</div>
+    </div>
+
+    <div class="flow">
+      <!-- INPUTS -->
+      <div class="col">
+        <div class="input-node">
+          <div class="icon">📋</div>
+          <div class="label">Brief & Estrategia</div>
+          <div class="desc">Objetivos, target, territorios de marca</div>
+        </div>
+        <div class="input-node">
+          <div class="icon">🎨</div>
+          <div class="label">Assets de Marca</div>
+          <div class="desc">Logos, paleta, guidelines, referencias</div>
+        </div>
+        <div class="input-node">
+          <div class="icon">📸</div>
+          <div class="label">Imágenes Referencia</div>
+          <div class="desc">Estilo visual, mood, estética</div>
+        </div>
+        <div class="input-node">
+          <div class="icon">✍️</div>
+          <div class="label">Copy & Narrativa</div>
+          <div class="desc">Tone of voice, mensajes clave</div>
+        </div>
+        <div class="input-node">
+          <div class="icon">📊</div>
+          <div class="label">Data & Insights</div>
+          <div class="desc">Performance previo, señales del mercado</div>
+        </div>
+        <div class="input-node">
+          <div class="icon">📐</div>
+          <div class="label">Formatos & Canales</div>
+          <div class="desc">IG, TikTok, YouTube, OOH, TV</div>
+        </div>
+      </div>
+
+      <!-- PROCESS LEFT -->
+      <div class="mid-col">
+        <div class="mid-node">
+          <div class="label">Prompt Engineering</div>
+          <div class="desc">Traducción creativa → prompts</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Style Transfer</div>
+          <div class="desc">Consistencia visual de marca</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Contexto Semántico</div>
+          <div class="desc">Narrativa + emoción + código cultural</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Segmentación</div>
+          <div class="desc">Versiones por audiencia</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Canvas Builder</div>
+          <div class="desc">Composición por formato</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Brand Guard</div>
+          <div class="desc">Filtro de coherencia</div>
+        </div>
+      </div>
+
+      <!-- HUB -->
+      <div class="hub">
+        <div class="hub-core">
+          <div class="hub-icon">⚡</div>
+          <div class="hub-label">IA Engine</div>
+          <div class="hub-sub">Creative Core</div>
+        </div>
+        <div class="process-ring">
+          <div class="process-tag">Gen AI</div>
+          <div class="process-tag">LLMs</div>
+          <div class="process-tag">Vision</div>
+          <div class="process-tag">Video</div>
+          <div class="process-tag">Audio</div>
+          <div class="process-tag">Copy</div>
+        </div>
+      </div>
+
+      <!-- PROCESS RIGHT -->
+      <div class="mid-col">
+        <div class="mid-node">
+          <div class="label">Image Generation</div>
+          <div class="desc">Piezas visuales on-brand</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Video Production</div>
+          <div class="desc">Clips, reels, motion</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Copy Adaptation</div>
+          <div class="desc">Textos por canal y audiencia</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Format Scaling</div>
+          <div class="desc">1 pieza → 50 adaptaciones</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Quality Check</div>
+          <div class="desc">Revisión humana + IA</div>
+        </div>
+        <div class="mid-node">
+          <div class="label">Performance Loop</div>
+          <div class="desc">Data → aprendizaje → mejora</div>
+        </div>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="col">
+        <div class="output-node">
+          <div class="label">Campañas 360°</div>
+          <div class="desc">Ecosistema completo de piezas</div>
+          <div class="metric">10x</div>
+          <div class="metric-label">Más direcciones creativas</div>
+        </div>
+        <div class="output-node">
+          <div class="label">Content at Scale</div>
+          <div class="desc">Cientos de piezas adaptadas</div>
+          <div class="metric">100+</div>
+          <div class="metric-label">Piezas por campaña</div>
+        </div>
+        <div class="output-node">
+          <div class="label">Video & Motion</div>
+          <div class="desc">Producción audiovisual amplificada</div>
+          <div class="metric">3x</div>
+          <div class="metric-label">Velocidad de producción</div>
+        </div>
+        <div class="output-node">
+          <div class="label">Optimización Continua</div>
+          <div class="desc">Iteraciones basadas en data real</div>
+          <div class="metric">∞</div>
+          <div class="metric-label">Loop de mejora</div>
+        </div>
+        <div class="output-node">
+          <div class="label">Multi-Mercado</div>
+          <div class="desc">Adaptación cultural y lingüística</div>
+          <div class="metric">21</div>
+          <div class="metric-label">Países activados</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom stats -->
+  <div class="bottom-bar">
+    <div class="left">
+      <div class="stat-item">
+        <div class="val">10x</div>
+        <div class="lbl">Velocidad</div>
+      </div>
+      <div class="stat-item">
+        <div class="val">↓70%</div>
+        <div class="lbl">Costo por pieza</div>
+      </div>
+      <div class="stat-item">
+        <div class="val">100%</div>
+        <div class="lbl">On Brand</div>
+      </div>
+      <div class="stat-item">
+        <div class="val">24/7</div>
+        <div class="lbl">Producción activa</div>
+      </div>
+    </div>
+    <div class="logo-area">WTF AGENCY</div>
+  </div>
+
+  <!-- Flow labels -->
+  <div class="arrow-label" style="top: 130px; left: 380px;">Input</div>
+  <div class="arrow-label" style="top: 130px; left: 580px;">Process</div>
+  <div class="arrow-label" style="top: 130px; left: 910px;">Engine</div>
+  <div class="arrow-label" style="top: 130px; left: 1260px;">Output</div>
+  <div class="arrow-label" style="top: 130px; left: 1600px;">Delivery</div>
+
+</body>
+</html>

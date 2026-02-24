@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; width: 430px; }
+  .slide { padding: 32px 24px; border-bottom: 1px solid #1a1a1a; }
+  .sh { font-size: 11px; letter-spacing: 4px; color: #ff3c3c; text-transform: uppercase; margin-bottom: 16px; }
+  .sh.g { color: #00e676; }
+  .sh.y { color: #ffd740; }
+  h2 { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+  
+  .cover { text-align: center; padding: 50px 24px; }
+  .cover .tag { font-size: 11px; letter-spacing: 4px; color: #555; text-transform: uppercase; margin-bottom: 20px; }
+  .cover h1 { font-size: 28px; font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+  .cover h1 span { color: #ffd740; }
+  .cover .sub { font-size: 14px; color: #666; margin-bottom: 30px; }
+  
+  .big-num { display: flex; justify-content: space-around; margin: 20px 0; }
+  .big-num .item { text-align: center; }
+  .big-num .item .val { font-size: 32px; font-weight: 900; }
+  .big-num .item .val.r { color: #ff3c3c; }
+  .big-num .item .val.g { color: #00e676; }
+  .big-num .item .val.y { color: #ffd740; }
+  .big-num .item .lbl { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+  
+  .rev-row { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #141414; }
+  .rev-row .month { font-size: 13px; font-weight: 700; color: #555; width: 32px; }
+  .rev-row .bars { flex: 1; margin: 0 10px; }
+  .rev-row .bar { height: 18px; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 600; }
+  .rev-row .bar.fee { background: #ff3c3c; color: #fff; }
+  .rev-row .bar.ext { background: #ffd740; color: #0a0a0a; margin-top: 2px; }
+  .rev-row .total { font-size: 15px; font-weight: 700; width: 58px; text-align: right; }
+  
+  .card { background: #141414; border-radius: 10px; border: 1px solid #1e1e1e; padding: 18px; margin-bottom: 10px; }
+  .card .title { font-size: 12px; font-weight: 700; color: #ffd740; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .card .row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #1a1a1a; font-size: 13px; }
+  .card .row:last-child { border: none; }
+  .card .row .k { color: #888; }
+  .card .row .v { font-weight: 700; }
+  
+  .kpi-row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .kpi-mini { flex: 1; background: #141414; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #1e1e1e; }
+  .kpi-mini .v { font-size: 20px; font-weight: 900; }
+  .kpi-mini .v.r { color: #ff3c3c; }
+  .kpi-mini .v.g { color: #00e676; }
+  .kpi-mini .v.y { color: #ffd740; }
+  .kpi-mini .l { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+  
+  .highlight { background: #1a1a0a; border: 1px solid #ffd74033; border-radius: 10px; padding: 18px; margin-top: 16px; text-align: center; }
+  .highlight .big { font-size: 36px; font-weight: 900; color: #ffd740; }
+  .highlight .desc { font-size: 12px; color: #888; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide cover">
+  <div class="tag">Revenue Model v2 · Fees + Extras</div>
+  <h1>De $16K a <span>$77K</span>/mes<br>en 6 meses</h1>
+  <div class="sub">Fees recurrentes + $30K/año en extras por cliente</div>
+  <div class="big-num">
+    <div class="item"><div class="val r">$16K</div><div class="lbl">Hoy</div></div>
+    <div class="item"><div class="val y">$77K</div><div class="lbl">M6 conservador</div></div>
+    <div class="item"><div class="val g">$100K</div><div class="lbl">M6 optimista</div></div>
+  </div>
+  <div class="highlight">
+    <div class="big">>$1M</div>
+    <div class="desc">Revenue anual proyectado (optimista)</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: EXTRAS BREAKDOWN -->
+<div class="slide">
+  <div class="sh y">Extras · $30K/año por cliente</div>
+  <h2>El turbo del modelo</h2>
+  
+  <div class="card">
+    <div class="title">Menú de adicionales</div>
+    <div class="row"><div class="k">Producción audiovisual</div><div class="v">$1.5-3K × 2-3/año</div></div>
+    <div class="row"><div class="k">Campañas especiales</div><div class="v">$1-2.5K × 3-4/año</div></div>
+    <div class="row"><div class="k">Eventos & activaciones</div><div class="v">$3-6K × 1-2/año</div></div>
+    <div class="row"><div class="k">Acciones (influencers, PR)</div><div class="v">$1.5-3K × 2-3/año</div></div>
+    <div class="row"><div class="k">Desarrollo web/landing</div><div class="v">$2-5K × 1-2/año</div></div>
+    <div class="row"><div class="k">Automatizaciones IA custom</div><div class="v">$1.5-3K × 1-2/año</div></div>
+  </div>
+  
+  <div class="kpi-row">
+    <div class="kpi-mini"><div class="v y">$2.5K</div><div class="l">Extras/mes/cliente</div></div>
+    <div class="kpi-mini"><div class="v y">$30K</div><div class="l">Extras/año/cliente</div></div>
+    <div class="kpi-mini"><div class="v y">25%</div><div class="l">% del revenue total</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 3: CONSERVADOR -->
+<div class="slide">
+  <div class="sh">Conservador · Fees + Extras</div>
+  <h2>Meta en M4 (no M6)</h2>
+  <p style="font-size:11px; color:#555; margin-bottom:16px;">1 cliente/mes · Fee $7.5K + Extras $2.5K · 4 clientes base con extras desde M1</p>
+  
+  <div class="rev-row">
+    <div class="month">M1</div>
+    <div class="bars">
+      <div class="bar fee" style="width:50%">$19.5K fees</div>
+      <div class="bar ext" style="width:26%">$10K extras</div>
+    </div>
+    <div class="total">$29.5K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M2</div>
+    <div class="bars">
+      <div class="bar fee" style="width:65%">$27K</div>
+      <div class="bar ext" style="width:26%">$10K</div>
+    </div>
+    <div class="total">$37K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M3</div>
+    <div class="bars">
+      <div class="bar fee" style="width:78%">$34.5K</div>
+      <div class="bar ext" style="width:32%">$12.5K</div>
+    </div>
+    <div class="total">$47K</div>
+  </div>
+  <div class="rev-row" style="border-bottom:2px solid #ff3c3c;">
+    <div class="month" style="color:#ff3c3c">M4</div>
+    <div class="bars">
+      <div class="bar fee" style="width:90%">$42K</div>
+      <div class="bar ext" style="width:38%">$15K</div>
+    </div>
+    <div class="total" style="color:#ff3c3c">$57K ✅</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M5</div>
+    <div class="bars">
+      <div class="bar fee" style="width:100%">$49.5K</div>
+      <div class="bar ext" style="width:44%">$17.5K</div>
+    </div>
+    <div class="total">$67K</div>
+  </div>
+  <div class="rev-row" style="border-bottom:2px solid #ffd740;">
+    <div class="month" style="color:#ffd740">M6</div>
+    <div class="bars">
+      <div class="bar fee" style="width:100%">$57K</div>
+      <div class="bar ext" style="width:51%">$20K</div>
+    </div>
+    <div class="total" style="color:#ffd740; font-size:17px;">$77K 🚀</div>
+  </div>
+</div>
+
+<!-- SLIDE 4: OPTIMISTA -->
+<div class="slide">
+  <div class="sh g">Optimista · Fees + Extras</div>
+  <h2>$100K/mes en M6</h2>
+  <p style="font-size:11px; color:#555; margin-bottom:16px;">2 clientes/mes al inicio · Fee $8K + Extras $2.5K</p>
+  
+  <div class="rev-row">
+    <div class="month">M1</div>
+    <div class="bars">
+      <div class="bar fee" style="width:42%">$23K</div>
+      <div class="bar ext" style="width:18%">$10K</div>
+    </div>
+    <div class="total">$33K</div>
+  </div>
+  <div class="rev-row" style="border-bottom:2px solid #00e676;">
+    <div class="month" style="color:#00e676">M2</div>
+    <div class="bars">
+      <div class="bar fee" style="width:60%">$39K</div>
+      <div class="bar ext" style="width:18%">$10K</div>
+    </div>
+    <div class="total" style="color:#00e676">$49K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M3</div>
+    <div class="bars">
+      <div class="bar fee" style="width:80%">$51.5K</div>
+      <div class="bar ext" style="width:27%">$15K</div>
+    </div>
+    <div class="total" style="color:#00e676">$66.5K ✅</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M4</div>
+    <div class="bars">
+      <div class="bar fee" style="width:90%">$59.5K</div>
+      <div class="bar ext" style="width:36%">$20K</div>
+    </div>
+    <div class="total">$79.5K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M5</div>
+    <div class="bars">
+      <div class="bar fee" style="width:100%">$67.5K</div>
+      <div class="bar ext" style="width:40%">$22.5K</div>
+    </div>
+    <div class="total">$90K</div>
+  </div>
+  <div class="rev-row" style="border-bottom:2px solid #00e676;">
+    <div class="month" style="color:#00e676">M6</div>
+    <div class="bars">
+      <div class="bar fee" style="width:100%">$75.5K</div>
+      <div class="bar ext" style="width:45%">$25K</div>
+    </div>
+    <div class="total" style="color:#00e676; font-size:17px;">$100K 🚀</div>
+  </div>
+</div>
+
+<!-- SLIDE 5: NÚMEROS CLAVE -->
+<div class="slide">
+  <div class="sh y">Números clave</div>
+  <h2>El nuevo modelo</h2>
+  
+  <div class="kpi-row">
+    <div class="kpi-mini"><div class="v y">$10K</div><div class="l">Valor total/mes/cliente</div></div>
+    <div class="kpi-mini"><div class="v g">$120K</div><div class="l">LTV anual/cliente</div></div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-mini"><div class="v r">$7.5K</div><div class="l">Fee mensual</div></div>
+    <div class="kpi-mini"><div class="v y">$2.5K</div><div class="l">Extras/mes</div></div>
+  </div>
+  
+  <div class="card" style="margin-top:16px;">
+    <div class="title">Revenue anual proyectado</div>
+    <div class="row"><div class="k">Conservador (10 clientes)</div><div class="v" style="color:#ff3c3c">$798K</div></div>
+    <div class="row"><div class="k">Optimista (12 clientes)</div><div class="v" style="color:#00e676">$1.018K (>$1M)</div></div>
+    <div class="row"><div class="k">% que representan extras</div><div class="v" style="color:#ffd740">25-27%</div></div>
+  </div>
+  
+  <div class="card">
+    <div class="title">Tiempo a meta $50-60K/mes</div>
+    <div class="row"><div class="k">Sin extras</div><div class="v">6 meses</div></div>
+    <div class="row"><div class="k">Con extras (conservador)</div><div class="v" style="color:#ffd740">4 meses</div></div>
+    <div class="row"><div class="k">Con extras (optimista)</div><div class="v" style="color:#00e676">2 meses</div></div>
+  </div>
+</div>
+
+</body>
+</html>

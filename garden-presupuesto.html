@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WTF Agency — Presupuesto Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #111;
+  width: 430px;
+  margin: 0 auto;
+}
+.page { padding: 36px 28px; }
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #111;
+}
+.wtf-logo {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+.wtf-sub {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 4px;
+}
+.header-right {
+  text-align: right;
+}
+.header-client {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.header-date {
+  font-size: 10px;
+  color: #bbb;
+  margin-top: 2px;
+}
+
+/* Title */
+.doc-title {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.doc-subtitle {
+  font-size: 13px;
+  color: #777;
+  font-weight: 400;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* Section */
+.section {
+  margin-bottom: 24px;
+}
+.section-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Option cards */
+.option-card {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  padding: 22px 20px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.option-card.featured {
+  border-color: #111;
+  background: #fafafa;
+}
+.option-badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: #111;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.option-name {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+.option-desc {
+  font-size: 11.5px;
+  color: #888;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.option-price {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 2px;
+}
+.option-price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+}
+.option-unit {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+/* Feature list */
+.feature-list {
+  list-style: none;
+}
+.feature-list li {
+  font-size: 12px;
+  color: #555;
+  padding: 5px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.4;
+}
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: #111;
+  font-size: 11px;
+}
+.feature-list li strong {
+  color: #222;
+}
+
+/* Deliverables grid */
+.del-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+.del-item {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.del-number {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+}
+.del-label {
+  font-size: 9px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+/* Workflow section */
+.workflow {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 0;
+}
+.wf-step {
+  flex: 1;
+  text-align: center;
+  padding: 14px 6px;
+  position: relative;
+}
+.wf-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #ccc;
+  font-weight: 300;
+}
+.wf-icon {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.wf-name {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #555;
+}
+.wf-desc {
+  font-size: 8.5px;
+  color: #aaa;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+/* Comparison row */
+.compare-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-label { color: #888; }
+.compare-val { font-weight: 600; color: #333; }
+.compare-val.highlight { color: #111; font-weight: 800; }
+
+/* Note */
+.note {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 6px;
+}
+.note-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+  margin-bottom: 8px;
+}
+.note p {
+  font-size: 11.5px;
+  color: #666;
+  line-height: 1.5;
+}
+.note p strong { color: #333; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 2px solid #111;
+}
+.footer-agency {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+.footer-tagline {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 2px;
+}
+.footer-contact {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 10px;
+}
+.footer-legal {
+  font-size: 8px;
+  color: #ccc;
+  margin-top: 12px;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 24px 0;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="wtf-logo">WTF</div>
+      <div class="wtf-sub">Brief Destroyers</div>
+    </div>
+    <div class="header-right">
+      <div class="header-client">Grupo Garden</div>
+      <div class="header-date">Febrero 2026</div>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="doc-title">Contenido de campaña<br>amplificado por IA</div>
+  <div class="doc-subtitle">Producción de piezas multi-formato con flujos creativos automatizados. Concepto humano, ejecución inteligente, escala infinita.</div>
+
+  <!-- WORKFLOW -->
+  <div class="section">
+    <div class="section-title">Flujo de trabajo</div>
+    <div class="workflow">
+      <div class="wf-step">
+        <div class="wf-icon">🧠</div>
+        <div class="wf-name">Brief</div>
+        <div class="wf-desc">Concepto y dirección creativa</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">⚡</div>
+        <div class="wf-name">IA Flows</div>
+        <div class="wf-desc">Generación y variaciones</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">🎨</div>
+        <div class="wf-name">Curación</div>
+        <div class="wf-desc">Selección y refinamiento</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">📦</div>
+        <div class="wf-name">Deploy</div>
+        <div class="wf-desc">Multi-formato final</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 1 -->
+  <div class="section">
+    <div class="section-title">Opciones por campaña</div>
+
+    <div class="option-card">
+      <div class="option-name">Campaign Pack</div>
+      <div class="option-desc">Producción de piezas a partir de un concepto definido. Ideal para campañas puntuales con dirección creativa propia.</div>
+      <div class="option-price">USD 3.500 <span>+ IVA</span></div>
+      <div class="option-unit">por campaña</div>
+
+      <div class="del-grid">
+        <div class="del-item">
+          <div class="del-number">30</div>
+          <div class="del-label">Piezas totales</div>
+        </div>
+        <div class="del-item">
+          <div class="del-number">5+</div>
+          <div class="del-label">Formatos</div>
+        </div>
+      </div>
+
+      <ul class="feature-list" style="margin-top:16px;">
+        <li><strong>30 piezas multi-formato</strong> (feed, stories, reels estáticos, carruseles, banners)</li>
+        <li>Adaptación automática a <strong>todos los tamaños</strong> (1:1, 9:16, 16:9, 4:5)</li>
+        <li>Flujos IA entrenados con <strong>brand guidelines</strong> del cliente</li>
+        <li><strong>Copies</strong> para cada pieza (títulos + CTA)</li>
+        <li><strong>2 rondas</strong> de ajustes incluidas</li>
+        <li>Entrega en <strong>7-10 días hábiles</strong></li>
+        <li>Archivos finales en <strong>alta resolución + editables</strong></li>
+      </ul>
+    </div>
+
+    <!-- OPCIÓN 2 -->
+    <div class="option-card featured">
+      <div class="option-badge">Recomendado</div>
+      <div class="option-name">Campaign Pack Pro</div>
+      <div class="option-desc">Concepto creativo + producción completa + piezas de video. La campaña llave en mano con inteligencia creativa.</div>
+      <div class="option-price">USD 5.500 <span>+ IVA</span></div>
+      <div class="option-unit">por campaña</div>
+
+      <div class="del-grid">
+        <div class="del-item">
+          <div class="del-number">30</div>
+          <div class="del-label">Piezas totales</div>
+        </div>
+        <div class="del-item">
+          <div class="del-number">8+</div>
+          <div class="del-label">Formatos</div>
+        </div>
+        <div class="del-item">
+          <div class="del-number">5</div>
+          <div class="del-label">Videos / Reels</div>
+        </div>
+        <div class="del-item">
+          <div class="del-number">∞</div>
+          <div class="del-label">Variaciones IA</div>
+        </div>
+      </div>
+
+      <ul class="feature-list" style="margin-top:16px;">
+        <li><strong>Concepto creativo y dirección de arte</strong> de la campaña</li>
+        <li><strong>30 piezas multi-formato</strong> (estáticas + animadas + video)</li>
+        <li><strong>5 piezas de video/motion</strong> (reels, bumpers, stories animadas)</li>
+        <li>Adaptación automática a <strong>todos los formatos y plataformas</strong></li>
+        <li>Flujos IA entrenados con <strong>identidad visual</strong> de cada marca</li>
+        <li><strong>Copies + hashtags + CTA</strong> optimizados por IA</li>
+        <li><strong>3 rondas</strong> de ajustes incluidas</li>
+        <li>Entrega en <strong>10-12 días hábiles</strong></li>
+        <li><strong>Sistema de variaciones ilimitadas</strong> — misma pieza, múltiples versiones para A/B</li>
+        <li>Archivos finales <strong>alta resolución + editables + grilla de publicación</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPARATIVO -->
+  <div class="section">
+    <div class="section-title">Comparativo</div>
+    <div class="compare-row">
+      <span class="compare-label">Piezas incluidas</span>
+      <span class="compare-val">30 &nbsp;|&nbsp; 30 + 5 video</span>
+    </div>
+    <div class="compare-row">
+      <span class="compare-label">Concepto creativo</span>
+      <span class="compare-val">— &nbsp;|&nbsp; ✓ Incluido</span>
+    </div>
+    <div class="compare-row">
+      <span class="compare-label">Video / Motion</span>
+      <span class="compare-val">— &nbsp;|&nbsp; ✓ 5 piezas</span>
+    </div>
+    <div class="compare-row">
+      <span class="compare-label">Variaciones IA</span>
+      <span class="compare-val">Limitadas &nbsp;|&nbsp; Ilimitadas</span>
+    </div>
+    <div class="compare-row">
+      <span class="compare-label">Rondas de ajustes</span>
+      <span class="compare-val">2 &nbsp;|&nbsp; 3</span>
+    </div>
+    <div class="compare-row">
+      <span class="compare-label">Precio por pieza</span>
+      <span class="compare-val">~USD 117 &nbsp;|&nbsp; <span class="highlight">~USD 157</span></span>
+    </div>
+    <div class="compare-row">
+      <span class="compare-label">Inversión</span>
+      <span class="compare-val">USD 3.500 &nbsp;|&nbsp; <span class="highlight">USD 5.500</span></span>
+    </div>
+  </div>
+
+  <!-- IA NOTE -->
+  <div class="section">
+    <div class="note">
+      <div class="note-title">💡 ¿Qué cambia con flujos IA?</div>
+      <p>Los flujos creativos automatizados permiten generar <strong>más piezas, más rápido y con más variaciones</strong> que un proceso tradicional. Cada flujo se entrena con la identidad visual de la marca: paleta, tipografía, estilo fotográfico y tono de comunicación.</p>
+      <p style="margin-top:8px;">El resultado: <strong>campañas consistentes, escalables y con tiempos de entrega hasta 3x más rápidos</strong> que producción convencional. El ojo creativo sigue siendo humano — la IA amplifica la ejecución.</p>
+    </div>
+  </div>
+
+  <!-- VOLUMEN -->
+  <div class="section">
+    <div class="note">
+      <div class="note-title">📦 Descuento por volumen</div>
+      <p><strong>3+ campañas simultáneas:</strong> 10% de descuento</p>
+      <p><strong>Acuerdo trimestral (6+ campañas):</strong> 15% de descuento</p>
+      <p style="margin-top:6px;">Para paquetes multi-marca (KIA + Mazda + Jeep, etc.) armamos un plan a medida con pricing preferencial.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-agency">WTF</div>
+    <div class="footer-tagline">Brief Destroyers · Creatividad + IA</div>
+    <div class="footer-contact">wally@wtf-agency.com</div>
+    <div class="footer-legal">Presupuesto válido por 30 días. Precios en USD + IVA. No incluye pauta ni media buying.</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+    display: flex;
+  }
+
+  /* LEFT COLUMN */
+  .left {
+    width: 720px;
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+  .logo span { color: #555; }
+
+  .tagline {
+    font-size: 18px;
+    font-weight: 100;
+    color: #999;
+    line-height: 1.6;
+    margin-top: 16px;
+    max-width: 480px;
+  }
+
+  .diferencial {
+    border-left: 1px solid #333;
+    padding-left: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .diferencial .big {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+  }
+  .diferencial .sub {
+    font-size: 14px;
+    font-weight: 100;
+    color: #777;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  .cierre {
+    font-size: 15px;
+    font-weight: 300;
+    color: #666;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+  .footer .agency {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #444;
+  }
+  .footer .cities {
+    font-size: 11px;
+    font-weight: 100;
+    color: #444;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #333 20%, #333 80%, transparent);
+    margin: 80px 0;
+  }
+
+  /* RIGHT COLUMN — STACK */
+  .right {
+    flex: 1;
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .stack-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 48px;
+  }
+
+  .layer {
+    display: flex;
+    align-items: flex-start;
+    padding: 28px 0;
+    border-top: 1px solid #1a1a1a;
+    position: relative;
+  }
+  .layer:last-child {
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .layer-number {
+    font-size: 11px;
+    font-weight: 100;
+    color: #333;
+    width: 40px;
+    flex-shrink: 0;
+    padding-top: 4px;
+  }
+
+  .layer-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #2a2a2a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 28px;
+    font-size: 12px;
+    color: #fff;
+  }
+  .layer:nth-child(1) .layer-icon { color: #fff; }
+  .layer:nth-child(2) .layer-icon { color: #ccc; }
+  .layer:nth-child(3) .layer-icon { color: #999; }
+  .layer:nth-child(4) .layer-icon { color: #777; }
+
+  .layer-content { flex: 1; }
+
+  .layer-name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+  }
+
+  .layer-desc {
+    font-size: 13px;
+    font-weight: 100;
+    color: #777;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  .accent-line {
+    position: absolute;
+    left: 40px;
+    top: 0;
+    width: 36px;
+    height: 1px;
+    background: linear-gradient(to right, #333, transparent);
+  }
+</style>
+</head>
+<body>
+
+  <div class="left">
+    <div>
+      <div class="logo">WTF <span>OS</span></div>
+      <div class="tagline">El sistema operativo creativo<br>que no existía. Hasta ahora.</div>
+    </div>
+
+    <div class="diferencial">
+      <div class="big">Un equipo de 6 hace<br>lo que antes hacía<br>uno de 30.</div>
+      <div class="sub">No por ser más baratos.<br>Por ser más inteligentes.</div>
+    </div>
+
+    <div>
+      <div class="cierre">Creatividad aumentada.<br>Sin el bullshit.</div>
+      <div class="footer">
+        <div class="agency">WTF Agency</div>
+        <div class="cities">Buenos Aires · Madrid · Santiago · Asunción · Lima · CDMX</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="right">
+    <div class="stack-title">The Stack</div>
+
+    <div class="layer">
+      <div class="layer-number">01</div>
+      <div class="layer-icon">◉</div>
+      <div class="layer-content">
+        <div class="layer-name">Human Layer</div>
+        <div class="layer-desc">Dirección creativa senior. Criterio, gusto, estrategia. La IA amplifica, no reemplaza.</div>
+      </div>
+    </div>
+
+    <div class="layer">
+      <div class="layer-number">02</div>
+      <div class="layer-icon">▲</div>
+      <div class="layer-content">
+        <div class="layer-name">Creation Layer</div>
+        <div class="layer-desc">Generación de imagen, prototipado rápido, producción visual acelerada. Lo que antes tomaba días, ahora sale en horas.</div>
+      </div>
+    </div>
+
+    <div class="layer">
+      <div class="layer-number">03</div>
+      <div class="layer-icon">◆</div>
+      <div class="layer-content">
+        <div class="layer-name">Amplification Layer</div>
+        <div class="layer-desc">CRM, e-commerce, automatización de workflows, reportería en tiempo real. Creatividad que escala.</div>
+      </div>
+    </div>
+
+    <div class="layer">
+      <div class="layer-number">04</div>
+      <div class="layer-icon">■</div>
+      <div class="layer-content">
+        <div class="layer-name">Intelligence Layer</div>
+        <div class="layer-desc">Research con IA, análisis competitivo, benchmarking, social listening. Decisiones informadas antes de crear.</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

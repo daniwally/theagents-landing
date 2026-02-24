@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; width: 430px; }
+  .slide { padding: 32px 24px; border-bottom: 1px solid #1a1a1a; }
+  .sh { font-size: 11px; letter-spacing: 4px; color: #ff3c3c; text-transform: uppercase; margin-bottom: 16px; }
+  .sh.g { color: #00e676; }
+  .sh.y { color: #ffd740; }
+  .sh.b { color: #448aff; }
+  h2 { font-size: 24px; font-weight: 900; margin-bottom: 20px; line-height: 1.2; }
+  
+  .cover { text-align: center; padding: 50px 24px; }
+  .cover .tag { font-size: 11px; letter-spacing: 4px; color: #555; text-transform: uppercase; margin-bottom: 20px; }
+  .cover h1 { font-size: 30px; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
+  .cover h1 span { color: #ff3c3c; }
+  .cover .sub { font-size: 13px; color: #666; line-height: 1.6; }
+  
+  .card { background: #141414; border-radius: 10px; border: 1px solid #1e1e1e; padding: 18px; margin-bottom: 10px; }
+  .card .title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .card .title.r { color: #ff3c3c; }
+  .card .title.g { color: #00e676; }
+  .card .title.y { color: #ffd740; }
+  .card .title.b { color: #448aff; }
+  .card .row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #1a1a1a; font-size: 13px; }
+  .card .row:last-child { border: none; }
+  .card .row .k { color: #888; }
+  .card .row .v { font-weight: 700; }
+  
+  .kpi-row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .kpi { flex: 1; background: #141414; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #1e1e1e; }
+  .kpi .v { font-size: 20px; font-weight: 900; }
+  .kpi .v.r { color: #ff3c3c; }
+  .kpi .v.g { color: #00e676; }
+  .kpi .v.y { color: #ffd740; }
+  .kpi .v.b { color: #448aff; }
+  .kpi .l { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+  
+  .tier { background: #141414; border-radius: 10px; border: 1px solid #1e1e1e; padding: 16px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+  .tier .left {}
+  .tier .name { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  .tier .desc { font-size: 11px; color: #666; margin-top: 4px; }
+  .tier .price { font-size: 24px; font-weight: 900; }
+  .tier .price span { font-size: 12px; color: #555; font-weight: 400; }
+  
+  .rev-row { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #141414; }
+  .rev-row .month { font-size: 13px; font-weight: 700; color: #555; width: 32px; }
+  .rev-row .bars { flex: 1; margin: 0 10px; }
+  .rev-row .bar { height: 16px; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; font-size: 9px; font-weight: 600; }
+  .rev-row .bar.fee { background: #ff3c3c; color: #fff; }
+  .rev-row .bar.ext { background: #ffd740; color: #0a0a0a; margin-top: 2px; }
+  .rev-row .total { font-size: 14px; font-weight: 700; width: 54px; text-align: right; }
+  
+  .action-item { display: flex; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #141414; }
+  .action-item .icon { font-size: 18px; width: 32px; flex-shrink: 0; }
+  .action-item .text { font-size: 13px; color: #ccc; line-height: 1.5; }
+  .action-item .text strong { color: #fff; }
+  
+  .risk { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #141414; }
+  .risk .level { font-size: 20px; width: 32px; }
+  .risk .info { flex: 1; }
+  .risk .info .name { font-size: 13px; font-weight: 700; }
+  .risk .info .fix { font-size: 11px; color: #666; margin-top: 2px; }
+  
+  .check { padding: 10px 0; border-bottom: 1px solid #141414; font-size: 14px; color: #ccc; padding-left: 28px; position: relative; }
+  .check:before { content: "☐"; position: absolute; left: 0; color: #ff3c3c; font-size: 16px; }
+
+  .versus { display: flex; gap: 10px; margin-bottom: 16px; }
+  .versus .col { flex: 1; background: #141414; border-radius: 10px; padding: 16px; text-align: center; border: 1px solid #1e1e1e; }
+  .versus .col .val { font-size: 28px; font-weight: 900; }
+  .versus .col .lbl { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide cover">
+  <div class="tag">Plan de Negocio 2026</div>
+  <h1>WTF<br><span>RELOADED</span></h1>
+  <div class="sub">Sistema creativo amplificado por IA<br>15 años de calle + la tecnología que lo cambia todo</div>
+  <div class="versus" style="margin-top:24px;">
+    <div class="col"><div class="val" style="color:#ff3c3c">$16K</div><div class="lbl">Hoy</div></div>
+    <div class="col"><div class="val" style="color:#00e676">$58-92K</div><div class="lbl">Meta M6</div></div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi"><div class="v r">3-4</div><div class="l">Clientes nuevos</div></div>
+    <div class="kpi"><div class="v y">$12-15K</div><div class="l">Ticket promedio</div></div>
+    <div class="kpi"><div class="v g">$630-920K</div><div class="l">Revenue año 1</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 2: HOY vs META -->
+<div class="slide">
+  <div class="sh">Situación actual</div>
+  <h2>El problema es el pricing, no la agencia</h2>
+  <div class="card">
+    <div class="title r">Hoy</div>
+    <div class="row"><div class="k">Motorola</div><div class="v">$10K/mes ✓</div></div>
+    <div class="row"><div class="k">Cliente 2</div><div class="v" style="color:#ff3c3c">~$2K/mes ✗</div></div>
+    <div class="row"><div class="k">Cliente 3</div><div class="v" style="color:#ff3c3c">~$2K/mes ✗</div></div>
+    <div class="row"><div class="k">Cliente 4</div><div class="v" style="color:#ff3c3c">~$2K/mes ✗</div></div>
+    <div class="row"><div class="k"><strong>Total</strong></div><div class="v">$16K/mes</div></div>
+  </div>
+  <div class="card">
+    <div class="title g">Acción inmediata</div>
+    <div class="row"><div class="k">Los 3 chicos</div><div class="v">Suben a $5K o se van</div></div>
+    <div class="row"><div class="k">Deadline</div><div class="v">60 días</div></div>
+    <div class="row"><div class="k">Si se van</div><div class="v">Liberás para 1 de $15K</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 3: PRICING -->
+<div class="slide">
+  <div class="sh y">Nuevo pricing</div>
+  <h2>Motorola es el piso, no el techo</h2>
+  
+  <div class="tier">
+    <div class="left"><div class="name" style="color:#888">Piloto</div><div class="desc">4-6 semanas · Pago único</div></div>
+    <div class="price">$5-8K</div>
+  </div>
+  <div class="tier">
+    <div class="left"><div class="name" style="color:#ff3c3c">Core</div><div class="desc">Marcas medianas · 1 mercado</div></div>
+    <div class="price" style="color:#ff3c3c">$10K <span>/mes</span></div>
+  </div>
+  <div class="tier">
+    <div class="left"><div class="name" style="color:#ffd740">Growth</div><div class="desc">Marcas grandes · 2-3 mercados</div></div>
+    <div class="price" style="color:#ffd740">$15K <span>/mes</span></div>
+  </div>
+  <div class="tier">
+    <div class="left"><div class="name" style="color:#00e676">Enterprise</div><div class="desc">Multinacionales · 4+ mercados</div></div>
+    <div class="price" style="color:#00e676">$20K+ <span>/mes</span></div>
+  </div>
+  
+  <div style="text-align:center; margin:16px 0 8px; font-size:11px; color:#555;">+ EXTRAS $30K/AÑO POR CLIENTE</div>
+  
+  <div class="kpi-row">
+    <div class="kpi"><div class="v y">$2.5K</div><div class="l">Extras/mes</div></div>
+    <div class="kpi"><div class="v g">$120K</div><div class="l">LTV anual</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 4: REVENUE CONSERVADOR -->
+<div class="slide">
+  <div class="sh">Conservador · Ticket $12K</div>
+  <h2>$58K en M6 con 3 clientes nuevos</h2>
+  
+  <div class="rev-row">
+    <div class="month">M1</div>
+    <div class="bars"><div class="bar fee" style="width:45%">$16K</div><div class="bar ext" style="width:2%"></div></div>
+    <div class="total">$16.5K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M2</div>
+    <div class="bars"><div class="bar fee" style="width:70%">$25K</div><div class="bar ext" style="width:4%"></div></div>
+    <div class="total">$26K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M3</div>
+    <div class="bars"><div class="bar fee" style="width:70%">$25K</div><div class="bar ext" style="width:8%">$2.5K</div></div>
+    <div class="total">$27.5K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M4</div>
+    <div class="bars"><div class="bar fee" style="width:88%">$39K</div><div class="bar ext" style="width:12%">$4K</div></div>
+    <div class="total">$43K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M5</div>
+    <div class="bars"><div class="bar fee" style="width:100%">$51K</div><div class="bar ext" style="width:17%">$6K</div></div>
+    <div class="total">$57K</div>
+  </div>
+  <div class="rev-row" style="border-bottom:2px solid #ff3c3c;">
+    <div class="month" style="color:#ff3c3c">M6</div>
+    <div class="bars"><div class="bar fee" style="width:100%">$51K</div><div class="bar ext" style="width:21%">$7.5K</div></div>
+    <div class="total" style="color:#ff3c3c">$58.5K ✅</div>
+  </div>
+  
+  <div style="font-size:11px; color:#555; margin-top:12px; text-align:center;">Acumulado S1: $228K · Año 1 proyectado: $630K</div>
+</div>
+
+<!-- SLIDE 5: REVENUE OPTIMISTA -->
+<div class="slide">
+  <div class="sh g">Optimista · Ticket $15K</div>
+  <h2>$92K en M6 con 4 clientes nuevos</h2>
+  
+  <div class="rev-row">
+    <div class="month">M1</div>
+    <div class="bars"><div class="bar fee" style="width:35%">$16K</div><div class="bar ext" style="width:2%"></div></div>
+    <div class="total">$16.5K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M2</div>
+    <div class="bars"><div class="bar fee" style="width:65%">$30K</div><div class="bar ext" style="width:4%">$1.5K</div></div>
+    <div class="total">$31.5K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M3</div>
+    <div class="bars"><div class="bar fee" style="width:85%">$45K</div><div class="bar ext" style="width:10%">$4K</div></div>
+    <div class="total">$49K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M4</div>
+    <div class="bars"><div class="bar fee" style="width:100%">$62K</div><div class="bar ext" style="width:14%">$6K</div></div>
+    <div class="total">$68K</div>
+  </div>
+  <div class="rev-row">
+    <div class="month">M5</div>
+    <div class="bars"><div class="bar fee" style="width:100%">$62K</div><div class="bar ext" style="width:18%">$8K</div></div>
+    <div class="total">$70K</div>
+  </div>
+  <div class="rev-row" style="border-bottom:2px solid #00e676;">
+    <div class="month" style="color:#00e676">M6</div>
+    <div class="bars"><div class="bar fee" style="width:100%">$82K</div><div class="bar ext" style="width:22%">$10K</div></div>
+    <div class="total" style="color:#00e676">$92K 🚀</div>
+  </div>
+  
+  <div style="font-size:11px; color:#555; margin-top:12px; text-align:center;">Acumulado S1: $327K · Año 1 proyectado: $920K</div>
+</div>
+
+<!-- SLIDE 6: GO TO MARKET -->
+<div class="slide">
+  <div class="sh b">Go-to-Market</div>
+  <h2>3 fases, 6 meses</h2>
+  
+  <div class="card">
+    <div class="title r">Fase 1 · M1-2 · Fundación</div>
+    <div class="action-item"><div class="icon">📝</div><div class="text"><strong>Caso Motorola</strong> como punta de lanza</div></div>
+    <div class="action-item"><div class="icon">💬</div><div class="text"><strong>LinkedIn founder:</strong> 3 posts/semana</div></div>
+    <div class="action-item"><div class="icon">🎯</div><div class="text"><strong>20 CMOs target</strong> (10 AR + 10 CL)</div></div>
+    <div class="action-item"><div class="icon">💰</div><div class="text"><strong>Renegociar</strong> los 3 clientes chicos</div></div>
+  </div>
+  
+  <div class="card">
+    <div class="title y">Fase 2 · M3-4 · Demanda</div>
+    <div class="action-item"><div class="icon">🎤</div><div class="text"><strong>Webinar</strong> "Creatividad + IA en Latam"</div></div>
+    <div class="action-item"><div class="icon">📧</div><div class="text"><strong>Outbound:</strong> 10 contactos/semana</div></div>
+    <div class="action-item"><div class="icon">🤝</div><div class="text"><strong>2 pilotos</strong> en ejecución</div></div>
+    <div class="action-item"><div class="icon">📰</div><div class="text"><strong>PR:</strong> 1 publicación en medio de marketing</div></div>
+  </div>
+  
+  <div class="card">
+    <div class="title b">Fase 3 · M5-6 · Aceleración</div>
+    <div class="action-item"><div class="icon">📢</div><div class="text"><strong>LinkedIn Ads:</strong> $2-3K/mes a CMOs</div></div>
+    <div class="action-item"><div class="icon">🇨🇱</div><div class="text"><strong>Chile:</strong> 5 contactos directos</div></div>
+    <div class="action-item"><div class="icon">🎬</div><div class="text"><strong>Video showcase</strong> WTF + IA</div></div>
+    <div class="action-item"><div class="icon">👤</div><div class="text">Evaluar <strong>hire account manager</strong></div></div>
+  </div>
+</div>
+
+<!-- SLIDE 7: COMPETITIVO -->
+<div class="slide">
+  <div class="sh">Vs. Competencia</div>
+  <h2>El espacio está vacío</h2>
+  
+  <div class="card">
+    <div class="title r">Agencias grandes</div>
+    <div class="row"><div class="k">Son</div><div class="v">Lentas y caras</div></div>
+    <div class="row"><div class="k">WTF gana porque</div><div class="v" style="color:#00e676">Ágil, founder directo</div></div>
+  </div>
+  <div class="card">
+    <div class="title y">Freelancers IA</div>
+    <div class="row"><div class="k">Son</div><div class="v">Sin criterio ni escala</div></div>
+    <div class="row"><div class="k">WTF gana porque</div><div class="v" style="color:#00e676">15 años de calle + portfolio</div></div>
+  </div>
+  <div class="card">
+    <div class="title b">Consultoras tech</div>
+    <div class="row"><div class="k">Son</div><div class="v">Implementadores, no creativos</div></div>
+    <div class="row"><div class="k">WTF gana porque</div><div class="v" style="color:#00e676">Piensa campañas, no features</div></div>
+  </div>
+  
+  <div style="background:#141414; border:1px solid #00e67644; border-radius:10px; padding:16px; margin-top:12px; text-align:center;">
+    <div style="font-size:16px; font-weight:700; color:#00e676;">Nadie en Latam combina</div>
+    <div style="font-size:13px; color:#888; margin-top:6px;">Creatividad senior + IA real + Portfolio tier-1</div>
+    <div style="font-size:11px; color:#555; margin-top:8px;">Ventana: 12-18 meses antes de que las networks reaccionen</div>
+  </div>
+</div>
+
+<!-- SLIDE 8: RIESGOS -->
+<div class="slide">
+  <div class="sh">Riesgos</div>
+  <h2>Lo que puede salir mal</h2>
+  
+  <div class="risk"><div class="level">🔴</div><div class="info"><div class="name">Founder no dedica tiempo a vender</div><div class="fix">→ Bloquear 40% de agenda para comercial. No negociable.</div></div></div>
+  <div class="risk"><div class="level">🟡</div><div class="info"><div class="name">No se cierran clientes en M1-3</div><div class="fix">→ Pipeline de 20+ prospects. Si M2 no hay reuniones, activar paid.</div></div></div>
+  <div class="risk"><div class="level">🟡</div><div class="info"><div class="name">Clientes chicos consumen tiempo</div><div class="fix">→ Deadline duro M2: suben o se van. Sin excepciones.</div></div></div>
+  <div class="risk"><div class="level">🟢</div><div class="info"><div class="name">Competidor planta bandera primero</div><div class="fix">→ Velocidad. Publicar casos y ser la voz del tema YA.</div></div></div>
+  <div class="risk"><div class="level">🟢</div><div class="info"><div class="name">Motorola se va</div><div class="fix">→ Diversificar. No depender >30% de 1 cliente.</div></div></div>
+</div>
+
+<!-- SLIDE 9: CHECKLIST -->
+<div class="slide">
+  <div class="sh">Arrancar ya</div>
+  <h2>Semana 1</h2>
+  
+  <div class="check">Definir mensaje central (1 frase killer)</div>
+  <div class="check">Lista de 20 CMOs target con LinkedIn</div>
+  <div class="check">Escribir caso Motorola con números</div>
+  <div class="check">Agendar reunión con cada cliente chico</div>
+  <div class="check">Primer post en LinkedIn (el founder)</div>
+  <div class="check">Deck de 10 slides: qué es WTF hoy</div>
+  <div class="check">3 mensajes directos a CMOs del top 20</div>
+  <div class="check">Landing page "Sistema Creativo WTF"</div>
+  <div class="check">Bloquear 40% de agenda = comercial</div>
+  <div class="check">CRM simple + cargar 20 prospects</div>
+  
+  <div style="background:#ff3c3c22; border:1px solid #ff3c3c44; border-radius:10px; padding:16px; margin-top:20px; text-align:center;">
+    <div style="font-size:14px; font-weight:700; color:#ff3c3c;">EL PLAN FUNCIONA SI VENDÉS.</div>
+    <div style="font-size:12px; color:#888; margin-top:4px;">Todo lo demás es contexto.</div>
+  </div>
+</div>
+
+</body>
+</html>

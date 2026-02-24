@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WTF Agency — Plan de Negocio 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 40px 36px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  
+  .header .logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+  }
+  
+  .header .tagline {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+  }
+  
+  .header .title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 16px;
+  }
+  
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+    margin: 20px 0;
+  }
+  
+  .thin-divider {
+    height: 1px;
+    background: #e8e8e8;
+    margin: 16px 0;
+  }
+  
+  /* Resumen */
+  .summary {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  
+  .summary p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #333;
+  }
+  
+  .summary strong { color: #1a1a1a; }
+  
+  /* Métricas */
+  .metrics {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .metric-box {
+    flex: 1;
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .metric-box .label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 6px;
+  }
+  
+  .metric-box .value {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+  
+  .metric-box .sub {
+    font-size: 10px;
+    color: #888;
+    margin-top: 2px;
+  }
+  
+  .metric-box.highlight {
+    background: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+  
+  .metric-box.highlight .label { color: #999; }
+  .metric-box.highlight .value { color: #fff; }
+  .metric-box.highlight .sub { color: #777; }
+  
+  /* Secciones */
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Pricing */
+  .pricing-grid {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tier {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 16px 14px;
+    text-align: center;
+  }
+  
+  .tier.featured {
+    border: 2px solid #1a1a1a;
+    position: relative;
+  }
+  
+  .tier .tier-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  
+  .tier .tier-price {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+  
+  .tier .tier-period {
+    font-size: 10px;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+  
+  .tier .tier-desc {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Roadmap */
+  .roadmap {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .phase {
+    flex: 1;
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 14px 12px;
+  }
+  
+  .phase .phase-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  
+  .phase .phase-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+  
+  .phase ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .phase ul li {
+    font-size: 10.5px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 12px;
+    position: relative;
+  }
+  
+  .phase ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #aaa;
+  }
+  
+  /* Revenue */
+  .revenue-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  
+  .revenue-table th {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+    text-align: center;
+    padding: 8px 4px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .revenue-table td {
+    text-align: center;
+    padding: 10px 4px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+  }
+  
+  .revenue-table td:first-child {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .revenue-table tr:last-child td {
+    font-weight: 700;
+    color: #1a1a1a;
+    background: #f7f7f7;
+    border-bottom: 2px solid #1a1a1a;
+  }
+  
+  /* Competitive */
+  .competitive {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  
+  .competitive .section-title {
+    color: #fff;
+    border-bottom-color: #444;
+  }
+  
+  .competitive p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  
+  .competitive strong { color: #fff; }
+  
+  .competitive .quote {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin: 14px 0 6px;
+    font-style: italic;
+  }
+  
+  /* Risk */
+  .risk-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  
+  .risk-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    min-width: 56px;
+    text-align: center;
+  }
+  
+  .risk-high { background: #fce4ec; color: #c62828; }
+  .risk-med { background: #fff3e0; color: #e65100; }
+  
+  .risk-text {
+    font-size: 11.5px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .footer p {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">WTF</div>
+    <div class="tagline">Brief Destroyers</div>
+    <div class="title">Plan de Negocio 2026</div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <div class="summary">
+    <p><strong>15 años, portfolio tier-1</strong> (Motorola 21 países, Honda Latam, Absolut, Ford), facturación actual de <strong>USD 16K/mes</strong> con 4 clientes — claramente subvaluada. Reposicionamiento como <strong>sistema creativo amplificado por IA</strong>. El espacio "creatividad + IA" en Latam está vacío. WTF tiene el track record para ocuparlo.</p>
+  </div>
+  
+  <div class="metrics">
+    <div class="metric-box">
+      <div class="label">Hoy</div>
+      <div class="value">$16K</div>
+      <div class="sub">4 clientes</div>
+    </div>
+    <div class="metric-box highlight">
+      <div class="label">Meta M6</div>
+      <div class="value">$58K</div>
+      <div class="sub">5-6 clientes</div>
+    </div>
+    <div class="metric-box">
+      <div class="label">Ticket min.</div>
+      <div class="value">$10K</div>
+      <div class="sub">piso = Motorola</div>
+    </div>
+    <div class="metric-box">
+      <div class="label">Año 1</div>
+      <div class="value">$750K</div>
+      <div class="sub">proyección</div>
+    </div>
+  </div>
+  
+  <div class="section-title">Pricing — 3 Tiers + Piloto</div>
+  <div class="pricing-grid">
+    <div class="tier">
+      <div class="tier-name">Piloto</div>
+      <div class="tier-price">$5-8K</div>
+      <div class="tier-period">pago único</div>
+      <div class="tier-desc">Diagnóstico + 1 campaña acotada. Puerta de entrada.</div>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Core</div>
+      <div class="tier-price">$10K</div>
+      <div class="tier-period">/mes</div>
+      <div class="tier-desc">Estrategia + contenido + 1 campaña/quarter.</div>
+    </div>
+    <div class="tier featured">
+      <div class="tier-name">Growth</div>
+      <div class="tier-price">$15K</div>
+      <div class="tier-period">/mes</div>
+      <div class="tier-desc">+ Producción expandida + regiones + reporting.</div>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Enterprise</div>
+      <div class="tier-price">$20K+</div>
+      <div class="tier-period">/mes</div>
+      <div class="tier-desc">Equipo dedicado + sprints + governance.</div>
+    </div>
+  </div>
+  
+  <div class="section-title">Roadmap 6 Meses</div>
+  <div class="roadmap">
+    <div class="phase">
+      <div class="phase-label">M1–M2</div>
+      <div class="phase-title">Fundación</div>
+      <ul>
+        <li>Caso Motorola publicado</li>
+        <li>20 CMOs target identificados</li>
+        <li>Renegociar clientes chicos</li>
+        <li>LinkedIn founder: 3 posts/sem</li>
+        <li>Landing "Sistema WTF" live</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-label">M3–M4</div>
+      <div class="phase-title">Demanda</div>
+      <ul>
+        <li>2-3 casos publicados</li>
+        <li>Webinar "Creatividad + IA"</li>
+        <li>10 contactos/sem a CMOs</li>
+        <li>2 pilotos en ejecución</li>
+        <li>1er cliente nuevo cerrado</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-label">M5–M6</div>
+      <div class="phase-title">Escala</div>
+      <ul>
+        <li>Pilotos → retainers (80%)</li>
+        <li>LinkedIn Ads ($2-3K/mes)</li>
+        <li>Expansión Chile</li>
+        <li>Video showcase IA</li>
+        <li>5+ clientes, $50K+/mes</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="section-title">Revenue Proyectado</div>
+  <table class="revenue-table">
+    <thead>
+      <tr>
+        <th>Mes</th>
+        <th>Clientes</th>
+        <th>Fees</th>
+        <th>Extras</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>M1</td><td>4</td><td>$16.0K</td><td>$0.5K</td><td>$16.5K</td></tr>
+      <tr><td>M2</td><td>3</td><td>$25.0K</td><td>$1.0K</td><td>$26.0K</td></tr>
+      <tr><td>M3</td><td>3</td><td>$25.0K</td><td>$2.5K</td><td>$27.5K</td></tr>
+      <tr><td>M4</td><td>4</td><td>$39.0K</td><td>$4.0K</td><td>$43.0K</td></tr>
+      <tr><td>M5</td><td>5</td><td>$51.0K</td><td>$6.0K</td><td>$57.0K</td></tr>
+      <tr><td>M6</td><td>5</td><td>$51.0K</td><td>$7.5K</td><td>$58.5K</td></tr>
+    </tbody>
+  </table>
+  
+  <div class="competitive">
+    <div class="section-title">Ventaja Competitiva</div>
+    <p>Las agencias grandes hablan de IA pero no la usan. Los freelancers IA no tienen criterio creativo. Las consultoras tech no piensan campañas. <strong>WTF es el único player en Latam que combina 15 años de creatividad senior con IA como sistema real de producción.</strong></p>
+    <div class="quote">"IA sin criterio produce basura rápido."</div>
+    <p style="text-align:center; font-size:11px; color:#888; margin-top:4px;">Ventana: 12-18 meses antes de que las networks reaccionen.</p>
+  </div>
+  
+  <div class="section-title">Riesgos Clave</div>
+  <div class="risk-item">
+    <span class="risk-tag risk-high">Crítico</span>
+    <span class="risk-text"><strong>El founder no dedica tiempo a vender.</strong> Todo el plan depende de actividad comercial. 40% del tiempo = comercial.</span>
+  </div>
+  <div class="risk-item">
+    <span class="risk-tag risk-med">Medio</span>
+    <span class="risk-text"><strong>Clientes chicos consumen tiempo sin subir fee.</strong> Deadline M2: suben a $5K mín o offboarding.</span>
+  </div>
+  <div class="risk-item">
+    <span class="risk-tag risk-med">Medio</span>
+    <span class="risk-text"><strong>Dependencia de Motorola (62% del revenue actual).</strong> Diversificar. Ningún cliente >30% en M6.</span>
+  </div>
+  
+  <div class="footer">
+    <p>WTF AGENCY · PLAN DE NEGOCIO 2026 · FEBRERO 2026</p>
+    <p style="margin-top:4px;">6 oficinas · Buenos Aires · Madrid · Santiago · Asunción · Lima · CDMX</p>
+  </div>
+
+</body>
+</html>

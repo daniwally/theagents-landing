@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cumple California</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:wght@300;400;600;700&family=Sacramento&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(170deg, #f5e6ff 0%, #edd5fa 20%, #e4c4f5 40%, #d9b0ef 60%, #e4c4f5 80%, #f0d8fc 100%);
+    position: relative;
+  }
+
+  /* Subtle texture overlay */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      radial-gradient(circle at 15% 15%, rgba(255,255,255,0.2) 0%, transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(255,255,255,0.12) 0%, transparent 35%),
+      radial-gradient(circle at 50% 70%, rgba(255,255,255,0.08) 0%, transparent 30%),
+      radial-gradient(circle at 20% 85%, rgba(255,255,255,0.1) 0%, transparent 25%);
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 50px 40px;
+  }
+
+  /* Decorative elements */
+  .deco {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.5;
+    color: #fff;
+  }
+  .d1 { top: 55px; left: 65px; font-size: 36px; }
+  .d2 { top: 130px; right: 80px; font-size: 24px; }
+  .d3 { top: 380px; left: 40px; font-size: 20px; }
+  .d4 { bottom: 280px; right: 50px; font-size: 32px; }
+  .d5 { bottom: 480px; left: 55px; font-size: 26px; }
+  .d6 { top: 650px; right: 35px; font-size: 18px; }
+  .d7 { top: 900px; left: 30px; font-size: 22px; }
+  .d8 { bottom: 100px; left: 160px; font-size: 28px; }
+  .d9 { top: 200px; left: 180px; font-size: 16px; opacity: 0.35; }
+  .d10 { bottom: 650px; right: 120px; font-size: 14px; opacity: 0.4; }
+
+  .top-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .te-invito {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .a-mi {
+    font-family: 'Sacramento', cursive;
+    font-size: 65px;
+    color: #fff;
+    margin: -5px 0 -15px;
+  }
+
+  .cumple-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+  }
+
+  .name-california {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 128px;
+    color: #fff;
+    text-shadow: 4px 4px 0 rgba(180,120,220,0.35), 0 0 60px rgba(255,255,255,0.3);
+    letter-spacing: 3px;
+    margin: 20px 0 0 0;
+    line-height: 1;
+  }
+
+  .cumple-nine {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 34px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+  }
+
+  /* Central image section */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 20px;
+  }
+
+  .img-emilia {
+    width: 380px;
+    height: 480px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 24px;
+    border: 3px solid rgba(255,255,255,0.4);
+    box-shadow: 0 15px 50px rgba(130,60,180,0.5);
+    z-index: 3;
+  }
+
+  .img-disco {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-8deg);
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(160,80,200,0.5));
+    z-index: 2;
+    mix-blend-mode: multiply;
+  }
+
+  .img-boots {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%) rotate(8deg);
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(160,80,200,0.5));
+    z-index: 2;
+    mix-blend-mode: multiply;
+  }
+
+  /* Details card */
+  .details {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 28px;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    padding: 30px 70px;
+    margin: 25px 0;
+    text-align: center;
+    width: 80%;
+  }
+
+  .detail-date {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 44px;
+    color: #fff;
+    margin: 5px 0;
+  }
+
+  .detail-time {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 58px;
+    color: #fff;
+    letter-spacing: 8px;
+  }
+
+  .detail-address {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 2px;
+    margin-top: 10px;
+  }
+
+  /* Bottom stickers section */
+  .bottom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding-bottom: 10px;
+  }
+
+  .img-stickers {
+    width: 750px;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    filter: drop-shadow(0 5px 15px rgba(160,80,200,0.3));
+    mix-blend-mode: multiply;
+    opacity: 0.88;
+  }
+
+  .te-espero {
+    font-family: 'Sacramento', cursive;
+    font-size: 60px;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 0 3px 15px rgba(130,60,180,0.3);
+  }
+</style>
+</head>
+<body>
+  <div class="deco d1">✦</div>
+  <div class="deco d2">✧</div>
+  <div class="deco d3">✦</div>
+  <div class="deco d4">✧</div>
+  <div class="deco d5">✦</div>
+  <div class="deco d6">✧</div>
+  <div class="deco d7">✦</div>
+  <div class="deco d8">✧</div>
+  <div class="deco d9">✦</div>
+  <div class="deco d10">✧</div>
+
+  <div class="container">
+    <div class="top-section">
+      <div class="te-invito">TE INVITO</div>
+      <div class="a-mi">a mi</div>
+      <div class="cumple-text">CUMPLEAÑOS</div>
+    </div>
+
+    <div class="name-california">California</div>
+    <div class="cumple-nine">C U M P L E  9</div>
+
+    <div class="hero-section">
+      <img src="disco.jpg" class="img-disco" alt="">
+      <img src="emilia.jpg" class="img-emilia" alt="">
+      <img src="boots.jpg" class="img-boots" alt="">
+    </div>
+
+    <div class="details">
+      <div class="detail-date">Domingo 1 de Marzo</div>
+      <div class="detail-time">15:30 hs</div>
+      <div class="detail-address">Artilleros 2361 - CABA</div>
+    </div>
+
+    <div class="bottom-section">
+      <img src="stickers.jpg" class="img-stickers" alt="">
+      <div class="te-espero">¡Te espero!</div>
+    </div>
+  </div>
+</body>
+</html>

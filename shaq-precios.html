@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHAQ Argentina — Listado de Precios</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 40px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .header img {
+    height: 50px;
+    margin-bottom: 16px;
+  }
+  
+  .header h1 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  
+  .header .date {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 1px;
+  }
+  
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+    margin: 20px 0 30px;
+  }
+  
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  .product-table thead th {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    text-align: left;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .product-table thead th:last-child {
+    text-align: right;
+  }
+  
+  .product-table thead th:nth-child(2) {
+    text-align: center;
+  }
+  
+  .product-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .product-table tbody tr:hover {
+    background: #fafafa;
+  }
+  
+  .product-table tbody td {
+    padding: 14px 0;
+    vertical-align: middle;
+  }
+  
+  .product-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .product-colors {
+    font-size: 11px;
+    color: #888;
+    margin-top: 2px;
+  }
+  
+  .product-table tbody td:nth-child(2) {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .product-price {
+    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  
+  .stock-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  
+  .in-stock {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .out-stock {
+    background: #fce4ec;
+    color: #c62828;
+  }
+  
+  .footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  
+  .footer p {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+  
+  .footer .url {
+    font-weight: 600;
+    color: #666;
+  }
+  
+  .payment-info {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .payment-info p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .payment-info strong {
+    color: #1a1a1a;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <img src="https://www.shaq.com.ar/cdn/shop/files/shaq-logo-negro.png?v=1763657974" alt="SHAQ">
+    <h1>Listado de Precios</h1>
+    <div class="date">Actualizado: 18 de febrero de 2026</div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <div class="payment-info">
+    <p><strong>3 cuotas sin interés</strong> con Mercado Pago · <strong>Envío gratis</strong> a todo el país</p>
+  </div>
+  
+  <div class="section-title">Adultos</div>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Stock</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Devastator</div>
+          <div class="product-colors">Negro · Gris · Celeste · Blanco/Negro</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$105.000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Hall Of Fame</div>
+          <div class="product-colors">Negro · Rojo · Blanco</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$105.000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Radiate</div>
+          <div class="product-colors">Gris/Negro · Gris/Naranja · Verde · Rojo +2</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$101.900</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Shaqnotize</div>
+          <div class="product-colors">Negro · Blanco/Naranja · Gris</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$99.980</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Speed Demon Mid</div>
+          <div class="product-colors">Negro · Gris</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$99.980</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Motivate</div>
+          <div class="product-colors">Negro · Celeste · Gris · Blanco/Naranja</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$99.000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Raq Low</div>
+          <div class="product-colors">Negro · Celeste</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$99.000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ 4X</div>
+          <div class="product-colors">Negro · Gris</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$93.000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Posture</div>
+          <div class="product-colors">Negro · Verde</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$89.300</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Spin Move</div>
+          <div class="product-colors">Negro · Gris · Blanco/Rojo · Blanco</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$89.000</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="section-title">Niños</div>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Stock</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Devastator Niños</div>
+          <div class="product-colors">Negro · Rojo · Blanco/Negro · Blanco</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$105.000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Radiate Niños</div>
+          <div class="product-colors">Verde · Celeste · Blanco/Negro</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$101.900</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Shaqnotize Niños</div>
+          <div class="product-colors">Gris</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$99.980</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Motivate Niños</div>
+          <div class="product-colors">Blanco/Naranja</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$99.000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Posture Niños</div>
+          <div class="product-colors">Verde</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$89.300</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product-name">SHAQ Spin Move Niños</div>
+          <div class="product-colors">Negro · Blanco/Rojo</div>
+        </td>
+        <td><span class="stock-badge in-stock">Disponible</span></td>
+        <td class="product-price">$89.000</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="footer">
+    <p>Talles adultos: 38 al 46 · Talles niños: 26.5 al 39</p>
+    <p class="url">www.shaq.com.ar</p>
+    <p>SHAQ Argentina · Sobrepatas S.A.S.</p>
+  </div>
+</body>
+</html>

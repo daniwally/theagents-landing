@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Plate x Sancor Seguros — Primer Influencer Virtual</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 40px 36px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header { text-align: center; margin-bottom: 20px; }
+  .header .pre { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #c4001d; margin-bottom: 8px; }
+  .header .title { font-size: 24px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+  .header .sub { font-size: 13px; font-weight: 300; color: #666; }
+  .header .sub strong { font-weight: 600; color: #1a1a1a; }
+  
+  .divider { height: 3px; background: linear-gradient(90deg, #c4001d, #1a1a1a, #c4001d); margin: 20px 0; }
+  
+  .section-title { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a1a1a; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #ddd; }
+  
+  /* Oportunidad */
+  .opp-box { background: #c4001d; color: #fff; border-radius: 10px; padding: 22px 24px; margin-bottom: 20px; text-align: center; }
+  .opp-box .big { font-size: 18px; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+  .opp-box .small { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+  
+  /* Datos */
+  .metrics { display: flex; gap: 10px; margin-bottom: 20px; }
+  .metric-box { flex: 1; text-align: center; padding: 14px 8px; border-radius: 10px; border: 1px solid #e0e0e0; }
+  .metric-box .label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #999; margin-bottom: 5px; }
+  .metric-box .value { font-size: 18px; font-weight: 800; color: #1a1a1a; }
+  .metric-box .sub { font-size: 9px; color: #888; margin-top: 2px; }
+  .metric-box.red { background: #c4001d; border-color: #c4001d; }
+  .metric-box.red .label { color: rgba(255,255,255,0.6); }
+  .metric-box.red .value { color: #fff; }
+  .metric-box.red .sub { color: rgba(255,255,255,0.5); }
+  
+  /* Concepto */
+  .concept { background: #1a1a1a; color: #fff; border-radius: 10px; padding: 22px 24px; margin-bottom: 20px; }
+  .concept .section-title { color: #fff; border-bottom-color: #444; }
+  .concept .concept-name { font-size: 22px; font-weight: 900; margin-bottom: 4px; color: #c4001d; }
+  .concept .concept-desc { font-size: 13px; font-weight: 300; color: #ccc; line-height: 1.6; margin-bottom: 14px; font-style: italic; }
+  .concept ul { list-style: none; padding: 0; }
+  .concept ul li { font-size: 12px; color: #aaa; line-height: 1.8; padding-left: 16px; position: relative; }
+  .concept ul li::before { content: "→"; position: absolute; left: 0; color: #c4001d; }
+  .concept ul li strong { color: #fff; }
+  
+  /* Precedentes */
+  .cases { display: flex; gap: 10px; margin-bottom: 20px; }
+  .case-card { flex: 1; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px 14px; }
+  .case-card .case-tag { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c4001d; margin-bottom: 6px; }
+  .case-card .case-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .case-card .case-desc { font-size: 10.5px; color: #666; line-height: 1.5; }
+  .case-card .case-stat { font-size: 11px; font-weight: 600; color: #1a1a1a; margin-top: 8px; }
+  
+  /* Sancor */
+  .sancor-box { background: #f7f7f7; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+  .sancor-box .section-title { margin-bottom: 10px; }
+  .sancor-grid { display: flex; gap: 16px; }
+  .sancor-item { flex: 1; }
+  .sancor-item .si-title { font-size: 11px; font-weight: 700; margin-bottom: 4px; }
+  .sancor-item .si-desc { font-size: 10.5px; color: #666; line-height: 1.5; }
+  
+  /* Entregables */
+  .deliverables { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .del-item { flex: 1; min-width: 45%; border-left: 3px solid #c4001d; padding: 10px 14px; background: #fafafa; border-radius: 0 8px 8px 0; }
+  .del-item .del-title { font-size: 11px; font-weight: 700; margin-bottom: 3px; }
+  .del-item .del-desc { font-size: 10px; color: #888; line-height: 1.4; }
+  
+  /* Roadmap */
+  .roadmap { display: flex; gap: 10px; margin-bottom: 20px; }
+  .phase { flex: 1; background: #f7f7f7; border-radius: 10px; padding: 14px 12px; }
+  .phase .phase-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c4001d; margin-bottom: 4px; }
+  .phase .phase-title { font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+  .phase ul { list-style: none; padding: 0; }
+  .phase ul li { font-size: 10px; color: #555; line-height: 1.6; padding-left: 12px; position: relative; }
+  .phase ul li::before { content: "→"; position: absolute; left: 0; color: #aaa; }
+  
+  /* Revenue */
+  .revenue-box { border: 2px solid #1a1a1a; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+  .revenue-box .section-title { margin-bottom: 10px; }
+  .rev-grid { display: flex; gap: 16px; text-align: center; }
+  .rev-item { flex: 1; }
+  .rev-item .rev-label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #999; margin-bottom: 4px; }
+  .rev-item .rev-value { font-size: 20px; font-weight: 800; }
+  .rev-item .rev-sub { font-size: 10px; color: #888; margin-top: 2px; }
+  
+  .footer { text-align: center; padding-top: 16px; border-top: 1px solid #e0e0e0; }
+  .footer p { font-size: 10px; color: #999; letter-spacing: 1px; }
+  .footer .wtf { font-weight: 700; color: #1a1a1a; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="pre">Propuesta de proyecto</div>
+    <div class="title">El primer influencer virtual<br>del fútbol argentino.</div>
+    <div class="sub">Una iniciativa de <strong>Sancor Seguros</strong> para <strong>River Plate</strong> · Producido por <strong>WTF Agency</strong></div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <div class="opp-box">
+    <div class="big">LaLiga ya lo hizo. River puede ser el primero en Argentina<br>y en todo el fútbol sudamericano.</div>
+    <div class="small">En octubre 2024, LaLiga lanzó a "Alex", el primer influencer virtual del fútbol profesional mundial. Los influencers virtuales generan hasta 3x más engagement que los reales. El mercado de influencers virtuales crece al 40% anual y llegará a USD 46B en 2030.</div>
+  </div>
+  
+  <div class="metrics">
+    <div class="metric-box">
+      <div class="label">Mercado global</div>
+      <div class="value">USD 6B</div>
+      <div class="sub">2024, +40% anual</div>
+    </div>
+    <div class="metric-box red">
+      <div class="label">Engagement</div>
+      <div class="value">3x</div>
+      <div class="sub">vs influencers reales</div>
+    </div>
+    <div class="metric-box">
+      <div class="label">Caso Prada x Miquela</div>
+      <div class="value">+30%</div>
+      <div class="sub">engagement vs campañas normales</div>
+    </div>
+    <div class="metric-box">
+      <div class="label">Lil Miquela</div>
+      <div class="value">5.8M</div>
+      <div class="sub">followers (IG + TikTok)</div>
+    </div>
+  </div>
+  
+  <div class="concept">
+    <div class="section-title">El concepto</div>
+    <div class="concept-name">Un hincha virtual de River. Powered by Sancor Seguros.</div>
+    <div class="concept-desc">No es un avatar genérico. Es un personaje con personalidad, historia, pasión por River y valores de marca. Vive en las redes del club, interactúa con los hinchas, crea contenido y lleva el brand de Sancor de forma orgánica.</div>
+    <ul>
+      <li><strong>Identidad propia:</strong> Nombre, look, backstory, personalidad definida. Joven, aspiracional, riverplatense.</li>
+      <li><strong>Contenido nativo:</strong> Reacciona a partidos, hace predicciones, cuenta historias del club, interactúa con jugadores.</li>
+      <li><strong>Integración Sancor:</strong> Es "protegido por Sancor Seguros" — la marca lo acompaña en cada momento, de forma natural y no intrusiva.</li>
+      <li><strong>IA conversacional:</strong> Puede responder preguntas, chatear con hinchas, generar contenido en tiempo real.</li>
+      <li><strong>Multiplataforma:</strong> Instagram, TikTok, X, YouTube Shorts. Formato vertical, nativo de cada red.</li>
+    </ul>
+  </div>
+  
+  <div class="section-title">Precedentes globales</div>
+  <div class="cases">
+    <div class="case-card">
+      <div class="case-tag">Fútbol</div>
+      <div class="case-name">Alex — LaLiga</div>
+      <div class="case-desc">Primer influencer virtual del fútbol profesional. Creado con IA y ChatGPT. Comparte hitos de LaLiga, Fantasy, curiosidades.</div>
+      <div class="case-stat">Lanzamiento: Oct 2024</div>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">Fashion / Lifestyle</div>
+      <div class="case-name">Lil Miquela</div>
+      <div class="case-desc">5.8M followers. Cobra USD 10K por post. Partners: Samsung, Prada, Calvin Klein, PacSun.</div>
+      <div class="case-stat">+30% engagement vs campañas normales</div>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">Retail / Brasil</div>
+      <div class="case-name">Lu do Magalu</div>
+      <div class="case-desc">Influencer virtual de Magazine Luiza (Brasil). 6M+ followers. Referente en e-commerce + entretenimiento.</div>
+      <div class="case-stat">La más grande de Latam</div>
+    </div>
+  </div>
+  
+  <div class="sancor-box">
+    <div class="section-title">Por qué Sancor Seguros</div>
+    <div class="sancor-grid">
+      <div class="sancor-item">
+        <div class="si-title">Track record deportivo</div>
+        <div class="si-desc">Sponsor oficial de la Selección Argentina. Acompañó el Mundial 2022, Copa América. Experiencia en activaciones deportivas de escala.</div>
+      </div>
+      <div class="sancor-item">
+        <div class="si-title">Valores de marca</div>
+        <div class="si-desc">"Protección" como concepto central. El influencer virtual está "protegido por Sancor" — narrativa orgánica que refuerza posicionamiento sin ser invasiva.</div>
+      </div>
+      <div class="sancor-item">
+        <div class="si-title">Audiencia joven</div>
+        <div class="si-desc">Seguros es una categoría difícil para Gen Z. Un influencer virtual en el ecosistema de River abre un canal directo a la audiencia más difícil de alcanzar.</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section-title">Entregables del proyecto</div>
+  <div class="deliverables">
+    <div class="del-item">
+      <div class="del-title">Biblia de personaje</div>
+      <div class="del-desc">Nombre, diseño visual, personalidad, tono, backstory, guidelines de uso</div>
+    </div>
+    <div class="del-item">
+      <div class="del-title">Diseño visual / 3D</div>
+      <div class="del-desc">Look del personaje, renders, assets para redes, animaciones base</div>
+    </div>
+    <div class="del-item">
+      <div class="del-title">Estrategia de contenido</div>
+      <div class="del-desc">Pilares, formatos, calendario editorial, plan de lanzamiento</div>
+    </div>
+    <div class="del-item">
+      <div class="del-title">Motor de IA</div>
+      <div class="del-desc">Sistema conversacional para interacción en tiempo real con hinchas</div>
+    </div>
+    <div class="del-item">
+      <div class="del-title">Producción mensual</div>
+      <div class="del-desc">Contenido recurrente: reels, stories, posts, reacciones a partidos</div>
+    </div>
+    <div class="del-item">
+      <div class="del-title">Medición y reporting</div>
+      <div class="del-desc">KPIs de engagement, crecimiento, sentiment, brand lift Sancor</div>
+    </div>
+  </div>
+  
+  <div class="section-title">Roadmap</div>
+  <div class="roadmap">
+    <div class="phase">
+      <div class="phase-label">Mes 1-2</div>
+      <div class="phase-title">Creación</div>
+      <ul>
+        <li>Biblia de personaje</li>
+        <li>Diseño visual y renders</li>
+        <li>Estrategia de contenido</li>
+        <li>Setup técnico IA</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Mes 3</div>
+      <div class="phase-title">Lanzamiento</div>
+      <ul>
+        <li>Teaser campaign</li>
+        <li>Reveal en partido de River</li>
+        <li>Activación Sancor en redes</li>
+        <li>PR + cobertura mediática</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Mes 4-6</div>
+      <div class="phase-title">Crecimiento</div>
+      <ul>
+        <li>Contenido semanal recurrente</li>
+        <li>Interacción con jugadores</li>
+        <li>Collabs con influencers reales</li>
+        <li>Activaciones en el Monumental</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Mes 7-12</div>
+      <div class="phase-title">Escala</div>
+      <ul>
+        <li>Monetización (sponsors secundarios)</li>
+        <li>Merchandise virtual</li>
+        <li>Expansión a otras plataformas</li>
+        <li>Licenciamiento del modelo</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="revenue-box">
+    <div class="section-title">Inversión estimada</div>
+    <div class="rev-grid">
+      <div class="rev-item">
+        <div class="rev-label">Creación</div>
+        <div class="rev-value">USD 25-40K</div>
+        <div class="rev-sub">one-time (M1-M2)</div>
+      </div>
+      <div class="rev-item">
+        <div class="rev-label">Producción mensual</div>
+        <div class="rev-value">USD 8-12K</div>
+        <div class="rev-sub">/mes (contenido + IA + soporte)</div>
+      </div>
+      <div class="rev-item">
+        <div class="rev-label">Lanzamiento</div>
+        <div class="rev-value">USD 10-15K</div>
+        <div class="rev-sub">one-time (campaña reveal)</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p class="wtf">WTF AGENCY · BRIEF DESTROYERS</p>
+    <p style="margin-top:4px;">River Plate x Sancor Seguros · Primer influencer virtual del fútbol argentino · 2026</p>
+    <p style="margin-top:4px;">wally@wtf-agency.com · wtf-agency.com</p>
+  </div>
+
+</body>
+</html>

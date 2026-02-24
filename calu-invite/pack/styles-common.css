@@ -1,0 +1,16 @@
+/* Common styles for Calu's Birthday Pack */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700;800;900&family=Sacramento&display=swap');
+
+:root {
+  --purple-dark: #4a1a8a;
+  --purple-mid: #7b2fbe;
+  --purple-light: #9b4dca;
+  --purple-pale: #c084e8;
+  --purple-bg: #5c1f9e;
+  --violet-bright: #8b35d4;
+  --pink-accent: #e855a0;
+  --white: #ffffff;
+  --gold: #ffd700;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }

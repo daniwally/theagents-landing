@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Banner Flags - Calu's Birthday</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1400px;
+  height: 1800px;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 25px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.flag {
+  width: 220px;
+  height: 300px;
+  background: linear-gradient(180deg, #7b2fbe 0%, #5c1f9e 60%, #4a1a8a 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.flag::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 15px,
+    rgba(255,255,255,0.03) 15px, rgba(255,255,255,0.03) 17px
+  );
+}
+
+.flag-alt {
+  background: linear-gradient(180deg, #9b4dca 0%, #7b2fbe 60%, #5c1f9e 100%);
+}
+
+.flag-letter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 120px;
+  color: #fff;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+
+.flag-letter-gold {
+  color: #ffd700;
+}
+
+.flag-star {
+  position: absolute;
+  color: rgba(255,255,255,0.2);
+  z-index: 1;
+  font-size: 16px;
+}
+.fs1 { top: 15px; left: 15px; }
+.fs2 { top: 15px; right: 15px; }
+.fs3 { bottom: 60px; left: 20px; }
+.fs4 { bottom: 60px; right: 20px; }
+
+.flag-small-img {
+  position: absolute;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(200,100,255,0.4));
+  opacity: 0.6;
+  bottom: 55px;
+}
+
+.section-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 10px 0 5px;
+}
+
+/* Toppers */
+.topper-row {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.topper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7b2fbe 0%, #5c1f9e 50%, #4a1a8a 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.topper::before {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px; right: 3px; bottom: 3px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+.topper-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #fff;
+  letter-spacing: 3px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  line-height: 1.1;
+}
+
+.topper-text-gold {
+  color: #ffd700;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.topper-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(200,100,255,0.5));
+}
+
+.topper-emilia {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.cut-note {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+</style>
+</head>
+<body>
+  <!-- Row 1: F-E-L-I-Z -->
+  <div class="section-label">Banderines — Línea 1: FELIZ</div>
+  <div class="row">
+    <div class="flag">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter flag-letter-gold">F</div>
+    </div>
+    <div class="flag flag-alt">
+      <div class="flag-star fs1">★</div><div class="flag-star fs2">✦</div>
+      <div class="flag-letter">E</div>
+    </div>
+    <div class="flag">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter flag-letter-gold">L</div>
+    </div>
+    <div class="flag flag-alt">
+      <div class="flag-star fs1">★</div><div class="flag-star fs2">✦</div>
+      <div class="flag-letter">I</div>
+    </div>
+    <div class="flag">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter flag-letter-gold">Z</div>
+    </div>
+  </div>
+
+  <!-- Row 2: C-U-M-P-L-E -->
+  <div class="section-label">Banderines — Línea 2: CUMPLE</div>
+  <div class="row">
+    <div class="flag flag-alt">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter">C</div>
+    </div>
+    <div class="flag">
+      <div class="flag-star fs1">★</div><div class="flag-star fs2">✦</div>
+      <div class="flag-letter flag-letter-gold">U</div>
+    </div>
+    <div class="flag flag-alt">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter">M</div>
+    </div>
+    <div class="flag">
+      <div class="flag-star fs1">★</div><div class="flag-star fs2">✦</div>
+      <div class="flag-letter flag-letter-gold">P</div>
+    </div>
+    <div class="flag flag-alt">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter">L</div>
+    </div>
+    <div class="flag">
+      <div class="flag-star fs1">★</div><div class="flag-star fs2">✦</div>
+      <div class="flag-letter flag-letter-gold">E</div>
+    </div>
+  </div>
+
+  <!-- Row 3: C-A-L-U -->
+  <div class="section-label">Banderines — Línea 3: CALU</div>
+  <div class="row">
+    <div class="flag">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter flag-letter-gold">C</div>
+      <img src="../disco.jpg" class="flag-small-img" alt="">
+    </div>
+    <div class="flag flag-alt">
+      <div class="flag-star fs1">★</div><div class="flag-star fs2">✦</div>
+      <div class="flag-letter">A</div>
+      <img src="../boots.jpg" class="flag-small-img" alt="">
+    </div>
+    <div class="flag">
+      <div class="flag-star fs1">✦</div><div class="flag-star fs2">★</div>
+      <div class="flag-letter flag-letter-gold">L</div>
+      <img src="../disco.jpg" class="flag-small-img" alt="">
+    </div>
+    <div class="flag flag-alt">
+      <div class="flag-star fs1">★</div><div class="flag-star fs2">✦</div>
+      <div class="flag-letter">U</div>
+      <img src="../boots.jpg" class="flag-small-img" alt="">
+    </div>
+  </div>
+
+  <!-- Toppers -->
+  <div class="section-label">Toppers para torta / cupcakes</div>
+  <div class="topper-row">
+    <div class="topper">
+      <div class="topper-text">CUMPLE</div>
+      <div class="topper-text-gold">9</div>
+    </div>
+    <div class="topper">
+      <img src="../disco.jpg" class="topper-img" alt="">
+    </div>
+    <div class="topper">
+      <div class="topper-text-gold">CALU</div>
+      <div class="topper-text">⚡</div>
+    </div>
+    <div class="topper">
+      <img src="../boots.jpg" class="topper-img" alt="">
+    </div>
+    <div class="topper">
+      <div class="topper-text">LET'S<br>MAKE IT</div>
+      <div class="topper-text-gold">ICONIC</div>
+    </div>
+  </div>
+
+  <div class="cut-note">✂ Recortar cada banderín / topper por el contorno</div>
+</body>
+</html>
