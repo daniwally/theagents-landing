@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WTF AI Services — Propuesta Comercial</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 40px 36px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header { text-align: center; margin-bottom: 24px; }
+  .header .logo { font-size: 30px; font-weight: 900; letter-spacing: -1px; }
+  .header .logo span { font-weight: 300; color: #888; }
+  .header .tagline { font-size: 10px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-top: 4px; }
+  .header .headline { font-size: 20px; font-weight: 300; color: #333; margin-top: 18px; line-height: 1.4; }
+  .header .headline strong { font-weight: 800; color: #1a1a1a; }
+  
+  .divider { height: 2px; background: linear-gradient(90deg, transparent, #1a1a1a, transparent); margin: 20px 0; }
+  .thin-divider { height: 1px; background: #eee; margin: 16px 0; }
+  
+  /* Problema / Solución */
+  .two-col { display: flex; gap: 12px; margin-bottom: 20px; }
+  .col-card { flex: 1; border-radius: 10px; padding: 18px 16px; }
+  .col-card.dark { background: #1a1a1a; color: #fff; }
+  .col-card.light { background: #f7f7f7; color: #1a1a1a; }
+  .col-card .col-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .col-card.dark .col-label { color: #666; }
+  .col-card.light .col-label { color: #999; }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card ul li { font-size: 12px; line-height: 1.7; padding-left: 16px; position: relative; }
+  .col-card ul li::before { content: "✕"; position: absolute; left: 0; }
+  .col-card.dark ul li::before { color: #ff5252; }
+  .col-card.light ul li::before { content: "✓"; color: #2e7d32; }
+  .col-card.dark ul li { color: #ccc; }
+  .col-card.light ul li { color: #444; }
+  
+  .section-title { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a1a1a; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #ddd; }
+  
+  /* Cómo funciona */
+  .steps { display: flex; gap: 10px; margin-bottom: 20px; }
+  .step { flex: 1; text-align: center; padding: 16px 10px; border-radius: 10px; border: 1px solid #e0e0e0; position: relative; }
+  .step .step-num { font-size: 28px; font-weight: 900; color: #e0e0e0; margin-bottom: 4px; }
+  .step .step-title { font-size: 11px; font-weight: 700; margin-bottom: 4px; }
+  .step .step-desc { font-size: 10px; color: #888; line-height: 1.5; }
+  .step-arrow { display: flex; align-items: center; font-size: 18px; color: #ccc; padding: 0 2px; }
+  
+  /* Planes */
+  .plans { display: flex; gap: 10px; margin-bottom: 20px; }
+  .plan { flex: 1; border: 1px solid #e0e0e0; border-radius: 10px; padding: 18px 14px; }
+  .plan.featured { border: 2px solid #1a1a1a; }
+  .plan .plan-name { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 6px; text-align: center; }
+  .plan .plan-for { font-size: 11px; color: #555; text-align: center; margin-bottom: 10px; font-style: italic; }
+  .plan .plan-price { font-size: 22px; font-weight: 800; text-align: center; margin-bottom: 2px; }
+  .plan .plan-period { font-size: 10px; color: #aaa; text-align: center; margin-bottom: 12px; }
+  .plan ul { list-style: none; padding: 0; }
+  .plan ul li { font-size: 10.5px; color: #555; line-height: 1.7; padding-left: 14px; position: relative; }
+  .plan ul li::before { content: "→"; position: absolute; left: 0; color: #aaa; }
+  
+  /* Incluye */
+  .includes { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .include-item { flex: 1; min-width: 45%; background: #f7f7f7; border-radius: 8px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; }
+  .include-item .inc-icon { font-size: 18px; min-width: 24px; }
+  .include-item .inc-title { font-size: 11px; font-weight: 700; margin-bottom: 2px; }
+  .include-item .inc-desc { font-size: 10px; color: #888; line-height: 1.4; }
+  
+  /* Ejemplo real */
+  .example-box {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .example-box .section-title { color: #fff; border-bottom-color: #444; }
+  .example-box .example-quote { font-size: 14px; font-weight: 300; font-style: italic; line-height: 1.6; color: #ddd; margin-bottom: 12px; }
+  .example-box .example-list { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .example-box .example-tag { font-size: 10px; color: #aaa; padding: 4px 10px; border: 1px solid #444; border-radius: 20px; }
+  
+  /* CTA */
+  .cta { text-align: center; background: #f7f7f7; border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+  .cta .cta-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .cta .cta-sub { font-size: 12px; color: #666; line-height: 1.6; }
+  .cta .cta-contact { font-size: 13px; font-weight: 600; margin-top: 12px; }
+  
+  .footer { text-align: center; padding-top: 16px; border-top: 1px solid #e0e0e0; }
+  .footer p { font-size: 10px; color: #999; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">WTF <span>AI Services</span></div>
+    <div class="tagline">By WTF Agency · Brief Destroyers</div>
+    <div class="headline"><strong>Tu asistente de inteligencia artificial,</strong><br>personalizado para tu negocio, en tu WhatsApp.</div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <div class="two-col">
+    <div class="col-card dark">
+      <div class="col-label">El problema</div>
+      <ul>
+        <li>Perdés horas en mails, agenda y tareas repetitivas</li>
+        <li>Los chatbots genéricos no entienden tu negocio</li>
+        <li>La IA suena bien pero no sabés cómo implementarla</li>
+        <li>Contratar un asistente humano cuesta $1.500+/mes</li>
+      </ul>
+    </div>
+    <div class="col-card light">
+      <div class="col-label">La solución</div>
+      <ul>
+        <li>Un asistente IA que trabaja 24/7 desde tu celular</li>
+        <li>Personalizado: conoce tu negocio, tus clientes, tu estilo</li>
+        <li>Nosotros lo implementamos, vos lo usás</li>
+        <li>Desde USD 150/mes — funciona desde el día 1</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="section-title">Cómo funciona</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Diagnóstico</div>
+      <div class="step-desc">Entendemos tu negocio, procesos y necesidades clave.</div>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Configuración</div>
+      <div class="step-desc">Creamos tu asistente: personalidad, memoria, integraciones.</div>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Activación</div>
+      <div class="step-desc">Lo conectamos a tu WhatsApp o Telegram. Listo para usar.</div>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Soporte</div>
+      <div class="step-desc">Mantenimiento, mejoras y optimización continua.</div>
+    </div>
+  </div>
+  
+  <div class="section-title">Planes</div>
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="plan-for">Profesionales independientes</div>
+      <div class="plan-price">USD 150</div>
+      <div class="plan-period">/mes</div>
+      <ul>
+        <li>1 asistente personal</li>
+        <li>1 canal (WhatsApp o Telegram)</li>
+        <li>Gmail + Calendar integrado</li>
+        <li>Memoria y personalidad custom</li>
+        <li>Soporte por mail</li>
+      </ul>
+    </div>
+    <div class="plan featured">
+      <div class="plan-name">Business</div>
+      <div class="plan-for">PyMEs y equipos</div>
+      <div class="plan-price">USD 500</div>
+      <div class="plan-period">/mes</div>
+      <ul>
+        <li>Hasta 3 asistentes</li>
+        <li>Multi-canal (WA + TG + mail)</li>
+        <li>Integraciones avanzadas (CRM, Shopify, Sheets)</li>
+        <li>Automatizaciones y alertas</li>
+        <li>Soporte prioritario</li>
+        <li>Reportes de uso mensual</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-for">Empresas medianas/grandes</div>
+      <div class="plan-price">USD 1.500+</div>
+      <div class="plan-period">/mes</div>
+      <ul>
+        <li>Asistentes ilimitados por área</li>
+        <li>Integraciones custom</li>
+        <li>Consultoría de automatización</li>
+        <li>Onboarding de equipos</li>
+        <li>Account manager dedicado</li>
+        <li>SLA de soporte 4h</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="section-title">Qué puede hacer tu asistente</div>
+  <div class="includes">
+    <div class="include-item">
+      <div class="inc-icon">📧</div>
+      <div>
+        <div class="inc-title">Email inteligente</div>
+        <div class="inc-desc">Lee, clasifica, responde y redacta mails por vos</div>
+      </div>
+    </div>
+    <div class="include-item">
+      <div class="inc-icon">📅</div>
+      <div>
+        <div class="inc-title">Agenda y reuniones</div>
+        <div class="inc-desc">Gestiona calendario, agenda citas, manda recordatorios</div>
+      </div>
+    </div>
+    <div class="include-item">
+      <div class="inc-icon">🔍</div>
+      <div>
+        <div class="inc-title">Research y análisis</div>
+        <div class="inc-desc">Investiga empresas, mercados, competencia, precios</div>
+      </div>
+    </div>
+    <div class="include-item">
+      <div class="inc-icon">📊</div>
+      <div>
+        <div class="inc-title">Reportes y documentos</div>
+        <div class="inc-desc">Genera presupuestos, resúmenes, presentaciones</div>
+      </div>
+    </div>
+    <div class="include-item">
+      <div class="inc-icon">🛒</div>
+      <div>
+        <div class="inc-title">E-commerce</div>
+        <div class="inc-desc">Monitorea Shopify, stock, pedidos, precios</div>
+      </div>
+    </div>
+    <div class="include-item">
+      <div class="inc-icon">💬</div>
+      <div>
+        <div class="inc-title">Comunicación</div>
+        <div class="inc-desc">Manda mensajes al equipo, follow-ups, notificaciones</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="example-box">
+    <div class="section-title">Caso real — Lo que hace hoy</div>
+    <div class="example-quote">"Dora, mandale un mail a Valeria presentándote, investigá esta empresa, armame un listado de precios con diseño y mandáselo a Pablo."</div>
+    <div class="example-list">
+      <span class="example-tag">Lee y responde mails</span>
+      <span class="example-tag">Investiga empresas</span>
+      <span class="example-tag">Analiza presentaciones</span>
+      <span class="example-tag">Genera documentos con diseño</span>
+      <span class="example-tag">Manda archivos por mail</span>
+      <span class="example-tag">Coordina con el equipo</span>
+      <span class="example-tag">Monitorea finanzas</span>
+      <span class="example-tag">Gestiona calendario</span>
+    </div>
+  </div>
+  
+  <div class="cta">
+    <div class="cta-title">¿Querés tu propio asistente IA?</div>
+    <div class="cta-sub">Lo configuramos en 48 horas. Sin contratos largos.<br>Lo probás, y si no te sirve, cancelás cuando quieras.</div>
+    <div class="cta-contact">wally@wtf-agency.com · wtf-agency.com</div>
+  </div>
+  
+  <div class="footer">
+    <p>WTF AI SERVICES · BY WTF AGENCY · BUENOS AIRES, ARGENTINA</p>
+    <p style="margin-top:4px;">Tecnología open-source respaldada por OpenAI · Datos privados y encriptados</p>
+  </div>
+
+</body>
+</html>

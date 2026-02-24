@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; width: 1280px; height: 720px; background: #fff; color: #1a1a1a; padding: 60px 80px; }
+  .section { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #c4001d; margin-bottom: 30px; }
+  .headline { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; max-width: 700px; }
+  .metrics { display: flex; gap: 20px; }
+  .metric { flex: 1; border: 1px solid #e0e0e0; border-radius: 16px; padding: 30px 24px; text-align: center; }
+  .metric.red { background: #c4001d; border-color: #c4001d; }
+  .metric .label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .metric.red .label { color: rgba(255,255,255,0.6); }
+  .metric .value { font-size: 40px; font-weight: 900; }
+  .metric.red .value { color: #fff; }
+  .metric .sub { font-size: 12px; color: #888; margin-top: 6px; }
+  .metric.red .sub { color: rgba(255,255,255,0.5); }
+  .note { position: absolute; bottom: 60px; font-size: 12px; color: #aaa; max-width: 600px; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <div class="section">La oportunidad</div>
+  <div class="headline">Los influencers virtuales son el futuro del marketing deportivo. Y en Argentina, nadie lo está haciendo.</div>
+  <div class="metrics">
+    <div class="metric">
+      <div class="label">Mercado global</div>
+      <div class="value">USD 6B</div>
+      <div class="sub">2024 · +40% anual</div>
+    </div>
+    <div class="metric red">
+      <div class="label">Engagement</div>
+      <div class="value">3x</div>
+      <div class="sub">vs influencers reales</div>
+    </div>
+    <div class="metric">
+      <div class="label">Proyección 2030</div>
+      <div class="value">USD 46B</div>
+      <div class="sub">CAGR 40.8%</div>
+    </div>
+    <div class="metric">
+      <div class="label">Caso Prada x Miquela</div>
+      <div class="value">+30%</div>
+      <div class="sub">engagement vs normal</div>
+    </div>
+  </div>
+  <div class="note">Fuentes: Grand View Research, Sprout Social, YouScan, LaLiga</div>
+</body>
+</html>

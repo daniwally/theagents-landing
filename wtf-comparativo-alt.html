@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1600px;
+    height: 720px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(0,0,0,0.85);
+    border-radius: 24px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 50px;
+  }
+
+  .table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header row */
+  .table-header {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.08);
+    margin-bottom: 6px;
+  }
+
+  .col-label {
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  .col-trad {
+    flex: 1;
+    text-align: center;
+  }
+
+  .col-vs {
+    width: 60px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .col-wtf {
+    flex: 1;
+    text-align: center;
+  }
+
+  .col-trad .header-label {
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .col-vs .vs-text {
+    font-weight: 100;
+    font-size: 11px;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 2px;
+  }
+
+  .col-wtf .header-label {
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Rows */
+  .table-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .table-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .table-row:last-child { border-bottom: none; }
+
+  .row-label {
+    width: 280px;
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    padding-right: 20px;
+  }
+
+  .row-trad {
+    flex: 1;
+    text-align: center;
+    font-weight: 300;
+    font-size: 28px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .row-vs {
+    width: 60px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(139,92,246,0.3);
+  }
+
+  .row-wtf {
+    flex: 1;
+    text-align: center;
+    font-weight: 900;
+    font-size: 32px;
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Bottom line */
+  .table-footer {
+    padding-top: 16px;
+    border-top: 2px solid rgba(255,255,255,0.08);
+    margin-top: 6px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .table-footer .footer-text {
+    font-weight: 100;
+    font-size: 13px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+
+  .table-footer .footer-text strong {
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+  }
+</style>
+</head>
+<body>
+
+<div class="table">
+  <div class="table-header">
+    <div class="col-label"></div>
+    <div class="col-trad"><div class="header-label">Modelo Tradicional</div></div>
+    <div class="col-vs"><div class="vs-text">VS</div></div>
+    <div class="col-wtf"><div class="header-label">Modelo WTF</div></div>
+  </div>
+
+  <div class="table-body">
+    <div class="table-row">
+      <div class="row-label">Exploración creativa</div>
+      <div class="row-trad">1 concepto</div>
+      <div class="row-vs">→</div>
+      <div class="row-wtf">10+ territorios</div>
+    </div>
+
+    <div class="table-row">
+      <div class="row-label">Tiempo de producción</div>
+      <div class="row-trad">3 semanas</div>
+      <div class="row-vs">→</div>
+      <div class="row-wtf">5 días</div>
+    </div>
+
+    <div class="table-row">
+      <div class="row-label">Piezas finales</div>
+      <div class="row-trad">5 piezas</div>
+      <div class="row-vs">→</div>
+      <div class="row-wtf">50+ curadas</div>
+    </div>
+
+    <div class="table-row">
+      <div class="row-label">Iteración post-lanzamiento</div>
+      <div class="row-trad">Ninguna</div>
+      <div class="row-vs">→</div>
+      <div class="row-wtf">Tiempo real</div>
+    </div>
+
+    <div class="table-row">
+      <div class="row-label">Aprendizaje del sistema</div>
+      <div class="row-trad">—</div>
+      <div class="row-vs">→</div>
+      <div class="row-wtf">Cada ciclo mejora</div>
+    </div>
+  </div>
+
+  <div class="table-footer">
+    <div class="footer-text">No es hacer más. Es <strong>hacer mejor, más rápido, y que cada vez sea más inteligente.</strong></div>
+  </div>
+</div>
+
+</body>
+</html>

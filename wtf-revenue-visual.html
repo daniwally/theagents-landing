@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; width: 430px; }
+  .slide { padding: 32px 24px; border-bottom: 1px solid #1a1a1a; }
+  
+  /* COVER */
+  .cover { text-align: center; padding: 50px 24px; }
+  .cover .tag { font-size: 11px; letter-spacing: 4px; color: #555; text-transform: uppercase; margin-bottom: 20px; }
+  .cover h1 { font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
+  .cover h1 span { color: #ff3c3c; }
+  .cover .nums { display: flex; justify-content: center; gap: 24px; margin-top: 24px; }
+  .cover .nums .n { text-align: center; }
+  .cover .nums .n .val { font-size: 28px; font-weight: 900; color: #ff3c3c; }
+  .cover .nums .n .lbl { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+  .arrow { font-size: 28px; color: #333; align-self: center; }
+
+  /* PRICING */
+  .tier { background: #141414; border-radius: 10px; border: 1px solid #1e1e1e; padding: 18px; margin-bottom: 10px; }
+  .tier .name { font-size: 12px; font-weight: 700; color: #ff3c3c; letter-spacing: 2px; text-transform: uppercase; }
+  .tier .name.g { color: #00e676; }
+  .tier .name.b { color: #448aff; }
+  .tier .price { font-size: 28px; font-weight: 900; margin: 6px 0; }
+  .tier .price span { font-size: 14px; color: #555; font-weight: 400; }
+  .tier .inc { font-size: 12px; color: #666; line-height: 1.6; }
+  
+  /* REVENUE TABLE */
+  .rev-row { display: flex; align-items: center; padding: 14px 0; border-bottom: 1px solid #1a1a1a; }
+  .rev-row .month { font-size: 14px; font-weight: 700; color: #555; width: 36px; }
+  .rev-row .bar-wrap { flex: 1; margin: 0 12px; }
+  .rev-row .bar { height: 24px; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 700; min-width: 30px; }
+  .rev-row .bar.base { background: #222; color: #666; }
+  .rev-row .bar.new { background: #ff3c3c; color: #fff; margin-top: 3px; }
+  .rev-row .bar.opt { background: #00e676; color: #0a0a0a; margin-top: 3px; }
+  .rev-row .total { font-size: 16px; font-weight: 700; width: 60px; text-align: right; }
+  .meta-line { border-top: 2px dashed #ff3c3c33; margin: 0; position: relative; }
+  .meta-label { position: absolute; right: 0; top: -18px; font-size: 10px; color: #ff3c3c; letter-spacing: 1px; }
+  
+  /* SECTION HEADER */
+  .sh { font-size: 11px; letter-spacing: 4px; color: #ff3c3c; text-transform: uppercase; margin-bottom: 16px; }
+  .sh.g { color: #00e676; }
+  h2 { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+  
+  /* KPI MINI */
+  .kpi-row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .kpi-mini { flex: 1; background: #141414; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #1e1e1e; }
+  .kpi-mini .v { font-size: 22px; font-weight: 900; }
+  .kpi-mini .v.red { color: #ff3c3c; }
+  .kpi-mini .v.grn { color: #00e676; }
+  .kpi-mini .v.blu { color: #448aff; }
+  .kpi-mini .l { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+  
+  /* FUNNEL */
+  .funnel-step { display: flex; align-items: center; margin-bottom: 6px; }
+  .funnel-step .icon { font-size: 20px; width: 36px; text-align: center; }
+  .funnel-step .text { font-size: 14px; color: #ccc; }
+  .funnel-step .text strong { color: #fff; }
+  .funnel-arrow { text-align: center; color: #333; font-size: 16px; margin: 2px 0; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide cover">
+  <div class="tag">Revenue Model · WTF Agency</div>
+  <h1>De $16K a <span>$57K</span>/mes<br>en 6 meses</h1>
+  <div class="nums">
+    <div class="n"><div class="val">$16K</div><div class="lbl">Hoy</div></div>
+    <div class="arrow">→</div>
+    <div class="n"><div class="val" style="color:#00e676">$57K</div><div class="lbl">Meta M6</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 2: PRICING -->
+<div class="slide">
+  <div class="sh">Estructura de Pricing</div>
+  <h2>Piloto → Fee</h2>
+  
+  <div class="tier">
+    <div class="name">Piloto · Pago único</div>
+    <div class="price">$3-4.5K <span>USD</span></div>
+    <div class="inc">Auditoría + estrategia IA + setup herramientas + 1 campaña piloto (4-6 semanas)</div>
+  </div>
+  
+  <div style="text-align:center; color:#333; font-size:20px; margin: 8px 0;">↓ conversión 80%+ ↓</div>
+  
+  <div class="tier">
+    <div class="name">Growth · Fee mensual</div>
+    <div class="price">$6K <span>/mes</span></div>
+    <div class="inc">Estrategia + ejecución 2-3 canales + IA integrada</div>
+  </div>
+  
+  <div class="tier">
+    <div class="name g">Scale · Fee mensual</div>
+    <div class="price">$7.5K <span>/mes</span></div>
+    <div class="inc">+ Paid media management + dashboards IA + optimización continua</div>
+  </div>
+  
+  <div class="tier">
+    <div class="name b">Premium · Fee mensual</div>
+    <div class="price">$9K <span>/mes</span></div>
+    <div class="inc">+ Consultoría estratégica semanal + IA avanzada (chatbots, predictivo)</div>
+  </div>
+</div>
+
+<!-- SLIDE 3: REVENUE CONSERVADOR -->
+<div class="slide">
+  <div class="sh">Escenario Conservador</div>
+  <h2>1 cliente nuevo/mes</h2>
+  <p style="font-size:12px; color:#555; margin-bottom:20px;">Fee promedio: USD 7.5K/mes · 6 clientes nuevos en 6 meses</p>
+  
+  <div class="rev-row">
+    <div class="month">M1</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:55%">$16K base</div>
+      <div class="bar new" style="width:12%">+$3.5K</div>
+    </div>
+    <div class="total">$19.5K</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month">M2</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:55%">$16K</div>
+      <div class="bar new" style="width:38%">+$11K</div>
+    </div>
+    <div class="total">$27K</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month">M3</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:55%">$16K</div>
+      <div class="bar new" style="width:64%">+$18.5K</div>
+    </div>
+    <div class="total">$34.5K</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month">M4</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:55%">$16K</div>
+      <div class="bar new" style="width:90%">+$26K</div>
+    </div>
+    <div class="total">$42K</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month">M5</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:55%">$16K</div>
+      <div class="bar new" style="width:100%">+$33.5K</div>
+    </div>
+    <div class="total">$49.5K</div>
+  </div>
+  
+  <div class="rev-row" style="border-bottom: 2px solid #ff3c3c;">
+    <div class="month" style="color:#ff3c3c">M6</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:55%">$16K</div>
+      <div class="bar new" style="width:100%">+$41K</div>
+    </div>
+    <div class="total" style="color:#ff3c3c">$57K ✅</div>
+  </div>
+</div>
+
+<!-- SLIDE 4: REVENUE OPTIMISTA -->
+<div class="slide">
+  <div class="sh g">Escenario Optimista</div>
+  <h2>2 clientes/mes al inicio</h2>
+  <p style="font-size:12px; color:#555; margin-bottom:20px;">Fee promedio: USD 8K/mes · 8 clientes nuevos en 6 meses</p>
+  
+  <div class="rev-row">
+    <div class="month">M1</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:55%">$16K</div>
+      <div class="bar opt" style="width:24%">+$7K</div>
+    </div>
+    <div class="total">$23K</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month">M2</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:45%">$16K</div>
+      <div class="bar opt" style="width:65%">+$23K</div>
+    </div>
+    <div class="total">$39K</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month" style="color:#00e676">M3</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:40%">$16K</div>
+      <div class="bar opt" style="width:88%">+$35.5K</div>
+    </div>
+    <div class="total" style="color:#00e676">$51.5K ✅</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month">M4</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:35%">$16K</div>
+      <div class="bar opt" style="width:95%">+$43.5K</div>
+    </div>
+    <div class="total">$59.5K</div>
+  </div>
+  
+  <div class="rev-row">
+    <div class="month">M5</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:30%">$16K</div>
+      <div class="bar opt" style="width:100%">+$51.5K</div>
+    </div>
+    <div class="total">$67.5K</div>
+  </div>
+  
+  <div class="rev-row" style="border-bottom: 2px solid #00e676;">
+    <div class="month" style="color:#00e676">M6</div>
+    <div class="bar-wrap">
+      <div class="bar base" style="width:28%">$16K</div>
+      <div class="bar opt" style="width:100%">+$59.5K</div>
+    </div>
+    <div class="total" style="color:#00e676">$75.5K 🚀</div>
+  </div>
+</div>
+
+<!-- SLIDE 5: KPIs + LTV -->
+<div class="slide">
+  <div class="sh">Números clave</div>
+  <h2>Lo que tenés que saber</h2>
+  
+  <div class="kpi-row">
+    <div class="kpi-mini"><div class="v red">$7.5K</div><div class="l">Fee promedio/mes</div></div>
+    <div class="kpi-mini"><div class="v grn">$90K</div><div class="l">LTV anual/cliente</div></div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-mini"><div class="v blu">80%+</div><div class="l">Conversión piloto→fee</div></div>
+    <div class="kpi-mini"><div class="v red">1/mes</div><div class="l">Ritmo de cierre</div></div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-mini"><div class="v grn">6-8</div><div class="l">Clientes nuevos</div></div>
+    <div class="kpi-mini"><div class="v blu">$3.5K</div><div class="l">Valor piloto</div></div>
+  </div>
+
+  <div style="background:#141414; border-radius:10px; padding:18px; margin-top:16px; border:1px solid #1e1e1e;">
+    <div style="font-size:12px; color:#555; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">Funnel mensual necesario</div>
+    <div class="funnel-step"><div class="icon">🎯</div><div class="text"><strong>8-10</strong> leads calificados</div></div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step"><div class="icon">📞</div><div class="text"><strong>4-6</strong> reuniones</div></div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step"><div class="icon">📄</div><div class="text"><strong>2-3</strong> propuestas</div></div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step"><div class="icon">🤝</div><div class="text"><strong>1</strong> piloto cerrado</div></div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-step"><div class="icon">🔥</div><div class="text"><strong>→ fee mensual</strong> USD 6-9K</div></div>
+  </div>
+</div>
+
+</body>
+</html>

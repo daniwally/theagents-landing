@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Keto — Semana 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    padding: 40px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .header h1 {
+    font-weight: 800;
+    font-size: 42px;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .header .subtitle {
+    font-weight: 300;
+    font-size: 16px;
+    color: #888;
+    margin-top: 8px;
+  }
+  
+  .header .macros {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .macro-pill {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 12px 24px;
+    text-align: center;
+  }
+  
+  .macro-pill .value {
+    font-weight: 800;
+    font-size: 24px;
+    color: #22c55e;
+  }
+  
+  .macro-pill .label {
+    font-weight: 300;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .day {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+  
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .day-name {
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #22c55e;
+  }
+  
+  .day-line {
+    flex: 1;
+    height: 1px;
+    background: #333;
+  }
+  
+  .meals {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .meal {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  
+  .meal-icon {
+    font-size: 20px;
+    min-width: 28px;
+    text-align: center;
+    padding-top: 2px;
+  }
+  
+  .meal-content {
+    flex: 1;
+  }
+  
+  .meal-label {
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #666;
+    margin-bottom: 2px;
+  }
+  
+  .meal-desc {
+    font-weight: 400;
+    font-size: 15px;
+    color: #ddd;
+    line-height: 1.4;
+  }
+  
+  .tips {
+    background: #0d1f0d;
+    border: 1px solid #1a3a1a;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 24px;
+  }
+  
+  .tips h3 {
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #22c55e;
+    margin-bottom: 14px;
+  }
+  
+  .tips ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .tips li {
+    font-size: 14px;
+    color: #aaa;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .tips li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 12px;
+    color: #444;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>PLAN KETO</h1>
+  <div class="subtitle">Semana 1 — 84 kg — Febrero 2026</div>
+  <div class="macros">
+    <div class="macro-pill">
+      <div class="value">~125g</div>
+      <div class="label">Proteína/día</div>
+    </div>
+    <div class="macro-pill">
+      <div class="value">&lt;30g</div>
+      <div class="label">Carbos netos</div>
+    </div>
+    <div class="macro-pill">
+      <div class="value">1.5g/kg</div>
+      <div class="label">Ratio proteico</div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <span class="day-name">Lunes</span>
+    <div class="day-line"></div>
+  </div>
+  <div class="meals">
+    <div class="meal">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-content">
+        <div class="meal-label">Desayuno</div>
+        <div class="meal-desc">3 huevos revueltos con queso cremoso + 2 fetas de jamón crudo</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌞</div>
+      <div class="meal-content">
+        <div class="meal-label">Almuerzo</div>
+        <div class="meal-desc">Bife de chorizo (200g) + ensalada de rúcula, palta y aceite de oliva</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-content">
+        <div class="meal-label">Cena</div>
+        <div class="meal-desc">Pollo al horno (200g) con brócoli salteado en manteca</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <span class="day-name">Martes</span>
+    <div class="day-line"></div>
+  </div>
+  <div class="meals">
+    <div class="meal">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-content">
+        <div class="meal-label">Desayuno</div>
+        <div class="meal-desc">Omelette de 3 huevos con espinaca y mozzarella</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌞</div>
+      <div class="meal-content">
+        <div class="meal-label">Almuerzo</div>
+        <div class="meal-desc">Milanesa de cerdo (con parmesano, sin pan rallado) + ensalada mixta</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-content">
+        <div class="meal-label">Cena</div>
+        <div class="meal-desc">Salmón rosado (200g) a la plancha con espárragos y limón</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <span class="day-name">Miércoles</span>
+    <div class="day-line"></div>
+  </div>
+  <div class="meals">
+    <div class="meal">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-content">
+        <div class="meal-label">Desayuno</div>
+        <div class="meal-desc">Yogur griego entero + 2 cdas de semillas de chía + nueces</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌞</div>
+      <div class="meal-content">
+        <div class="meal-label">Almuerzo</div>
+        <div class="meal-desc">2 hamburguesas caseras (120g c/u) con cheddar, lechuga y tomate (sin pan)</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-content">
+        <div class="meal-label">Cena</div>
+        <div class="meal-desc">Tira de asado (250g) + ensalada de tomate y cebolla</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <span class="day-name">Jueves</span>
+    <div class="day-line"></div>
+  </div>
+  <div class="meals">
+    <div class="meal">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-content">
+        <div class="meal-label">Desayuno</div>
+        <div class="meal-desc">3 huevos fritos en manteca + panceta crocante (4 fetas)</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌞</div>
+      <div class="meal-content">
+        <div class="meal-label">Almuerzo</div>
+        <div class="meal-desc">Ensalada César: pollo grillado (200g), parmesano, aceite de oliva (sin croutons)</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-content">
+        <div class="meal-label">Cena</div>
+        <div class="meal-desc">Bondiola a la plancha (200g) con zucchini grillado</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <span class="day-name">Viernes</span>
+    <div class="day-line"></div>
+  </div>
+  <div class="meals">
+    <div class="meal">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-content">
+        <div class="meal-label">Desayuno</div>
+        <div class="meal-desc">Licuado: whey protein (1 scoop) + leche de almendras + 1 cda manteca de maní</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌞</div>
+      <div class="meal-content">
+        <div class="meal-label">Almuerzo</div>
+        <div class="meal-desc">Peceto (200g) con puré de coliflor con queso crema</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-content">
+        <div class="meal-label">Cena</div>
+        <div class="meal-desc">Merluza (250g) al horno con manteca de hierbas + ensalada verde</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <span class="day-name">Sábado</span>
+    <div class="day-line"></div>
+  </div>
+  <div class="meals">
+    <div class="meal">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-content">
+        <div class="meal-label">Desayuno</div>
+        <div class="meal-desc">2 huevos poché sobre jamón cocido con salsa holandesa (sin pan)</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌞</div>
+      <div class="meal-content">
+        <div class="meal-label">Almuerzo</div>
+        <div class="meal-desc">Entraña (200g) a la parrilla + ensalada de palta, tomate cherry y albahaca</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-content">
+        <div class="meal-label">Cena</div>
+        <div class="meal-desc">Suprema de pollo rellena con mozzarella y jamón + espinaca salteada</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-header">
+    <span class="day-name">Domingo</span>
+    <div class="day-line"></div>
+  </div>
+  <div class="meals">
+    <div class="meal">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-content">
+        <div class="meal-label">Desayuno</div>
+        <div class="meal-desc">3 huevos revueltos con salmón ahumado y queso crema</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌞</div>
+      <div class="meal-content">
+        <div class="meal-label">Almuerzo</div>
+        <div class="meal-desc">Asado: vacío (250g) + ensalada rusa keto (coliflor en vez de papa, con mayo)</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-content">
+        <div class="meal-label">Cena</div>
+        <div class="meal-desc">Wok de cerdo (200g) con champiñones, morrón y salsa de soja</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tips">
+  <h3>📌 Tips</h3>
+  <ul>
+    <li>Cociná con manteca, aceite de oliva o grasa animal</li>
+    <li>Snacks: queso en cubitos, aceitunas, nueces, almendras</li>
+    <li>Hidratación: mínimo 2.5L de agua + sal (en keto perdés electrolitos)</li>
+    <li>Si te da hambre entre comidas: puñado de almendras o huevo duro</li>
+    <li>Suplementá magnesio y potasio si sentís calambres o fatiga</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Preparado por Dora 🗺️ — Febrero 2026
+</div>
+
+</body>
+</html>

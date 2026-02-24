@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1600px;
+    height: 720px;
+    font-family: 'Inter', sans-serif;
+    background: transparent;
+    border-radius: 24px;
+    color: white;
+    display: flex;
+    padding: 40px 50px;
+    gap: 50px;
+  }
+
+  .side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .side-label {
+    font-weight: 100;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .side.trad .side-label { color: rgba(255,255,255,0.5); }
+  .side.wtf .side-label { color: #00B4FF; }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .item-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+
+  .side.trad .item-icon {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.6);
+  }
+
+  .side.wtf .item-icon {
+    background: rgba(0,180,255,0.08);
+    border: 1px solid rgba(0,180,255,0.2);
+    color: #00B4FF;
+  }
+
+  .item-content { flex: 1; }
+
+  .item-number {
+    font-weight: 900;
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .side.trad .item-number { color: #FFFFFF; }
+  .side.wtf .item-number {
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .item-desc {
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .side.trad .item-desc { color: rgba(255,255,255,0.7); }
+  .side.wtf .item-desc { color: rgba(255,255,255,0.6); }
+
+  /* Divider */
+  .divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(139,92,246,0.3), transparent);
+    flex-shrink: 0;
+    margin: 30px 0;
+  }
+</style>
+</head>
+<body>
+
+  <div class="side trad">
+    <div class="side-label">Modelo Tradicional</div>
+    <div class="item">
+      <div class="item-icon">01</div>
+      <div class="item-content">
+        <div class="item-number">1</div>
+        <div class="item-desc">Concepto creativo</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">02</div>
+      <div class="item-content">
+        <div class="item-number">3 sem</div>
+        <div class="item-desc">Tiempo de producción</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">03</div>
+      <div class="item-content">
+        <div class="item-number">5</div>
+        <div class="item-desc">Piezas finales</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">04</div>
+      <div class="item-content">
+        <div class="item-number">0</div>
+        <div class="item-desc">Iteraciones post-lanzamiento</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">05</div>
+      <div class="item-content">
+        <div class="item-number">—</div>
+        <div class="item-desc">El sistema no aprende nada</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="side wtf">
+    <div class="side-label">Modelo WTF</div>
+    <div class="item">
+      <div class="item-icon">01</div>
+      <div class="item-content">
+        <div class="item-number">10+</div>
+        <div class="item-desc">Territorios explorados</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">02</div>
+      <div class="item-content">
+        <div class="item-number">5 días</div>
+        <div class="item-desc">Tiempo de producción</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">03</div>
+      <div class="item-content">
+        <div class="item-number">50+</div>
+        <div class="item-desc">Piezas curadas por canal</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">04</div>
+      <div class="item-content">
+        <div class="item-number">Real time</div>
+        <div class="item-desc">Optimización continua</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">05</div>
+      <div class="item-content">
+        <div class="item-number">Loop ✓</div>
+        <div class="item-desc">Cada ciclo mejora el siguiente</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

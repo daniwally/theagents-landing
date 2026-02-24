@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ==================== SLIDE 10 - EL PROBLEMA ==================== */
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    page-break-after: always;
+  }
+
+  .slide-problem {
+    background: #0A0A0F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .slide-problem .grid {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .slide-problem .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 80px;
+  }
+
+  .slide-problem .eyebrow {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 50px;
+  }
+
+  .slide-problem h1 {
+    font-weight: 900;
+    font-size: 58px;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 50px;
+  }
+
+  .slide-problem h1 .dim {
+    color: rgba(255,255,255,0.25);
+  }
+
+  .slide-problem h1 .highlight {
+    background: linear-gradient(135deg, #FF6432, #FF3366);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .slide-problem .comparison {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 60px;
+  }
+
+  .slide-problem .comp-item {
+    text-align: center;
+    padding: 40px;
+    border-radius: 16px;
+    width: 380px;
+  }
+
+  .slide-problem .comp-item.bad {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .slide-problem .comp-item.good {
+    background: rgba(255,100,50,0.05);
+    border: 1px solid rgba(255,100,50,0.2);
+  }
+
+  .slide-problem .comp-item .comp-label {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .slide-problem .comp-item.bad .comp-label { color: rgba(255,255,255,0.3); }
+  .slide-problem .comp-item.good .comp-label { color: #FF6432; }
+
+  .slide-problem .comp-item .comp-text {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .slide-problem .comp-item.good .comp-text {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .slide-problem .footer-tag {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.1);
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 10: EL PROBLEMA -->
+<div class="slide slide-problem" id="slide-problem">
+  <div class="grid"></div>
+  <div class="content">
+    <div class="eyebrow">El problema real</div>
+    <h1><span class="dim">Todas las agencias dicen que</span> usan IA.<br><span class="highlight">Pocas saben qué hacer con lo que genera.</span></h1>
+    <div class="comparison">
+      <div class="comp-item bad">
+        <div class="comp-label">Otras agencias</div>
+        <div class="comp-text">Generan 500 imágenes.<br>Publican 10.<br>Sin estrategia.<br>Sin criterio.<br>Sin sistema.</div>
+      </div>
+      <div class="comp-item good">
+        <div class="comp-label">WTF Agency</div>
+        <div class="comp-text">Destruimos el brief.<br>Definimos el territorio.<br>La IA multiplica.<br>El criterio selecciona.<br>El sistema aprende.</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-tag">WTF AGENCY</div>
+</div>
+
+</body>
+</html>

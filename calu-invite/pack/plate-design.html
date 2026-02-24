@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Plate Design - Calu's Birthday</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 900px;
+  height: 900px;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plate {
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7b2fbe 0%, #5c1f9e 50%, #4a1a8a 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rim */
+.plate::before {
+  content: '';
+  position: absolute;
+  top: 8px; left: 8px; right: 8px; bottom: 8px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.15);
+}
+
+/* Inner rim */
+.plate::after {
+  content: '';
+  position: absolute;
+  top: 40px; left: 40px; right: 40px; bottom: 40px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255,255,255,0.1);
+}
+
+/* Starburst */
+.starburst {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(255,255,255,0.025) 5deg,
+    transparent 10deg
+  );
+}
+
+.plate-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.plate-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: #fff;
+  letter-spacing: 8px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+  line-height: 1;
+}
+
+.plate-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 52px;
+  color: #ffd700;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.plate-sub {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.plate-emilia {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  box-shadow: 0 5px 25px rgba(60,10,120,0.6);
+  margin: 10px 0;
+}
+
+.plate-disco {
+  position: absolute;
+  top: 70px;
+  right: 120px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 10px rgba(200,100,255,0.5));
+  z-index: 1;
+}
+
+.plate-boots {
+  position: absolute;
+  bottom: 80px;
+  left: 110px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 10px rgba(200,100,255,0.5));
+  z-index: 1;
+}
+
+.plate-lightning {
+  position: absolute;
+  z-index: 1;
+  font-size: 36px;
+  filter: drop-shadow(0 0 8px rgba(255,215,0,0.5));
+}
+.pl1 { top: 140px; left: 150px; }
+.pl2 { bottom: 130px; right: 140px; }
+
+.star-deco {
+  position: absolute;
+  z-index: 1;
+  color: rgba(255,255,255,0.3);
+}
+.sd1 { top: 60px; left: 200px; font-size: 24px; }
+.sd2 { bottom: 60px; right: 200px; font-size: 20px; }
+.sd3 { top: 200px; right: 80px; font-size: 18px; }
+.sd4 { bottom: 200px; left: 80px; font-size: 22px; }
+
+.iconic {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+  <div class="plate">
+    <div class="starburst"></div>
+    <img src="../disco.jpg" class="plate-disco" alt="">
+    <img src="../boots.jpg" class="plate-boots" alt="">
+    <div class="plate-lightning pl1">⚡</div>
+    <div class="plate-lightning pl2">⚡</div>
+    <div class="star-deco sd1">✦</div>
+    <div class="star-deco sd2">★</div>
+    <div class="star-deco sd3">✦</div>
+    <div class="star-deco sd4">★</div>
+
+    <div class="plate-content">
+      <div class="plate-sub">★ CUMPLE 9 ★</div>
+      <div class="plate-name">CALIFORNIA</div>
+      <img src="../emilia.jpg" class="plate-emilia" alt="">
+      <div class="plate-title">BIRTHDAY</div>
+      <div class="iconic">Let's make it iconic</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Shoes Argentina — One Pager</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  width: 430px;
+  margin: 0 auto;
+  padding: 0;
+}
+.page {
+  padding: 40px 28px;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+.logo-text {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.logo-text span { color: #00E676; }
+.tagline {
+  font-size: 14px;
+  color: #888;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Section */
+.section {
+  margin-bottom: 28px;
+}
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #00E676;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0,230,118,0.2);
+}
+
+/* Stat grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-value {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #fff;
+}
+.stat-value.green { color: #00E676; }
+.stat-label {
+  font-size: 10px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Full width stat */
+.stat-full {
+  background: linear-gradient(135deg, rgba(0,230,118,0.1), rgba(0,230,118,0.03));
+  border: 1px solid rgba(0,230,118,0.2);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 12px;
+}
+.stat-full .stat-value {
+  font-size: 36px;
+  color: #00E676;
+}
+
+/* Price table */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.price-row:last-child { border-bottom: none; }
+.price-service {
+  font-size: 13px;
+  font-weight: 400;
+  color: #ccc;
+}
+.price-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Margin bars */
+.margin-item {
+  margin-bottom: 14px;
+}
+.margin-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.margin-label {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 400;
+}
+.margin-pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: #00E676;
+}
+.margin-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.margin-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00E676, #00C853);
+  border-radius: 3px;
+}
+
+/* Revenue scenarios */
+.scenario {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.scenario-name {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 400;
+}
+.scenario-name strong {
+  color: #fff;
+  font-weight: 600;
+  display: block;
+  font-size: 13px;
+}
+.scenario-rev {
+  text-align: right;
+}
+.scenario-rev .amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.scenario-rev .sub {
+  font-size: 10px;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Advantages */
+.advantage {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.advantage-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: rgba(0,230,118,0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.advantage-text {
+  font-size: 12.5px;
+  color: #bbb;
+  line-height: 1.4;
+}
+.advantage-text strong {
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-cta {
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.footer-contact {
+  font-size: 12px;
+  color: #00E676;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.footer-note {
+  font-size: 9px;
+  color: #333;
+  margin-top: 16px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="badge">Oportunidad de negocio</div>
+    <div class="logo-text">NEW <span>SHOES</span></div>
+    <div class="tagline">Lavandería premium de sneakers → Argentina</div>
+  </div>
+
+  <!-- QUÉ ES -->
+  <div class="section">
+    <div class="section-title">El concepto</div>
+    <p style="font-size:13px; color:#bbb; line-height:1.6;">
+      Red de lavanderías especializadas en limpieza, restauración y cuidado de zapatillas. 
+      Fundada en Brasil (2023), franquicia desde 2024. <strong style="color:#fff;">36 locales en 6 estados.</strong> 
+      Ya en proceso de internacionalización.
+    </p>
+  </div>
+
+  <!-- KEY METRICS -->
+  <div class="section">
+    <div class="section-title">Números clave</div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value">USD 55K</div>
+        <div class="stat-label">Inversión total</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value green">12-18</div>
+        <div class="stat-label">Meses de payback</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">70%</div>
+        <div class="stat-label">Margen bruto</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value green">35-50%</div>
+        <div class="stat-label">Margen neto</div>
+      </div>
+    </div>
+    <div class="stat-full">
+      <div class="stat-label" style="margin-bottom:6px;">Ticket promedio por par</div>
+      <div class="stat-value">$22.000 <span style="font-size:16px;font-weight:400;color:#888;">~USD 18</span></div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS Y PRECIOS -->
+  <div class="section">
+    <div class="section-title">Servicios & precios sugeridos</div>
+    <div class="price-row">
+      <span class="price-service">Limpieza básica</span>
+      <span class="price-value">$12.000 — $15.000</span>
+    </div>
+    <div class="price-row">
+      <span class="price-service">Limpieza profunda</span>
+      <span class="price-value">$18.000 — $25.000</span>
+    </div>
+    <div class="price-row">
+      <span class="price-service">Premium + blanqueamiento</span>
+      <span class="price-value">$30.000 — $40.000</span>
+    </div>
+    <div class="price-row">
+      <span class="price-service">Restauración completa</span>
+      <span class="price-value">$45.000 — $60.000</span>
+    </div>
+    <div class="price-row">
+      <span class="price-service">Protección (add-on)</span>
+      <span class="price-value">$8.000 — $12.000</span>
+    </div>
+  </div>
+
+  <!-- MÁRGENES -->
+  <div class="section">
+    <div class="section-title">Estructura de márgenes</div>
+    <div class="margin-item">
+      <div class="margin-header">
+        <span class="margin-label">Margen bruto</span>
+        <span class="margin-pct">70%</span>
+      </div>
+      <div class="margin-bar"><div class="margin-fill" style="width:70%"></div></div>
+    </div>
+    <div class="margin-item">
+      <div class="margin-header">
+        <span class="margin-label">Margen neto (conservador)</span>
+        <span class="margin-pct">35%</span>
+      </div>
+      <div class="margin-bar"><div class="margin-fill" style="width:35%"></div></div>
+    </div>
+    <div class="margin-item">
+      <div class="margin-header">
+        <span class="margin-label">Margen neto (maduro)</span>
+        <span class="margin-pct">52%</span>
+      </div>
+      <div class="margin-bar"><div class="margin-fill" style="width:52%"></div></div>
+    </div>
+  </div>
+
+  <!-- ESCENARIOS -->
+  <div class="section">
+    <div class="section-title">Escenarios de ingreso mensual</div>
+    <div class="scenario">
+      <div class="scenario-name">
+        <strong>Conservador</strong>
+        12 pares/día
+      </div>
+      <div class="scenario-rev">
+        <div class="amount">USD 2.300</div>
+        <div class="sub">neto/mes</div>
+      </div>
+    </div>
+    <div class="scenario">
+      <div class="scenario-name">
+        <strong>Optimista</strong>
+        20 pares/día
+      </div>
+      <div class="scenario-rev">
+        <div class="amount">USD 5.200</div>
+        <div class="sub">neto/mes</div>
+      </div>
+    </div>
+    <div class="scenario" style="border-color:rgba(0,230,118,0.3); background:rgba(0,230,118,0.06);">
+      <div class="scenario-name">
+        <strong>Maduro</strong>
+        25+ pares/día + upselling
+      </div>
+      <div class="scenario-rev">
+        <div class="amount" style="color:#00E676;">USD 7.700</div>
+        <div class="sub">neto/mes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUÉ ARGENTINA -->
+  <div class="section">
+    <div class="section-title">Por qué funciona en Argentina</div>
+    <div class="advantage">
+      <div class="advantage-icon">🥇</div>
+      <div class="advantage-text"><strong>Primer mover.</strong> No existe competencia formal — solo freelancers vía Instagram.</div>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">👟</div>
+      <div class="advantage-text"><strong>Cultura sneaker en auge.</strong> Zapatillas de $100-300 USD justifican el servicio.</div>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">🔗</div>
+      <div class="advantage-text"><strong>Sinergia con SHAQ.</strong> Vendés zapatillas y las mantenés. Ecosistema completo.</div>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">📈</div>
+      <div class="advantage-text"><strong>Escalable.</strong> Master franquicia → 5-10 puntos en 2-3 años.</div>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">💰</div>
+      <div class="advantage-text"><strong>Inversión moderada.</strong> USD 55K con payback en ~12 meses.</div>
+    </div>
+  </div>
+
+  <!-- INVERSIÓN BREAKDOWN -->
+  <div class="section">
+    <div class="section-title">Desglose de inversión</div>
+    <div class="price-row">
+      <span class="price-service">Fee franquicia</span>
+      <span class="price-value">USD 15-20K</span>
+    </div>
+    <div class="price-row">
+      <span class="price-service">Equipamiento + tecnología</span>
+      <span class="price-value">USD 15-20K</span>
+    </div>
+    <div class="price-row">
+      <span class="price-service">Acondicionamiento local</span>
+      <span class="price-value">USD 8-12K</span>
+    </div>
+    <div class="price-row">
+      <span class="price-service">Capital de trabajo (3 meses)</span>
+      <span class="price-value">USD 8-10K</span>
+    </div>
+    <div class="price-row" style="border-bottom:none; padding-top:12px; border-top: 1px solid rgba(0,230,118,0.3);">
+      <span class="price-service" style="color:#fff; font-weight:700;">Total estimado</span>
+      <span class="price-value" style="color:#00E676; font-size:18px;">USD 50-60K</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-cta">Contacto internacionalización</div>
+    <div class="footer-contact">Raphael Quadros — expansao@newshoes.com.br</div>
+    <div class="footer-contact" style="color:#888;">+55 47 9683-7240</div>
+    <div class="footer-note">Análisis preparado por Dora 🗺️ para WTF Agency — Feb 2026. Datos estimados sujetos a validación.</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    width: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: #F5F5F0;
+    color: #1A1A1A;
+    padding: 60px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    border-bottom: 3px solid #1A1A1A;
+    padding-bottom: 30px;
+  }
+
+  .header h1 {
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  .header h1 span {
+    font-weight: 100;
+    font-size: 22px;
+    display: block;
+    margin-top: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  .tag {
+    background: #1A1A1A;
+    color: #F5F5F0;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .big-number {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .big-number .card {
+    flex: 1;
+    background: white;
+    padding: 35px;
+    border: 1px solid #E0E0E0;
+  }
+
+  .big-number .card .value {
+    font-weight: 900;
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+
+  .big-number .card .value.accent {
+    color: #0066FF;
+  }
+
+  .big-number .card .label {
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .big-number .card .sub {
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 6px;
+    color: #999;
+  }
+
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section h2 {
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #1A1A1A;
+  }
+
+  .leader {
+    background: white;
+    border: 1px solid #E0E0E0;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  .leader h3 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .leader .stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+  }
+
+  .leader .stat {
+    font-size: 13px;
+    color: #666;
+  }
+
+  .leader .stat strong {
+    display: block;
+    font-size: 20px;
+    color: #1A1A1A;
+    font-weight: 700;
+  }
+
+  .competitors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .competitors .comp {
+    background: white;
+    border: 1px solid #E0E0E0;
+    padding: 20px;
+  }
+
+  .competitors .comp h4 {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .competitors .comp p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+
+  .insight {
+    background: #1A1A1A;
+    color: #F5F5F0;
+    padding: 35px;
+    margin-top: 40px;
+  }
+
+  .insight h2 {
+    color: #F5F5F0;
+    font-weight: 100;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+
+  .insight p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .insight p strong {
+    font-weight: 700;
+  }
+
+  .footer {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #BBB;
+    text-align: right;
+    font-weight: 300;
+  }
+
+  .global-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .global-row .card {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border: 1px solid #E0E0E0;
+  }
+
+  .global-row .card .value {
+    font-weight: 900;
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .global-row .card .label {
+    font-weight: 300;
+    font-size: 13px;
+    margin-top: 6px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Mercado de Termos<br>e Hidratación<br>Argentina
+      <span>Research — Febrero 2026</span>
+    </h1>
+    <div class="tag">Confidencial</div>
+  </div>
+
+  <div class="big-number">
+    <div class="card">
+      <div class="value">USD 100-150M</div>
+      <div class="label">Mercado total estimado Argentina</div>
+      <div class="sub">Termos + botellas + hidratación (todas las marcas)</div>
+    </div>
+    <div class="card">
+      <div class="value accent">+6.7%</div>
+      <div class="label">Crecimiento anual global</div>
+      <div class="sub">CAGR 2025-2030 (Grand View Research)</div>
+    </div>
+  </div>
+
+  <div class="global-row">
+    <div class="card">
+      <div class="value">USD 3.09B</div>
+      <div class="label">Mercado global Thermos Drinkware 2024</div>
+    </div>
+    <div class="card">
+      <div class="value">USD 5.36B</div>
+      <div class="label">Mercado global Thermos Bottles 2024</div>
+    </div>
+    <div class="card">
+      <div class="value">USD 4.49B</div>
+      <div class="label">Proyección global 2030</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Líder del mercado argentino</h2>
+    <div class="leader">
+      <h3>Stanley (Grupo Mendizábal)</h3>
+      <p style="color: #888; font-size: 13px;">Licencia exclusiva desde 2015 · +100 empleados · 10 locales propios · 14.000 puntos de venta</p>
+      <div class="stats">
+        <div class="stat"><strong>USD 46M</strong>Facturación 2024</div>
+        <div class="stat"><strong>USD 60M</strong>Proyección 2025</div>
+        <div class="stat"><strong>+30%</strong>Crecimiento en unidades</div>
+        <div class="stat"><strong>~40-50%</strong>Share estimado (premium)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Competidores en Argentina</h2>
+    <div class="competitors">
+      <div class="comp">
+        <h4>Thermos</h4>
+        <p>Tienda oficial local. Marca histórica, fuerte en isotérmicos clásicos.</p>
+      </div>
+      <div class="comp">
+        <h4>Contigo</h4>
+        <p>Presente en retail. Posicionamiento funcional, precio medio.</p>
+      </div>
+      <div class="comp">
+        <h4>Coleman</h4>
+        <p>Más fuerte en outdoor/camping. Termos como complemento.</p>
+      </div>
+      <div class="comp">
+        <h4>Klean Kanteen</h4>
+        <p>Nicho eco-premium. Menor penetración local.</p>
+      </div>
+      <div class="comp">
+        <h4>Pura / Drip</h4>
+        <p>Marcas argentinas emergentes. Precio accesible, creciendo en ML.</p>
+      </div>
+      <div class="comp">
+        <h4>Genéricos (China)</h4>
+        <p>Gran volumen en Mercado Libre. Precio bajo, calidad variable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <h2>Oportunidad</h2>
+    <p>Stanley domina el premium con producto importado a <strong>precios hasta 3x vs otros mercados</strong> (termo clásico: USD 106 en ARG vs USD 36 en USA). Hay un gap enorme entre el premium importado y el genérico chino. <strong>Una marca regional con identidad fuerte, calidad real y precio competitivo tiene todo el espacio para capturar el segmento medio-alto.</strong></p>
+  </div>
+
+  <div class="footer">
+    Fuentes: Grand View Research, Fortune Business Insights, Clarín, Infobae · Elaboración propia · Feb 2026
+  </div>
+
+</body>
+</html>

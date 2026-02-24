@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; width: 1080px; }
+  
+  .slide { padding: 60px; min-height: 1080px; display: flex; flex-direction: column; justify-content: center; border-bottom: 2px solid #1a1a1a; }
+  
+  /* SLIDE 1 - COVER */
+  .cover { min-height: 1350px; text-align: center; justify-content: center; background: linear-gradient(180deg, #0a0a0a 0%, #111 100%); }
+  .cover .tag { font-size: 13px; letter-spacing: 6px; color: #555; text-transform: uppercase; margin-bottom: 30px; }
+  .cover h1 { font-size: 72px; font-weight: 900; letter-spacing: -2px; line-height: 1.1; margin-bottom: 20px; }
+  .cover h1 span { color: #ff3c3c; }
+  .cover .sub { font-size: 22px; font-weight: 300; color: #888; margin-bottom: 40px; }
+  .cover .meta { font-size: 14px; color: #444; letter-spacing: 2px; }
+  
+  /* SLIDE 2 - EL PROBLEMA */
+  .problem { background: #0d0d0d; }
+  .problem h2 { font-size: 14px; letter-spacing: 5px; color: #ff3c3c; text-transform: uppercase; margin-bottom: 30px; }
+  .problem .big-text { font-size: 36px; font-weight: 700; line-height: 1.4; margin-bottom: 40px; }
+  .problem .big-text em { color: #ff3c3c; font-style: normal; }
+  .versus { display: flex; gap: 20px; margin-top: 30px; }
+  .versus .col { flex: 1; background: #141414; border-radius: 12px; padding: 24px; border: 1px solid #222; }
+  .versus .col h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: #ff3c3c; }
+  .versus .col.us h3 { color: #00e676; }
+  .versus .col p { font-size: 14px; color: #888; line-height: 1.6; }
+  
+  /* FASES */
+  .phase { background: #0a0a0a; }
+  .phase-tag { display: inline-block; background: #ff3c3c; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 3px; padding: 6px 16px; border-radius: 4px; text-transform: uppercase; margin-bottom: 20px; }
+  .phase-tag.green { background: #00e676; color: #0a0a0a; }
+  .phase-tag.blue { background: #448aff; }
+  .phase h2 { font-size: 42px; font-weight: 900; margin-bottom: 8px; }
+  .phase .period { font-size: 16px; color: #555; margin-bottom: 40px; }
+  .phase .objective { font-size: 20px; color: #888; font-weight: 300; margin-bottom: 40px; font-style: italic; }
+  
+  .actions { display: flex; flex-direction: column; gap: 16px; }
+  .action-card { background: #141414; border-radius: 12px; padding: 24px; border: 1px solid #1e1e1e; }
+  .action-card h4 { font-size: 14px; color: #ff3c3c; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .action-card.green h4 { color: #00e676; }
+  .action-card.blue h4 { color: #448aff; }
+  .action-card ul { list-style: none; }
+  .action-card ul li { font-size: 15px; color: #ccc; padding: 6px 0; padding-left: 20px; position: relative; line-height: 1.5; }
+  .action-card ul li:before { content: "→"; position: absolute; left: 0; color: #444; }
+  
+  /* KPIs */
+  .kpi-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 30px; }
+  .kpi { background: #141414; border-radius: 12px; padding: 20px; border: 1px solid #1e1e1e; flex: 1; min-width: 200px; text-align: center; }
+  .kpi .number { font-size: 32px; font-weight: 900; color: #ff3c3c; }
+  .kpi.green .number { color: #00e676; }
+  .kpi.blue .number { color: #448aff; }
+  .kpi .label { font-size: 12px; color: #666; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  
+  /* MENSAJES */
+  .quote-box { background: #141414; border-left: 4px solid #ff3c3c; padding: 24px 30px; margin: 12px 0; border-radius: 0 12px 12px 0; }
+  .quote-box p { font-size: 18px; font-weight: 300; color: #ddd; line-height: 1.6; font-style: italic; }
+  .quote-box .for { font-size: 12px; color: #555; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px; }
+  
+  /* BUDGET */
+  .budget-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+  .budget-table th { text-align: left; font-size: 12px; color: #555; letter-spacing: 2px; text-transform: uppercase; padding: 12px 16px; border-bottom: 1px solid #222; }
+  .budget-table td { font-size: 16px; padding: 16px; border-bottom: 1px solid #1a1a1a; color: #ccc; }
+  .budget-table tr:last-child td { border-bottom: 2px solid #ff3c3c; color: #fff; font-weight: 700; font-size: 18px; }
+  
+  /* TIMELINE */
+  .timeline { display: flex; gap: 12px; margin-top: 30px; }
+  .timeline .month { flex: 1; text-align: center; }
+  .timeline .month .num { font-size: 24px; font-weight: 900; color: #333; }
+  .timeline .month.active .num { color: #ff3c3c; }
+  .timeline .month.active2 .num { color: #00e676; }
+  .timeline .month.active3 .num { color: #448aff; }
+  .timeline .month .desc { font-size: 10px; color: #555; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .timeline .bar { height: 4px; border-radius: 2px; background: #222; margin-top: 8px; }
+  .timeline .month.active .bar { background: #ff3c3c; }
+  .timeline .month.active2 .bar { background: #00e676; }
+  .timeline .month.active3 .bar { background: #448aff; }
+  
+  /* CHECKLIST */
+  .check-list { list-style: none; }
+  .check-list li { font-size: 18px; padding: 14px 0; border-bottom: 1px solid #1a1a1a; color: #ccc; padding-left: 36px; position: relative; }
+  .check-list li:before { content: "☐"; position: absolute; left: 0; font-size: 20px; color: #ff3c3c; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide cover">
+  <div class="tag">Go-to-Market Plan · 6 Meses</div>
+  <h1>WTF<br><span>RELOADED</span></h1>
+  <div class="sub">De agencia de campañas a sistema creativo<br>amplificado por IA</div>
+  <div class="meta">ARGENTINA → CHILE → LATAM · FEBRERO 2026</div>
+</div>
+
+<!-- SLIDE 2: EL PROBLEMA -->
+<div class="slide problem">
+  <h2>El tablero cambió</h2>
+  <div class="big-text">Las agencias grandes son <em>lentas</em>.<br>Las productoras ejecutan <em>sin estrategia</em>.<br>Los AI studios tienen herramientas <em>sin calle</em>.</div>
+  <div class="versus">
+    <div class="col">
+      <h3>EL MERCADO HOY</h3>
+      <p>6 semanas para una campaña<br>Departamentos que no se hablan<br>IA como buzzword, no como método<br>Mucho deck, poco resultado</p>
+    </div>
+    <div class="col us">
+      <h3>WTF</h3>
+      <p>6 días con el mismo nivel creativo<br>Células autónomas, un flujo<br>IA integrada en producción real<br>Sistema que aprende y escala</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: TIMELINE -->
+<div class="slide phase">
+  <h2 style="font-size: 36px; margin-bottom: 30px;">El camino de 6 meses</h2>
+  <div class="timeline">
+    <div class="month active"><div class="num">M1</div><div class="bar"></div><div class="desc">Infra</div></div>
+    <div class="month active"><div class="num">M2</div><div class="bar"></div><div class="desc">Autoridad</div></div>
+    <div class="month active2"><div class="num">M3</div><div class="bar"></div><div class="desc">Activación</div></div>
+    <div class="month active2"><div class="num">M4</div><div class="bar"></div><div class="desc">Pipeline</div></div>
+    <div class="month active3"><div class="num">M5</div><div class="bar"></div><div class="desc">Escala</div></div>
+    <div class="month active3"><div class="num">M6</div><div class="bar"></div><div class="desc">Expansión</div></div>
+  </div>
+  <div class="kpi-grid" style="margin-top: 50px;">
+    <div class="kpi"><div class="number">6-10</div><div class="label">Clientes nuevos</div></div>
+    <div class="kpi green"><div class="number">$80-150K</div><div class="label">Revenue nuevo (USD)</div></div>
+    <div class="kpi blue"><div class="number">100-150</div><div class="label">Leads calificados</div></div>
+    <div class="kpi"><div class="number">4.000+</div><div class="label">Seguidores LinkedIn</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 4: FASE 1 -->
+<div class="slide phase">
+  <div class="phase-tag">Fase 1</div>
+  <h2>Fundación & Autoridad</h2>
+  <div class="period">Mes 1 — Mes 2</div>
+  <div class="objective">"Instalar el nuevo WTF en el radar de la industria"</div>
+  <div class="actions">
+    <div class="action-card">
+      <h4>LinkedIn Orgánico</h4>
+      <ul>
+        <li>Rediseñar perfiles de los 4 líderes clave con nuevo posicionamiento</li>
+        <li>Calendario editorial: 4 posts/semana por líder, 3/semana empresa</li>
+        <li>5 pilares: Behind IA, Velocidad vs Calidad, Casos, Opinión, Modelo Celular</li>
+      </ul>
+    </div>
+    <div class="action-card">
+      <h4>Caso Starter como punta de lanza</h4>
+      <ul>
+        <li>Carrusel antes/después + métricas (costo, tiempo, resultado)</li>
+        <li>Video de 2 min mostrando el proceso real</li>
+        <li>Pitch a AdLatina, Adweek Latam, Marketers by Adlatina</li>
+      </ul>
+    </div>
+    <div class="action-card">
+      <h4>Prospección orgánica</h4>
+      <ul>
+        <li>Lista de 50 CMOs Argentina + 30 Chile</li>
+        <li>Interacción genuina en sus publicaciones</li>
+        <li>DMs estratégicos: conversación, no venta</li>
+        <li>Manifiesto CEO: "Por qué dejamos de ser una agencia"</li>
+      </ul>
+    </div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="number">+1.200</div><div class="label">Seguidores</div></div>
+    <div class="kpi"><div class="number">150K</div><div class="label">Impresiones</div></div>
+    <div class="kpi"><div class="number">20</div><div class="label">Conversaciones CMOs</div></div>
+    <div class="kpi"><div class="number">3-5</div><div class="label">Reuniones inbound</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 5: FASE 2 -->
+<div class="slide phase">
+  <div class="phase-tag green">Fase 2</div>
+  <h2>Generación de Demanda</h2>
+  <div class="period">Mes 3 — Mes 4</div>
+  <div class="objective">"Convertir autoridad en pipeline comercial"</div>
+  <div class="actions">
+    <div class="action-card green">
+      <h4>Primer presupuesto paid</h4>
+      <ul>
+        <li>LinkedIn Ads: USD 2-5K/mes — Sponsored Content + Message Ads</li>
+        <li>Audiencia: CMOs y VPs Marketing en AR y CL</li>
+        <li>Asset descargable: "Guía: Cómo integrar IA en tu proceso creativo"</li>
+        <li>Landing page: caso Starter + modelo celular + CTA a reunión</li>
+      </ul>
+    </div>
+    <div class="action-card green">
+      <h4>Eventos presenciales</h4>
+      <ul>
+        <li>Desayuno/almuerzo para 15-20 CMOs en Buenos Aires</li>
+        <li>Tema: "Producción a escala con IA — lo que funciona y lo que no"</li>
+        <li>Sin pitch de venta, puro valor</li>
+        <li>Replicar en Santiago (presencial o virtual)</li>
+      </ul>
+    </div>
+    <div class="action-card green">
+      <h4>Propuesta piloto</h4>
+      <ul>
+        <li>Proyecto acotado, precio agresivo, sin retainer</li>
+        <li>"Probá el modelo con un proyecto real. Si funciona, hablamos."</li>
+      </ul>
+    </div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi green"><div class="number">40-60</div><div class="label">Leads calificados</div></div>
+    <div class="kpi green"><div class="number">15-20</div><div class="label">Reuniones</div></div>
+    <div class="kpi green"><div class="number">8-12</div><div class="label">Propuestas</div></div>
+    <div class="kpi green"><div class="number">2-3</div><div class="label">Clientes cerrados</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 6: FASE 3 -->
+<div class="slide phase">
+  <div class="phase-tag blue">Fase 3</div>
+  <h2>Aceleración & Expansión</h2>
+  <div class="period">Mes 5 — Mes 6</div>
+  <div class="objective">"Escalar pipeline, cerrar deals, preparar expansión Latam"</div>
+  <div class="actions">
+    <div class="action-card blue">
+      <h4>Escalar paid</h4>
+      <ul>
+        <li>LinkedIn Ads: USD 6-8K/mes</li>
+        <li>Agregar Google Ads en keywords de intención ($2-3K/mes)</li>
+        <li>Meta Ads para retargeting de audiencias LinkedIn</li>
+      </ul>
+    </div>
+    <div class="action-card blue">
+      <h4>WTF Lab — El closer definitivo</h4>
+      <ul>
+        <li>Workshop de medio día donde CMOs prueban el modelo con su brief real</li>
+        <li>Precio accesible — la experiencia vende sola</li>
+        <li>Evento grande: 30-40 personas, panel de clientes</li>
+      </ul>
+    </div>
+    <div class="action-card blue">
+      <h4>Expansión Latam</h4>
+      <ul>
+        <li>Outbound activo a México y Colombia</li>
+        <li>PR en medios de negocios: "La agencia argentina que produce para 21 países con IA"</li>
+        <li>Reporte "Estado de la IA en producción creativa Latam 2026"</li>
+      </ul>
+    </div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi blue"><div class="number">100-150</div><div class="label">Leads acumulados</div></div>
+    <div class="kpi blue"><div class="number">$200-400K</div><div class="label">Pipeline activo</div></div>
+    <div class="kpi blue"><div class="number">6-10</div><div class="label">Clientes totales</div></div>
+    <div class="kpi blue"><div class="number">$80-150K</div><div class="label">Revenue nuevo</div></div>
+  </div>
+</div>
+
+<!-- SLIDE 7: MENSAJES -->
+<div class="slide phase">
+  <h2 style="font-size: 36px; margin-bottom: 40px;">Mensajes clave</h2>
+  <div class="quote-box">
+    <p>"Tu agencia tarda 6 semanas en entregar una campaña. Nosotros tardamos 6 días. Mismo nivel creativo, con IA integrada en cada paso."</p>
+    <div class="for">→ Para el CMO cansado de su agencia</div>
+  </div>
+  <div class="quote-box">
+    <p>"No necesitás un AI studio que no entiende tu marca. Necesitás un equipo creativo que ya usa IA en producción real."</p>
+    <div class="for">→ Para el CMO curioso sobre IA</div>
+  </div>
+  <div class="quote-box">
+    <p>"Motorola nos confía su marca en 21 países. No somos un experimento. Somos 15 años de calle + la tecnología que cambia todo."</p>
+    <div class="for">→ Para el CMO escéptico</div>
+  </div>
+  <div class="quote-box">
+    <p>"Elegí un proyecto. Uno solo. Dejanos mostrar el modelo. Si no te vuela la cabeza, no pasó nada."</p>
+    <div class="for">→ Para el que quiere probar sin riesgo</div>
+  </div>
+</div>
+
+<!-- SLIDE 8: BUDGET -->
+<div class="slide phase">
+  <h2 style="font-size: 36px; margin-bottom: 40px;">Inversión estimada (USD)</h2>
+  <table class="budget-table">
+    <tr><th>Concepto</th><th>Mes 1-2</th><th>Mes 3-4</th><th>Mes 5-6</th><th>Total</th></tr>
+    <tr><td>LinkedIn Ads</td><td>—</td><td>$6-10K</td><td>$12-16K</td><td>$18-26K</td></tr>
+    <tr><td>Google Ads</td><td>—</td><td>—</td><td>$4-6K</td><td>$4-6K</td></tr>
+    <tr><td>Eventos (3-4)</td><td>—</td><td>$3-6K</td><td>$3-6K</td><td>$6-12K</td></tr>
+    <tr><td>Herramientas</td><td>$500</td><td>$500</td><td>$500</td><td>$1.5K</td></tr>
+    <tr><td>PR / Freelancers</td><td>$1K</td><td>$2K</td><td>$2K</td><td>$5K</td></tr>
+    <tr><td><strong>TOTAL</strong></td><td><strong>$1.5K</strong></td><td><strong>$11-18K</strong></td><td><strong>$21-30K</strong></td><td><strong>$35-50K</strong></td></tr>
+  </table>
+  <p style="font-size: 13px; color: #444; margin-top: 16px;">* No incluye sueldos internos. Escala según tracción.</p>
+</div>
+
+<!-- SLIDE 9: SEMANA 1 -->
+<div class="slide phase">
+  <div class="phase-tag">Arrancar ya</div>
+  <h2>Checklist Semana 1</h2>
+  <div class="period" style="margin-bottom: 30px;">Lo primero que hay que hacer. Sin excusas.</div>
+  <ul class="check-list">
+    <li>Actualizar perfiles LinkedIn de los 4 líderes clave</li>
+    <li>Redactar manifiesto del CEO</li>
+    <li>Armar caso Starter (copy + carrusel + video corto)</li>
+    <li>Crear calendario editorial mes 1</li>
+    <li>Armar lista de 50 CMOs Argentina</li>
+    <li>Identificar 3 medios para PR inicial</li>
+    <li>Definir quién lidera cada acción</li>
+  </ul>
+</div>
+
+</body>
+</html>

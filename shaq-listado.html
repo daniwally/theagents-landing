@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    width: 430px;
+    padding: 32px 24px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  
+  .header .sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: #666;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    background: #141414;
+    border-radius: 10px;
+    border: 1px solid #1e1e1e;
+  }
+  
+  .product-info {
+    flex: 1;
+  }
+  
+  .product-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .product-colors {
+    font-size: 11px;
+    color: #666;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  
+  .product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-align: right;
+    white-space: nowrap;
+    padding-left: 12px;
+  }
+  
+  .product-price .currency {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+  }
+  
+  .badge {
+    display: inline-block;
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 9px;
+    color: #888;
+    margin-left: 6px;
+    font-weight: 600;
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+  }
+  
+  .footer {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2a2a;
+    text-align: center;
+  }
+  
+  .footer-line {
+    font-size: 12px;
+    color: #555;
+    font-weight: 300;
+    margin-bottom: 6px;
+  }
+  
+  .footer-line span {
+    color: #999;
+    font-weight: 600;
+  }
+  
+  .footer-promo {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+  
+  .footer-promo small {
+    display: block;
+    font-size: 11px;
+    color: #555;
+    font-weight: 300;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="shaq-logo.png" alt="SHAQ" style="height: 70px; margin-bottom: 12px; filter: invert(1);">
+  <div class="sub">Catálogo Argentina · Feb 2026</div>
+</div>
+
+<div class="product-list">
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Devastator <span class="badge">TOP</span></div>
+      <div class="product-colors">Negro · Gris · Celeste · Blanco-Negro</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>105.000</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Hall Of Fame <span class="badge">TOP</span></div>
+      <div class="product-colors">Negro · Rojo · Blanco</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>105.000</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Radiate</div>
+      <div class="product-colors">Gris-Negro · Gris-Naranja · Verde · Rojo +2</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>101.900</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Shaqnotize</div>
+      <div class="product-colors">Negro · Blanco-Naranja · Gris</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>99.980</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Speed Demon Mid</div>
+      <div class="product-colors">Negro · Gris</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>99.980</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Raq Low</div>
+      <div class="product-colors">Negro · Celeste</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>99.000</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Motivate</div>
+      <div class="product-colors">Negro · Celeste · Gris · Blanco-Naranja</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>99.000</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">4X</div>
+      <div class="product-colors">Negro · Gris</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>93.000</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Posture</div>
+      <div class="product-colors">Negro · Verde</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>89.300</div>
+  </div>
+
+  <div class="product">
+    <div class="product-info">
+      <div class="product-name">Spin Move</div>
+      <div class="product-colors">Negro · Gris · Blanco-Rojo · Blanco</div>
+    </div>
+    <div class="product-price"><span class="currency">$ </span>89.000</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-line"><span>10 modelos</span> · Talles 38 al 46</div>
+  <div class="footer-line"><span>www.shaq.com.ar</span></div>
+  <div class="footer-promo">3 cuotas sin interés · Envío gratis<small>Pagando con Mercado Pago</small></div>
+</div>
+
+</body>
+</html>

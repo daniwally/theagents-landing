@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cup Wrapper - Calu's Birthday</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1400px;
+  height: 700px;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 1350px;
+  height: 550px;
+  background: linear-gradient(90deg, #5c1f9e 0%, #7b2fbe 25%, #4a1a8a 50%, #7b2fbe 75%, #5c1f9e 100%);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 40px;
+}
+
+/* Diagonal stripes */
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 25px,
+    rgba(255,255,255,0.03) 25px,
+    rgba(255,255,255,0.03) 27px
+  );
+}
+
+/* Star burst from center */
+.wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 25% 50%, rgba(255,255,255,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 75% 50%, rgba(255,255,255,0.06) 0%, transparent 40%);
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.disco-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(200,100,255,0.5));
+}
+
+.boots-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(200,100,255,0.5));
+}
+
+.emilia-img {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.3);
+  box-shadow: 0 5px 20px rgba(80,20,140,0.5);
+}
+
+.title-block {
+  text-align: center;
+}
+
+.title-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  color: #fff;
+  letter-spacing: 6px;
+  line-height: 1;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+
+.title-sub {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  color: #ffd700;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.title-detail {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.lightning {
+  font-size: 40px;
+  filter: drop-shadow(0 0 8px rgba(255,215,0,0.5));
+}
+
+.star-float {
+  position: absolute;
+  color: rgba(255,255,255,0.25);
+  z-index: 1;
+}
+.sf1 { top: 30px; left: 60px; font-size: 28px; }
+.sf2 { bottom: 40px; left: 200px; font-size: 22px; }
+.sf3 { top: 50px; right: 80px; font-size: 26px; }
+.sf4 { bottom: 30px; right: 250px; font-size: 20px; }
+.sf5 { top: 20px; left: 500px; font-size: 18px; }
+.sf6 { bottom: 20px; right: 500px; font-size: 24px; }
+
+.divider {
+  width: 2px;
+  height: 70%;
+  background: rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 1;
+}
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="star-float sf1">✦</div>
+    <div class="star-float sf2">★</div>
+    <div class="star-float sf3">✦</div>
+    <div class="star-float sf4">★</div>
+    <div class="star-float sf5">✦</div>
+    <div class="star-float sf6">★</div>
+
+    <div class="section">
+      <img src="../disco.jpg" class="disco-img" alt="">
+      <div class="lightning">⚡</div>
+    </div>
+
+    <div class="section">
+      <div class="title-block">
+        <div class="title-main">CALU'S</div>
+        <div class="title-main">BIRTHDAY</div>
+        <div class="title-detail">★ Cumple 9 ★</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <img src="../emilia.jpg" class="emilia-img" alt="">
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="title-block">
+        <div class="title-sub">CALIFORNIA</div>
+        <div class="title-detail">LET'S MAKE IT</div>
+        <div class="title-detail">ICONIC</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="../boots.jpg" class="boots-img" alt="">
+      <div class="lightning">⚡</div>
+    </div>
+  </div>
+</body>
+</html>

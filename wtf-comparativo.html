@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1600px;
+    height: 720px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(0,0,0,0.8);
+    border-radius: 24px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+  }
+
+  .card {
+    flex: 1;
+    border-radius: 20px;
+    padding: 36px 44px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card.trad {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .card.wtf {
+    background: rgba(0,180,255,0.06);
+    border: 1px solid rgba(0,180,255,0.2);
+  }
+
+  .card-label {
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .card.trad .card-label { color: rgba(255,255,255,0.5); }
+  .card.wtf .card-label { color: #00B4FF; }
+
+  .card-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .card.trad .card-title { color: rgba(255,255,255,0.6); }
+  .card.wtf .card-title { color: rgba(255,255,255,0.9); }
+
+  .rows {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .row:last-child { border-bottom: none; }
+
+  .row-metric {
+    font-weight: 900;
+    font-size: 34px;
+    letter-spacing: -1px;
+    min-width: 90px;
+  }
+
+  .card.trad .row-metric { color: rgba(255,255,255,0.4); }
+  .card.wtf .row-metric { 
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .row-desc {
+    font-weight: 300;
+    font-size: 16px;
+    text-align: right;
+    flex: 1;
+    padding-left: 15px;
+  }
+
+  .card.trad .row-desc { color: rgba(255,255,255,0.55); }
+  .card.wtf .row-desc { color: rgba(255,255,255,0.75); }
+
+  /* Arrow */
+  .arrow-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .arrow-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(139,92,246,0.1);
+    border: 1px solid rgba(139,92,246,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: rgba(139,92,246,0.6);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card trad">
+    <div class="card-label">Modelo Tradicional</div>
+    <div class="card-title">Una campaña como siempre se hizo</div>
+    <div class="rows">
+      <div class="row">
+        <div class="row-metric">1</div>
+        <div class="row-desc">Concepto creativo</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">3 sem</div>
+        <div class="row-desc">Tiempo de producción</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">5</div>
+        <div class="row-desc">Piezas finales</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">0</div>
+        <div class="row-desc">Iteraciones post-lanzamiento</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">—</div>
+        <div class="row-desc">Aprendizaje del sistema</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-col">
+    <div class="arrow-icon">→</div>
+  </div>
+
+  <div class="card wtf">
+    <div class="card-label">Modelo WTF</div>
+    <div class="card-title">La misma campaña con nuestro sistema</div>
+    <div class="rows">
+      <div class="row">
+        <div class="row-metric">10+</div>
+        <div class="row-desc">Territorios explorados</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">5 días</div>
+        <div class="row-desc">Tiempo de producción</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">50+</div>
+        <div class="row-desc">Piezas curadas por canal</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">∞</div>
+        <div class="row-desc">Optimización en tiempo real</div>
+      </div>
+      <div class="row">
+        <div class="row-metric">✓</div>
+        <div class="row-desc">Cada ciclo mejora el siguiente</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

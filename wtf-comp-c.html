@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1600px;
+    height: 720px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(0,0,0,0.85);
+    border-radius: 24px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 80px;
+  }
+
+  .numbers {
+    display: flex;
+    gap: 80px;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .num-block {
+    text-align: center;
+  }
+
+  .num-value {
+    font-weight: 900;
+    font-size: 120px;
+    letter-spacing: -6px;
+    line-height: 1;
+    background: linear-gradient(135deg, #00B4FF, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .num-unit {
+    font-weight: 100;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 8px;
+  }
+
+  .separator {
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
+    margin-bottom: 20px;
+  }
+
+  /* Versus line */
+  .versus {
+    font-weight: 300;
+    font-size: 18px;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    line-height: 1.8;
+    max-width: 900px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .versus .old {
+    text-decoration: line-through;
+    color: rgba(255,255,255,0.15);
+    font-weight: 300;
+  }
+
+  .versus .new {
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <div class="numbers">
+    <div class="num-block">
+      <div class="num-value">10x</div>
+      <div class="num-unit">territorios</div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="num-block">
+      <div class="num-value">50+</div>
+      <div class="num-unit">piezas curadas</div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="num-block">
+      <div class="num-value">5</div>
+      <div class="num-unit">días</div>
+    </div>
+  </div>
+
+  <div class="versus">
+    vs <span class="old">1 concepto</span> · <span class="old">5 piezas</span> · <span class="old">3 semanas</span> en una agencia tradicional<br>
+    <span class="new">Mismo presupuesto. Distinto sistema. Otro resultado.</span>
+  </div>
+
+</body>
+</html>

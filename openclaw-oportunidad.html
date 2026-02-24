@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oportunidad — AI Assistant as a Service</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  /* === RIVER DIAGONAL BAND === */
+  .hero {
+    position: relative;
+    background: #ffffff;
+    padding: 60px 36px 50px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -60px;
+    right: -60px;
+    height: 140px;
+    background: #CD1831;
+    transform: rotate(-3.5deg);
+    z-index: 0;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 75px;
+    left: -60px;
+    right: -60px;
+    height: 6px;
+    background: #CD1831;
+    transform: rotate(-3.5deg);
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 80px;
+  }
+  .hero-content .wtf-logo {
+    height: 38px;
+    margin-bottom: 8px;
+  }
+  .hero-content .logo-text {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: #1a1a1a;
+  }
+  .hero-content .logo-text span { color: #CD1831; }
+  .hero-content .sub {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #999;
+    margin-top: 6px;
+  }
+  .hero-content .title {
+    font-size: 18px;
+    font-weight: 300;
+    color: #555;
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+  .hero-content .title strong { font-weight: 700; color: #1a1a1a; }
+  
+  .main { padding: 0 36px 40px; }
+  
+  .divider { height: 2px; background: linear-gradient(90deg, transparent, #CD1831, transparent); margin: 20px 0; }
+  .divider-thin { height: 1px; background: linear-gradient(90deg, transparent, #e0e0e0, transparent); margin: 16px 0; }
+  
+  .insight-box {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+    text-align: center;
+    border-left: 5px solid #CD1831;
+  }
+  .insight-box .big { font-size: 19px; font-weight: 700; margin-bottom: 10px; line-height: 1.35; }
+  .insight-box .big span { color: #CD1831; }
+  .insight-box .small { font-size: 11.5px; color: #aaa; line-height: 1.6; }
+  
+  .metrics { display: flex; gap: 10px; margin-bottom: 22px; }
+  .metric-box { flex: 1; text-align: center; padding: 14px 8px; border-radius: 10px; border: 1px solid #e0e0e0; }
+  .metric-box .label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 5px; }
+  .metric-box .value { font-size: 20px; font-weight: 800; color: #1a1a1a; }
+  .metric-box .sub { font-size: 10px; color: #888; margin-top: 2px; }
+  .metric-box.red { background: #CD1831; border-color: #CD1831; }
+  .metric-box.red .label { color: rgba(255,255,255,0.7); }
+  .metric-box.red .value { color: #fff; }
+  .metric-box.red .sub { color: rgba(255,255,255,0.6); }
+  .metric-box.dark { background: #1a1a1a; border-color: #1a1a1a; }
+  .metric-box.dark .label { color: #888; }
+  .metric-box.dark .value { color: #fff; }
+  .metric-box.dark .sub { color: #666; }
+  
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #CD1831;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #CD1831;
+    display: inline-block;
+  }
+  .section-title-wrap { margin-bottom: 14px; }
+  
+  .what-grid { display: flex; gap: 10px; margin-bottom: 22px; }
+  .what-card { flex: 1; background: #fafafa; border-radius: 10px; padding: 16px 14px; border-top: 3px solid #CD1831; }
+  .what-card .icon { font-size: 22px; margin-bottom: 8px; }
+  .what-card .card-title { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .what-card .card-desc { font-size: 11px; color: #666; line-height: 1.5; }
+  
+  .model-grid { display: flex; gap: 10px; margin-bottom: 22px; }
+  .model-card { flex: 1; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px 14px; text-align: center; }
+  .model-card.featured { border: 2px solid #CD1831; }
+  .model-card .model-name { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 6px; }
+  .model-card.featured .model-name { color: #CD1831; }
+  .model-card .model-price { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+  .model-card .model-period { font-size: 10px; color: #aaa; margin-bottom: 8px; }
+  .model-card .model-desc { font-size: 10.5px; color: #666; line-height: 1.5; text-align: left; }
+  .model-card .model-margin { font-size: 10px; font-weight: 700; color: #CD1831; margin-top: 8px; }
+  
+  .target-list { margin-bottom: 22px; }
+  .target-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+  .target-icon { font-size: 20px; min-width: 30px; text-align: center; }
+  .target-info { flex: 1; }
+  .target-who { font-size: 12px; font-weight: 600; color: #1a1a1a; }
+  .target-detail { font-size: 11px; color: #888; }
+  .target-price { font-size: 14px; font-weight: 700; color: #CD1831; min-width: 80px; text-align: right; }
+  
+  .revenue-grid { display: flex; gap: 10px; margin-bottom: 22px; }
+  .rev-card { flex: 1; background: #fafafa; border-radius: 10px; padding: 16px; text-align: center; }
+  .rev-card .rev-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 6px; }
+  .rev-card .rev-clients { font-size: 11px; color: #666; margin-bottom: 4px; }
+  .rev-card .rev-value { font-size: 22px; font-weight: 800; }
+  .rev-card .rev-sub { font-size: 10px; color: #888; margin-top: 2px; }
+  .rev-card.target { background: #CD1831; }
+  .rev-card.target .rev-label { color: rgba(255,255,255,0.7); }
+  .rev-card.target .rev-clients { color: rgba(255,255,255,0.85); }
+  .rev-card.target .rev-value { color: #fff; }
+  .rev-card.target .rev-sub { color: rgba(255,255,255,0.6); }
+  
+  .advantages { display: flex; gap: 10px; margin-bottom: 22px; }
+  .adv-card { flex: 1; border-left: 3px solid #CD1831; padding: 12px 14px; background: #fafafa; border-radius: 0 8px 8px 0; }
+  .adv-card .adv-title { font-size: 11px; font-weight: 700; margin-bottom: 4px; }
+  .adv-card .adv-desc { font-size: 10.5px; color: #666; line-height: 1.5; }
+  
+  .footer {
+    text-align: center;
+    margin-top: 28px;
+    padding: 20px 36px;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -60px;
+    right: -60px;
+    height: 60px;
+    background: #CD1831;
+    transform: rotate(-2deg);
+    z-index: 0;
+  }
+  .footer p { font-size: 10px; color: #888; letter-spacing: 1px; position: relative; z-index: 1; }
+  .footer .wtf-footer { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin-bottom: 6px; position: relative; z-index: 1; }
+  .footer .wtf-footer span { color: #CD1831; }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="logo-text">WTF <span>+</span> AI</div>
+      <div class="sub">Nueva línea de negocio</div>
+      <div class="title"><strong>Asistentes IA personalizados</strong><br>como servicio para empresas en Argentina</div>
+    </div>
+  </div>
+  
+  <div class="main">
+  
+  <div class="divider"></div>
+  
+  <div class="insight-box">
+    <div class="big">No hay nadie vendiendo asistentes IA implementados<br>y personalizados en español en <span>Argentina</span>.</div>
+    <div class="small">El software es open-source y gratis. El valor está en la implementación, personalización y soporte. Costo real: USD 20-50/mes. Precio de venta: USD 150-3.000/mes.</div>
+  </div>
+  
+  <div class="metrics">
+    <div class="metric-box">
+      <div class="label">Inversión</div>
+      <div class="value">~$0</div>
+      <div class="sub">software gratis (MIT)</div>
+    </div>
+    <div class="metric-box">
+      <div class="label">Costo/cliente</div>
+      <div class="value">$30</div>
+      <div class="sub">/mes (server + API)</div>
+    </div>
+    <div class="metric-box red">
+      <div class="label">Margen bruto</div>
+      <div class="value">80%+</div>
+      <div class="sub">servicio puro</div>
+    </div>
+    <div class="metric-box dark">
+      <div class="label">Mercado</div>
+      <div class="value">Vacío</div>
+      <div class="sub">en Latam / español</div>
+    </div>
+  </div>
+  
+  <div class="section-title-wrap"><div class="section-title">Qué vendés</div></div>
+  <div class="what-grid">
+    <div class="what-card">
+      <div class="icon">🤖</div>
+      <div class="card-title">Asistente IA autónomo</div>
+      <div class="card-desc">Vive en WhatsApp o Telegram del cliente. Lee mails, agenda reuniones, busca info, manda mensajes, automatiza tareas.</div>
+    </div>
+    <div class="what-card">
+      <div class="icon">🎯</div>
+      <div class="card-title">Personalizado al negocio</div>
+      <div class="card-desc">Personalidad, memoria, integraciones específicas. No es un chatbot genérico — es un asistente que conoce el negocio.</div>
+    </div>
+    <div class="what-card">
+      <div class="icon">🔧</div>
+      <div class="card-title">Soporte en español</div>
+      <div class="card-desc">Setup, mantenimiento, optimización, capacitación. El cliente no toca nada técnico. Todo funciona desde su celular.</div>
+    </div>
+  </div>
+  
+  <div class="section-title-wrap"><div class="section-title">3 líneas de ingreso</div></div>
+  <div class="model-grid">
+    <div class="model-card">
+      <div class="model-name">Managed</div>
+      <div class="model-price">$150-500</div>
+      <div class="model-period">/mes por cliente</div>
+      <div class="model-desc">Asistente listo para usar. Hosting, soporte, actualizaciones. Para profesionales y PyMEs.</div>
+      <div class="model-margin">Margen: ~85%</div>
+    </div>
+    <div class="model-card featured">
+      <div class="model-name">Implementación</div>
+      <div class="model-price">$2-15K</div>
+      <div class="model-period">one-time + retainer</div>
+      <div class="model-desc">Diagnóstico + setup multi-asistente + integraciones custom. Para empresas medianas/grandes. Retainer $1-3K/mes.</div>
+      <div class="model-margin">Margen: ~75%</div>
+    </div>
+    <div class="model-card">
+      <div class="model-name">Setup</div>
+      <div class="model-price">$500-2K</div>
+      <div class="model-period">one-time</div>
+      <div class="model-desc">Instalación + personalización. El cliente paga su propio hosting después. Fee de soporte opcional.</div>
+      <div class="model-margin">Margen: ~90%</div>
+    </div>
+  </div>
+  
+  <div class="section-title-wrap"><div class="section-title">Target</div></div>
+  <div class="target-list">
+    <div class="target-item">
+      <div class="target-icon">👔</div>
+      <div class="target-info">
+        <div class="target-who">Ejecutivos C-level / Founders</div>
+        <div class="target-detail">Asistente personal premium — agenda, mails, research, seguimiento</div>
+      </div>
+      <div class="target-price">$300-500/mes</div>
+    </div>
+    <div class="target-item">
+      <div class="target-icon">🏢</div>
+      <div class="target-info">
+        <div class="target-who">PyMEs (e-commerce, servicios, agencias)</div>
+        <div class="target-detail">Automatización de soporte, ventas, ops. Múltiples asistentes.</div>
+      </div>
+      <div class="target-price">$500-3K/mes</div>
+    </div>
+    <div class="target-item">
+      <div class="target-icon">⚖️</div>
+      <div class="target-info">
+        <div class="target-who">Profesionales (abogados, contadores, consultores)</div>
+        <div class="target-detail">Gestión de clientes, documentos, agenda, recordatorios</div>
+      </div>
+      <div class="target-price">$150-300/mes</div>
+    </div>
+    <div class="target-item">
+      <div class="target-icon">🏭</div>
+      <div class="target-info">
+        <div class="target-who">Empresas medianas (50-500 empleados)</div>
+        <div class="target-detail">Transformación IA: múltiples asistentes por área + consultoría</div>
+      </div>
+      <div class="target-price">$5-15K setup</div>
+    </div>
+  </div>
+  
+  <div class="section-title-wrap"><div class="section-title">Revenue proyectado</div></div>
+  <div class="revenue-grid">
+    <div class="rev-card">
+      <div class="rev-label">Mes 3</div>
+      <div class="rev-clients">10 clientes managed</div>
+      <div class="rev-value">$2.500</div>
+      <div class="rev-sub">/mes</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-label">Mes 6</div>
+      <div class="rev-clients">20 managed + 2 enterprise</div>
+      <div class="rev-value">$8.000</div>
+      <div class="rev-sub">/mes</div>
+    </div>
+    <div class="rev-card target">
+      <div class="rev-label">Mes 12</div>
+      <div class="rev-clients">50 managed + 5 enterprise</div>
+      <div class="rev-value">$20K+</div>
+      <div class="rev-sub">/mes</div>
+    </div>
+  </div>
+  
+  <div class="section-title-wrap"><div class="section-title">Por qué ahora, por qué WTF</div></div>
+  <div class="advantages">
+    <div class="adv-card">
+      <div class="adv-title">Mercado virgen</div>
+      <div class="adv-desc">Cero implementadores de asistentes IA en español en Argentina. WhatsApp tiene 90%+ de penetración — la interfaz ya existe.</div>
+    </div>
+    <div class="adv-card">
+      <div class="adv-title">Ventana de 12-18 meses</div>
+      <div class="adv-desc">Antes de que las big tech lancen soluciones managed propias. El que planta bandera primero, se queda con el mercado.</div>
+    </div>
+    <div class="adv-card">
+      <div class="adv-title">Sinergia WTF</div>
+      <div class="adv-desc">Ya tenés clientes que necesitan esto. Se ofrece como add-on al servicio de agencia o como línea independiente. Mismo posicionamiento: creatividad + IA.</div>
+    </div>
+  </div>
+  
+  </div><!-- /main -->
+  
+  <div class="footer">
+    <div class="wtf-footer">WTF <span>AGENCY</span></div>
+    <p>AI ASSISTANT AS A SERVICE · OPORTUNIDAD ARGENTINA 2026</p>
+    <p style="margin-top:4px;">Tecnología: OpenClaw (open-source, MIT) · 180K+ GitHub stars · Fundación respaldada por OpenAI</p>
+  </div>
+
+</body>
+</html>
