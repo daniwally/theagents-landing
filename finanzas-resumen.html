@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #0a0e1a;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    padding: 40px;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 36px;
+  }
+  
+  .section {
+    background: #111827;
+    border-radius: 10px;
+    padding: 20px 28px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+  }
+  
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 15px;
+  }
+  
+  .row .label { color: #ccc; font-weight: 400; }
+  .row .sublabel { color: #888; font-size: 12px; }
+  .row .value { font-weight: 600; text-align: right; }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid #1e293b;
+    margin: 10px 0;
+  }
+  
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 4px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  
+  /* Colors */
+  .s-feb { border-color: #f59e0b; }
+  .s-feb .section-title { color: #f59e0b; }
+  .s-feb .value { color: #f59e0b; }
+  
+  .s-mar { border-color: #3b82f6; }
+  .s-mar .section-title { color: #3b82f6; }
+  .s-mar .value { color: #3b82f6; }
+  
+  .s-creditos { border-color: #ef4444; }
+  .s-creditos .section-title { color: #ef4444; }
+  .s-creditos .value { color: #ef4444; }
+  
+  .s-total { border-color: #10b981; }
+  .s-total .section-title { color: #10b981; }
+  .s-total .value { color: #10b981; }
+  
+  .footer {
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    margin-top: 36px;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<h1>GASTOS PERSONALES — WALLY</h1>
+<div class="subtitle">Resumen Ejecutivo | Actualizado 24 Feb 2026</div>
+
+<!-- FEBRERO -->
+<div class="section s-feb">
+  <div class="section-title">▲ VENCIMIENTOS FEBRERO</div>
+  
+  <div class="row">
+    <div>
+      <div class="label">Banco Galicia — Visa</div>
+      <div class="sublabel">Resumen TC · vto 02/03</div>
+    </div>
+    <div class="value">$2.483.357</div>
+  </div>
+  
+  <div class="row">
+    <div>
+      <div class="label">Banco Macro — AMEX ICON</div>
+      <div class="sublabel">Resumen TC · vto 02/03</div>
+    </div>
+    <div class="value">$1.524.855</div>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="label">Cuota Alimentaria</div>
+      <div class="sublabel">Febrero 2026 (base Enero + 2.8%) · vto 28/02</div>
+    </div>
+    <div class="value">$1.144.306</div>
+  </div>
+  
+  <div class="row">
+    <div>
+      <div class="label">Supervielle — Crédito 1</div>
+      <div class="sublabel">Cuota 19/48</div>
+    </div>
+    <div class="value">$471.521</div>
+  </div>
+  
+  <div class="row">
+    <div>
+      <div class="label">Banco Macro — Visa Signature</div>
+      <div class="sublabel">Resumen TC · vto 02/03</div>
+    </div>
+    <div class="value">$378.006</div>
+  </div>
+
+  <hr class="divider">
+  <div class="total-row">
+    <span>TOTAL FEBRERO</span>
+    <span class="value">$6.002.045</span>
+  </div>
+</div>
+
+<!-- MARZO -->
+<div class="section s-mar">
+  <div class="section-title">◆ VENCIMIENTOS MARZO</div>
+  
+  <div class="row">
+    <div>
+      <div class="label">Supervielle — Crédito 1</div>
+      <div class="sublabel">Cuota 20/48</div>
+    </div>
+    <div class="value">$1.555.390</div>
+  </div>
+  
+  <div class="row">
+    <div>
+      <div class="label">Colegio SCMS — Calu</div>
+      <div class="sublabel">Arancel Marzo · 4° Primaria B · vto 13/03</div>
+    </div>
+    <div class="value">$1.383.419</div>
+  </div>
+  
+  <div class="row">
+    <div>
+      <div class="label">Supervielle — Crédito 2</div>
+      <div class="sublabel">Cuota 13/48</div>
+    </div>
+    <div class="value">$698.604</div>
+  </div>
+
+  <hr class="divider">
+  <div class="total-row">
+    <span>TOTAL MARZO</span>
+    <span class="value">$3.637.413</span>
+  </div>
+</div>
+
+<!-- RESUMEN -->
+<div class="section s-total">
+  <div class="section-title">● RESUMEN ACUMULADO</div>
+  
+  <div class="row">
+    <span class="label">Total Febrero</span>
+    <span class="value">$6.002.045</span>
+  </div>
+  <div class="row">
+    <span class="label">Total Marzo (parcial)</span>
+    <span class="value">$3.637.413</span>
+  </div>
+  <hr class="divider">
+  <div class="total-row">
+    <span>TOTAL REGISTRADO</span>
+    <span class="value" style="font-size: 20px;">$9.639.458</span>
+  </div>
+</div>
+
+<div class="footer">Dora — WTF Agency</div>
+
+</body>
+</html>
