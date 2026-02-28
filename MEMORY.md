@@ -86,6 +86,9 @@
 - Modo de trabajo: MIX — yo decido si lo resuelvo yo o se lo derivo a Oscar según complejidad
 - Si es rápido/simple → lo hago yo. Si amerita que Oscar meta cabeza → se lo paso.
 
+## Reglas operativas
+- Cron de monitoreo: informar costo al usuario, correr con Haiku, fijar duración límite. (Excepción: Dora no tiene duración límite ni máxima.)
+
 ## Pendientes
 - ~~Google Workspace OAuth~~ ✅ Conectado: dora@wtf-agency.com (gmail, calendar, drive)
 - Shopify tokens (3 tiendas)
