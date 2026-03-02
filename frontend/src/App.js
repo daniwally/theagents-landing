@@ -4,7 +4,6 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { AgentsGrid } from "./components/AgentsGrid";
 import { HowItWorks } from "./components/HowItWorks";
-import { Packs } from "./components/Packs";
 import { ChatDemo, ChatTrigger } from "./components/ChatDemo";
 import { TrialForm } from "./components/TrialForm";
 import { Footer } from "./components/Footer";
@@ -12,15 +11,8 @@ import { Footer } from "./components/Footer";
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isTrialOpen, setIsTrialOpen] = useState(false);
-  const [selectedPack, setSelectedPack] = useState(null);
 
   const handleTrialClick = () => {
-    setSelectedPack(null);
-    setIsTrialOpen(true);
-  };
-
-  const handlePackSelect = (pack) => {
-    setSelectedPack(pack);
     setIsTrialOpen(true);
   };
 
@@ -44,9 +36,6 @@ function App() {
         {/* How it Works */}
         <HowItWorks />
 
-        {/* Packs */}
-        <Packs onSelectPack={handlePackSelect} />
-
         {/* Footer */}
         <Footer onDemoClick={handleTrialClick} />
       </main>
@@ -62,7 +51,7 @@ function App() {
       <TrialForm 
         isOpen={isTrialOpen} 
         onClose={() => setIsTrialOpen(false)}
-        selectedPack={selectedPack}
+        selectedPack={null}
       />
     </div>
   );

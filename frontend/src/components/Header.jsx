@@ -41,12 +41,6 @@ export const Header = ({ onTrialClick }) => {
               Cómo funciona
             </button>
             <button 
-              onClick={() => scrollTo('packs')}
-              className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest"
-            >
-              Packs
-            </button>
-            <button 
               onClick={onTrialClick}
               className="btn-primary text-sm"
               data-testid="header-cta-trial"
@@ -83,12 +77,6 @@ export const Header = ({ onTrialClick }) => {
                 className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest text-left py-2"
               >
                 Cómo funciona
-              </button>
-              <button 
-                onClick={() => scrollTo('packs')}
-                className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest text-left py-2"
-              >
-                Packs
               </button>
               <button 
                 onClick={onTrialClick}
