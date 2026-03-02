@@ -81,19 +81,8 @@ export const Hero = ({ onCTAClick }) => {
             </div>
           </div>
 
-          {/* Right - stats box */}
-          <div className="lg:col-span-5 hidden lg:flex items-center justify-end">
-            <div className="relative">
-              <div className="w-52 h-52 border border-white/20 backdrop-blur-sm bg-black/30 flex items-center justify-center">
-                <div className="text-[#FFD700] font-mono text-sm text-center">
-                  <div className="mb-2 text-white/60">6 AGENTES</div>
-                  <div className="text-5xl font-black">24/7</div>
-                  <div className="mt-2 text-white/60">ACTIVOS</div>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 w-52 h-52 border border-[#FFD700]/30" />
-            </div>
-          </div>
+          {/* Right - empty space for image */}
+          <div className="lg:col-span-5 hidden lg:block" />
         </div>
 
         {/* Scroll indicator */}
