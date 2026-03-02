@@ -5,15 +5,18 @@ const tiers = [
     id: 'starter',
     name: 'STARTER',
     price: '$3K',
-    period: '/mes',
+    priceType: 'setup único',
+    maintenance: '$350',
+    maintenanceDetail: '/mes por agente',
+    agents: '1 agente',
     icon: Zap,
     description: 'Para empresas que quieren empezar',
     features: [
       '1 agente personalizado',
       'Integración básica',
-      'Soporte por email',
-      '1.000 interacciones/mes',
-      'Dashboard básico',
+      'Soporte incluido',
+      'AWS hosting incluido',
+      'Licencias IA incluidas',
       'Onboarding guiado'
     ],
     cta: 'AGENDAR DEMO',
@@ -23,17 +26,20 @@ const tiers = [
     id: 'pro',
     name: 'PRO',
     price: '$6K',
-    period: '/mes',
+    priceType: 'setup único',
+    maintenance: '$350',
+    maintenanceDetail: '/mes por agente',
+    agents: '3 agentes',
     icon: Crown,
     description: 'Para empresas en crecimiento',
     features: [
       '3 agentes personalizados',
       'Integraciones avanzadas',
       'Soporte prioritario 24/7',
-      '10.000 interacciones/mes',
+      'AWS hosting incluido',
+      'Licencias IA incluidas',
       'Analytics completo',
       'API access',
-      'Custom workflows',
       'Training dedicado'
     ],
     cta: 'AGENDAR DEMO',
@@ -43,19 +49,21 @@ const tiers = [
     id: 'enterprise',
     name: 'ENTERPRISE',
     price: '$12K',
-    period: '/mes',
+    priceType: 'setup único',
+    maintenance: '$350',
+    maintenanceDetail: '/mes por agente',
+    agents: 'Agentes ilimitados',
     icon: Building2,
     description: 'Para empresas que quieren dominar',
     features: [
       'Agentes ilimitados',
       'Integraciones enterprise',
       'Account manager dedicado',
-      'Interacciones ilimitadas',
+      'AWS hosting incluido',
+      'Licencias IA incluidas',
       'White-label disponible',
       'SLA garantizado',
-      'On-premise opcional',
-      'Custom AI training',
-      'Compliance & security'
+      'Custom AI training'
     ],
     cta: 'AGENDAR DEMO',
     featured: false
@@ -88,7 +96,7 @@ export const Pricing = ({ onDemoClick }) => {
           </h2>
           
           <p className="font-light text-neutral-400 max-w-2xl mx-auto text-lg">
-            Elegí el plan que mejor se adapte a tu empresa. Sin contratos largos, sin letra chica.
+            Setup único + mantenimiento mensual. Sin sorpresas, sin letra chica.
           </p>
         </div>
 
@@ -133,18 +141,34 @@ export const Pricing = ({ onDemoClick }) => {
                     {tier.name}
                   </h3>
                   
-                  {/* Price */}
-                  <div className="mb-4">
+                  {/* Setup Price */}
+                  <div className="mb-2">
                     <span className={`font-black text-5xl tracking-tight ${
                       tier.featured ? 'text-[#FFD700]' : 'text-white'
                     }`}>
                       {tier.price}
                     </span>
-                    <span className="text-neutral-500 font-light">{tier.period}</span>
+                  </div>
+                  <p className="text-xs text-neutral-500 uppercase tracking-wider mb-4">
+                    {tier.priceType} • {tier.agents}
+                  </p>
+                  
+                  {/* Maintenance */}
+                  <div className="bg-white/5 border border-white/10 p-4 mb-6">
+                    <p className="text-xs text-neutral-500 uppercase tracking-wider mb-1">
+                      Mantenimiento
+                    </p>
+                    <p className="text-white">
+                      <span className="font-bold text-xl">{tier.maintenance}</span>
+                      <span className="text-neutral-400 text-sm">{tier.maintenanceDetail}</span>
+                    </p>
+                    <p className="text-xs text-neutral-500 mt-1">
+                      Incluye soporte, AWS y licencias IA
+                    </p>
                   </div>
                   
                   {/* Description */}
-                  <p className="font-light text-neutral-400 mb-8">
+                  <p className="font-light text-neutral-400 mb-6">
                     {tier.description}
                   </p>
                   
