@@ -1,52 +1,69 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { AgentsGrid } from "./components/AgentsGrid";
+import { HowItWorks } from "./components/HowItWorks";
+import { Packs } from "./components/Packs";
+import { ChatDemo, ChatTrigger } from "./components/ChatDemo";
+import { TrialForm } from "./components/TrialForm";
+import { Footer } from "./components/Footer";
 
 function App() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isTrialOpen, setIsTrialOpen] = useState(false);
+  const [selectedPack, setSelectedPack] = useState(null);
+
+  const handleTrialClick = () => {
+    setSelectedPack(null);
+    setIsTrialOpen(true);
+  };
+
+  const handlePackSelect = (pack) => {
+    setSelectedPack(pack);
+    setIsTrialOpen(true);
+  };
+
+  const handleChatToggle = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div className="App noise-overlay" data-testid="app-container">
+      {/* Header */}
+      <Header onTrialClick={handleTrialClick} />
+
+      {/* Main content */}
+      <main>
+        {/* Hero Section */}
+        <Hero onCTAClick={handleTrialClick} />
+
+        {/* Agents Grid */}
+        <AgentsGrid />
+
+        {/* How it Works */}
+        <HowItWorks />
+
+        {/* Packs */}
+        <Packs onSelectPack={handlePackSelect} />
+
+        {/* Footer */}
+        <Footer onDemoClick={handleTrialClick} />
+      </main>
+
+      {/* Chat Demo */}
+      {isChatOpen ? (
+        <ChatDemo isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+      ) : (
+        <ChatTrigger onClick={handleChatToggle} />
+      )}
+
+      {/* Trial Form Modal */}
+      <TrialForm 
+        isOpen={isTrialOpen} 
+        onClose={() => setIsTrialOpen(false)}
+        selectedPack={selectedPack}
+      />
     </div>
   );
 }
