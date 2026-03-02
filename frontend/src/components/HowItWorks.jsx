@@ -82,11 +82,20 @@ export const HowItWorks = () => {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 md:mt-24 text-center">
-          <p className="font-light text-neutral-400 mb-6">
-            Tu competencia ya lo tiene. ¿Vas a esperar?
-          </p>
+        {/* Bottom CTA - Provocative message */}
+        <div className="mt-20 md:mt-32 relative">
+          {/* Decorative lines */}
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-[#FFD700]/30 to-transparent" />
+          
+          <div className="relative bg-[#050505] py-12 text-center">
+            <p className="font-black text-3xl md:text-5xl lg:text-6xl tracking-tight uppercase mb-4">
+              Tu competencia<br className="md:hidden" /> 
+              <span className="text-[#FFD700]">ya lo tiene.</span>
+            </p>
+            <p className="font-thin text-2xl md:text-4xl tracking-tight text-white/80">
+              ¿Vas a esperar?
+            </p>
+          </div>
         </div>
       </div>
     </section>
