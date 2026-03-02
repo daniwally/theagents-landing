@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="App noise-overlay" data-testid="app-container">
+    <div className="App bg-main noise-overlay" data-testid="app-container">
       {/* Header */}
       <Header onTrialClick={handleTrialClick} />
 

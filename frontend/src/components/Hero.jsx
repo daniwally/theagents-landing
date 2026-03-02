@@ -13,16 +13,6 @@ export const Hero = ({ onCTAClick }) => {
       className="min-h-screen flex flex-col justify-center relative pt-20 pb-12 overflow-hidden"
       data-testid="hero-section"
     >
-      {/* Background texture */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1772048197106-922b41271750?crop=entropy&cs=srgb&fm=jpg&q=85)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-      
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left content */}

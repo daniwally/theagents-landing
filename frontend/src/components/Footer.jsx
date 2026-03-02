@@ -12,19 +12,9 @@ export const Footer = ({ onDemoClick }) => {
 
   return (
     <footer 
-      className="relative py-24 md:py-32 bg-[#050505] overflow-hidden"
+      className="relative py-24 md:py-32 bg-[#050505]/80 overflow-hidden"
       data-testid="footer"
     >
-      {/* Background texture */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1771790193799-2ee0163f2e87?crop=entropy&cs=srgb&fm=jpg&q=85)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* CTA Section */}
         <div className="text-center mb-24">

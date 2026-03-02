@@ -92,6 +92,27 @@ code, .font-mono {
   font-weight: 900;
 }
 
+/* Background image */
+.bg-main {
+  position: relative;
+}
+
+.bg-main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: -5%;
+  width: 65%;
+  height: 100%;
+  background-image: url('https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/4rnhs0kd_u2462154512_Low-angle_close-up_of_a_person_holding_a_transpar_98891fd1-56d2-4f49-9a89-e0f9a2d9ae83_0%20%281%29.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+  filter: brightness(2) contrast(1.2);
+}
+
 /* Noise texture overlay */
 .noise-overlay::before {
   content: '';
