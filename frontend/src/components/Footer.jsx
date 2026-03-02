@@ -30,7 +30,7 @@ export const Footer = ({ onDemoClick }) => {
         <div className="text-center mb-24">
           <h2 className="font-thin text-4xl md:text-6xl tracking-tight uppercase mb-6">
             ¿Listo para<br />
-            <span className="font-black text-[#00ff88]">escalar?</span>
+            <span className="font-black text-[#FFD700]">escalar?</span>
           </h2>
           <p className="font-light text-neutral-400 mb-8 max-w-lg mx-auto">
             Tu competencia ya lo tiene. Cada día que esperás es un día que perdés.
@@ -80,7 +80,7 @@ export const Footer = ({ onDemoClick }) => {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-black text-xl tracking-tight">THE AGENTS</span>
-                <span className="text-[#00ff88] font-mono text-sm">.wtf</span>
+                <span className="text-[#FFD700] font-mono text-sm">.wtf</span>
               </div>
               <p className="font-light text-sm text-neutral-500">
                 Powered by WTF Agency — 15 años creando marcas. Ahora creamos equipos.
@@ -91,7 +91,7 @@ export const Footer = ({ onDemoClick }) => {
             <div className="flex items-center gap-8">
               <a 
                 href="mailto:hola@theagents.wtf" 
-                className="text-neutral-400 hover:text-[#00ff88] transition-colors text-sm font-light"
+                className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm font-light"
               >
                 hola@theagents.wtf
               </a>

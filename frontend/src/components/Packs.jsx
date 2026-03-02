@@ -66,7 +66,7 @@ export const Packs = ({ onSelectPack }) => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section header */}
         <div className="mb-16">
-          <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#00ff88] mb-4 block">
+          <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-4 block">
             Soluciones
           </span>
           <h2 className="font-bold text-4xl md:text-6xl tracking-tight uppercase">
@@ -84,22 +84,22 @@ export const Packs = ({ onSelectPack }) => {
                 key={pack.id}
                 className={`group relative p-8 border transition-all duration-300 animate-fade-in-up ${
                   pack.featured 
-                    ? 'bg-[#00ff88]/5 border-[#00ff88]/30 hover:border-[#00ff88]' 
-                    : 'bg-[#050505] border-white/10 hover:border-[#00ff88]/50'
+                    ? 'bg-[#FFD700]/5 border-[#FFD700]/30 hover:border-[#FFD700]' 
+                    : 'bg-[#050505] border-white/10 hover:border-[#FFD700]/50'
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
                 data-testid={`pack-${pack.id}`}
               >
                 {/* Featured badge */}
                 {pack.featured && (
-                  <div className="absolute top-0 right-0 bg-[#00ff88] text-black font-bold text-xs tracking-widest uppercase px-4 py-2">
+                  <div className="absolute top-0 right-0 bg-[#FFD700] text-black font-bold text-xs tracking-widest uppercase px-4 py-2">
                     Recomendado
                   </div>
                 )}
 
                 {/* Icon */}
                 <Icon 
-                  className={`mb-6 ${pack.featured ? 'text-[#00ff88]' : 'text-white/60 group-hover:text-[#00ff88]'} transition-colors`} 
+                  className={`mb-6 ${pack.featured ? 'text-[#FFD700]' : 'text-white/60 group-hover:text-[#FFD700]'} transition-colors`} 
                   size={36} 
                 />
 
@@ -109,7 +109,7 @@ export const Packs = ({ onSelectPack }) => {
                 </h3>
 
                 {/* Agents included */}
-                <p className="font-mono text-[#00ff88] text-sm mb-4">
+                <p className="font-mono text-[#FFD700] text-sm mb-4">
                   {pack.agents.join(' + ')}
                 </p>
 
@@ -122,7 +122,7 @@ export const Packs = ({ onSelectPack }) => {
                 <ul className="space-y-2 mb-8">
                   {pack.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <Check className="text-[#00ff88] flex-shrink-0 mt-0.5" size={16} />
+                      <Check className="text-[#FFD700] flex-shrink-0 mt-0.5" size={16} />
                       <span className="font-light text-sm text-neutral-300">{feature}</span>
                     </li>
                   ))}

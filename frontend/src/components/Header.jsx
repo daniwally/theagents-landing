@@ -23,26 +23,26 @@ export const Header = ({ onTrialClick }) => {
             data-testid="logo-link"
           >
             <span className="font-black text-xl tracking-tight">THE AGENTS</span>
-            <span className="text-[#00ff88] font-mono text-sm">.wtf</span>
+            <span className="text-[#FFD700] font-mono text-sm">.wtf</span>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8" data-testid="desktop-nav">
             <button 
               onClick={() => scrollTo('agents')}
-              className="text-neutral-400 hover:text-[#00ff88] transition-colors text-sm uppercase tracking-widest"
+              className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest"
             >
               Agentes
             </button>
             <button 
               onClick={() => scrollTo('how-it-works')}
-              className="text-neutral-400 hover:text-[#00ff88] transition-colors text-sm uppercase tracking-widest"
+              className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest"
             >
               Cómo funciona
             </button>
             <button 
               onClick={() => scrollTo('packs')}
-              className="text-neutral-400 hover:text-[#00ff88] transition-colors text-sm uppercase tracking-widest"
+              className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest"
             >
               Packs
             </button>
@@ -74,19 +74,19 @@ export const Header = ({ onTrialClick }) => {
             <div className="flex flex-col gap-4">
               <button 
                 onClick={() => scrollTo('agents')}
-                className="text-neutral-400 hover:text-[#00ff88] transition-colors text-sm uppercase tracking-widest text-left py-2"
+                className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest text-left py-2"
               >
                 Agentes
               </button>
               <button 
                 onClick={() => scrollTo('how-it-works')}
-                className="text-neutral-400 hover:text-[#00ff88] transition-colors text-sm uppercase tracking-widest text-left py-2"
+                className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest text-left py-2"
               >
                 Cómo funciona
               </button>
               <button 
                 onClick={() => scrollTo('packs')}
-                className="text-neutral-400 hover:text-[#00ff88] transition-colors text-sm uppercase tracking-widest text-left py-2"
+                className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest text-left py-2"
               >
                 Packs
               </button>

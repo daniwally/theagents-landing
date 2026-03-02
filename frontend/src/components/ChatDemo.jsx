@@ -72,7 +72,7 @@ export const ChatDemo = ({ isOpen, onClose }) => {
       {/* Header */}
       <div className="p-4 border-b border-white/10 bg-[#050505] flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 bg-[#00ff88] rounded-full animate-pulse-green" />
+          <div className="w-3 h-3 bg-[#FFD700] rounded-full animate-pulse-green" />
           <div>
             <h4 className="font-bold text-sm">ROCK</h4>
             <p className="text-xs text-neutral-500 font-mono">Agente de Ventas • Online</p>
@@ -98,7 +98,7 @@ export const ChatDemo = ({ isOpen, onClose }) => {
               className={`max-w-[85%] p-3 ${
                 msg.role === 'user' 
                   ? 'bg-white text-black text-sm' 
-                  : 'bg-[#111] text-[#00ff88] font-mono text-sm border-l-2 border-[#00ff88]'
+                  : 'bg-[#111] text-[#FFD700] font-mono text-sm border-l-2 border-[#FFD700]'
               }`}
               data-testid={`chat-message-${msg.role}`}
             >
@@ -109,7 +109,7 @@ export const ChatDemo = ({ isOpen, onClose }) => {
         
         {isLoading && (
           <div className="flex justify-start">
-            <div className="bg-[#111] text-[#00ff88] p-3 border-l-2 border-[#00ff88]">
+            <div className="bg-[#111] text-[#FFD700] p-3 border-l-2 border-[#FFD700]">
               <Loader2 className="animate-spin" size={16} />
             </div>
           </div>
@@ -127,14 +127,14 @@ export const ChatDemo = ({ isOpen, onClose }) => {
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Escribí tu mensaje..."
-            className="flex-1 bg-[#111] border border-white/10 px-4 py-3 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-[#00ff88] transition-colors"
+            className="flex-1 bg-[#111] border border-white/10 px-4 py-3 text-white text-sm placeholder:text-neutral-600 focus:outline-none focus:border-[#FFD700] transition-colors"
             disabled={isLoading}
             data-testid="chat-input"
           />
           <button
             onClick={sendMessage}
             disabled={isLoading || !input.trim()}
-            className="bg-[#00ff88] text-black p-3 hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-[#FFD700] text-black p-3 hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             data-testid="chat-send-button"
           >
             <Send size={18} />
@@ -149,7 +149,7 @@ export const ChatTrigger = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-8 right-8 bg-[#00ff88] text-black p-4 hover:bg-white transition-colors shadow-lg glow-green z-40"
+      className="fixed bottom-8 right-8 bg-[#FFD700] text-black p-4 hover:bg-white transition-colors shadow-lg glow-green z-40"
       data-testid="chat-trigger"
     >
       <MessageSquare size={24} />

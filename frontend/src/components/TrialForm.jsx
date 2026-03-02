@@ -64,7 +64,7 @@ export const TrialForm = ({ isOpen, onClose, selectedPack }) => {
 
         {status === 'success' ? (
           <div className="text-center py-8" data-testid="trial-success">
-            <CheckCircle className="text-[#00ff88] mx-auto mb-6" size={64} />
+            <CheckCircle className="text-[#FFD700] mx-auto mb-6" size={64} />
             <h3 className="font-black text-2xl mb-4">¡Listo!</h3>
             <p className="font-light text-neutral-400 mb-6">
               Te contactamos en las próximas 24hs para activar tu trial.
@@ -81,7 +81,7 @@ export const TrialForm = ({ isOpen, onClose, selectedPack }) => {
           <>
             {/* Header */}
             <div className="mb-8">
-              <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#00ff88] mb-4 block">
+              <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-4 block">
                 Trial gratuito 7 días
               </span>
               <h3 className="font-black text-3xl tracking-tight mb-2">
@@ -90,7 +90,7 @@ export const TrialForm = ({ isOpen, onClose, selectedPack }) => {
               <p className="font-light text-neutral-400">
                 Completá tus datos y te contactamos para activar tu equipo de agentes.
                 {selectedPack && (
-                  <span className="block text-[#00ff88] mt-2 font-mono text-sm">
+                  <span className="block text-[#FFD700] mt-2 font-mono text-sm">
                     Pack seleccionado: {selectedPack.name}
                   </span>
                 )}

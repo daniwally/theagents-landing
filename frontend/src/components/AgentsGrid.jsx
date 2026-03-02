@@ -69,7 +69,7 @@ const AgentCard = ({ agent, onClick, index }) => {
   
   return (
     <div 
-      className={`group relative bg-[#050505] border border-white/5 hover:border-[#00ff88]/50 transition-all duration-500 cursor-pointer overflow-hidden animate-fade-in-up ${
+      className={`group relative bg-[#050505] border border-white/5 hover:border-[#FFD700]/50 transition-all duration-500 cursor-pointer overflow-hidden animate-fade-in-up ${
         index === 0 || index === 5 ? 'md:row-span-2' : ''
       }`}
       onClick={() => onClick(agent)}
@@ -90,14 +90,14 @@ const AgentCard = ({ agent, onClick, index }) => {
       <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-end min-h-[300px] md:min-h-[400px]">
         {/* Icon */}
         <div className="mb-4">
-          <Icon className="text-[#00ff88] group-hover:scale-110 transition-transform duration-300" size={32} />
+          <Icon className="text-[#FFD700] group-hover:scale-110 transition-transform duration-300" size={32} />
         </div>
 
         {/* Name & Role */}
         <h3 className="font-black text-2xl md:text-3xl tracking-tight mb-1">
           {agent.name}
         </h3>
-        <p className="font-bold text-xs tracking-[0.2em] uppercase text-[#00ff88] mb-3">
+        <p className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-3">
           {agent.role}
         </p>
 
@@ -108,7 +108,7 @@ const AgentCard = ({ agent, onClick, index }) => {
 
         {/* View more indicator */}
         <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="text-[#00ff88] font-mono text-xs">
+          <span className="text-[#FFD700] font-mono text-xs">
             Click para ver más →
           </span>
         </div>
@@ -155,12 +155,12 @@ const AgentModal = ({ agent, onClose }) => {
 
         {/* Content */}
         <div className="p-8 -mt-20 relative z-10">
-          <Icon className="text-[#00ff88] mb-4" size={40} />
+          <Icon className="text-[#FFD700] mb-4" size={40} />
           
           <h2 className="font-black text-4xl tracking-tight mb-2">
             {agent.name}
           </h2>
-          <p className="font-bold text-xs tracking-[0.2em] uppercase text-[#00ff88] mb-4">
+          <p className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-4">
             {agent.role}
           </p>
           
@@ -198,7 +198,7 @@ export const AgentsGrid = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section header */}
         <div className="mb-16">
-          <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#00ff88] mb-4 block">
+          <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-4 block">
             El equipo
           </span>
           <h2 className="font-bold text-4xl md:text-6xl tracking-tight uppercase">

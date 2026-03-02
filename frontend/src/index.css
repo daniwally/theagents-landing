@@ -11,19 +11,19 @@
   --card-foreground: 0 0% 100%;
   --popover: 0 0% 4%;
   --popover-foreground: 0 0% 100%;
-  --primary: 145 100% 50%;
+  --primary: 51 100% 50%;
   --primary-foreground: 0 0% 0%;
   --secondary: 0 0% 7%;
   --secondary-foreground: 0 0% 100%;
   --muted: 0 0% 20%;
   --muted-foreground: 0 0% 60%;
-  --accent: 145 100% 50%;
+  --accent: 51 100% 50%;
   --accent-foreground: 0 0% 0%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --border: 0 0% 20%;
   --input: 0 0% 20%;
-  --ring: 145 100% 50%;
+  --ring: 51 100% 50%;
   --radius: 0px;
 }
 
@@ -66,12 +66,12 @@ code, .font-mono {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00ff88;
+  background: #FFD700;
 }
 
 /* Selection */
 ::selection {
-  background-color: #00ff88;
+  background-color: #FFD700;
   color: #000000;
 }
 
@@ -210,7 +210,7 @@ code, .font-mono {
   content: '|';
   animation: blink 1s infinite;
   margin-left: 2px;
-  color: #00ff88;
+  color: #FFD700;
 }
 
 /* Border animations */
@@ -225,7 +225,7 @@ code, .font-mono {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #00ff88;
+  background-color: #FFD700;
   transition: width 0.3s ease;
 }
 
@@ -235,7 +235,7 @@ code, .font-mono {
 
 /* Text gradient (only for specific use) */
 .text-gradient-green {
-  background: linear-gradient(90deg, #00ff88, #ffffff);
+  background: linear-gradient(90deg, #FFD700, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -243,7 +243,7 @@ code, .font-mono {
 
 /* Button styles */
 .btn-primary {
-  background-color: #00ff88;
+  background-color: #FFD700;
   color: #000000;
   font-weight: 700;
   text-transform: uppercase;
@@ -296,7 +296,7 @@ code, .font-mono {
 }
 
 .input-minimal:focus {
-  border-color: #00ff88;
+  border-color: #FFD700;
 }
 
 /* Card hover effects */

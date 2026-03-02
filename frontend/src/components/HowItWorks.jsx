@@ -37,7 +37,7 @@ export const HowItWorks = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section header */}
         <div className="mb-16 md:mb-24">
-          <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#00ff88] mb-4 block">
+          <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-4 block">
             El proceso
           </span>
           <h2 className="font-bold text-4xl md:text-6xl tracking-tight uppercase">
@@ -53,18 +53,18 @@ export const HowItWorks = () => {
             return (
               <div 
                 key={step.number}
-                className="group border-l border-white/20 pl-6 py-4 hover:border-[#00ff88] transition-colors animate-fade-in-up"
+                className="group border-l border-white/20 pl-6 py-4 hover:border-[#FFD700] transition-colors animate-fade-in-up"
                 style={{ animationDelay: `${index * 150}ms` }}
                 data-testid={`step-${step.number}`}
               >
                 {/* Number */}
-                <span className="font-mono text-[#00ff88] text-sm mb-4 block">
+                <span className="font-mono text-[#FFD700] text-sm mb-4 block">
                   {step.number}
                 </span>
 
                 {/* Icon */}
                 <Icon 
-                  className="text-white/40 group-hover:text-[#00ff88] transition-colors mb-4" 
+                  className="text-white/40 group-hover:text-[#FFD700] transition-colors mb-4" 
                   size={28} 
                 />
 
