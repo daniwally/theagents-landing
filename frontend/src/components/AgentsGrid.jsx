@@ -202,7 +202,7 @@ export const AgentsGrid = () => {
             El equipo
           </span>
           <h2 className="font-bold text-4xl md:text-6xl tracking-tight uppercase">
-            6 Agentes.<br />
+            Múltiples Agentes.<br />
             <span className="font-thin">Infinitas posibilidades.</span>
           </h2>
         </div>
