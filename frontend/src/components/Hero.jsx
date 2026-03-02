@@ -1,5 +1,7 @@
 import { ArrowDown } from 'lucide-react';
 
+const HERO_IMAGE = 'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/4rnhs0kd_u2462154512_Low-angle_close-up_of_a_person_holding_a_transpar_98891fd1-56d2-4f49-9a89-e0f9a2d9ae83_0%20%281%29.png';
+
 export const Hero = ({ onCTAClick }) => {
   const scrollToAgents = () => {
     const element = document.getElementById('agents');
@@ -13,10 +15,27 @@ export const Hero = ({ onCTAClick }) => {
       className="min-h-screen flex flex-col justify-center relative pt-20 pb-12 overflow-hidden"
       data-testid="hero-section"
     >
+      {/* Background image - right side */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div 
+          className="absolute top-0 right-0 w-full lg:w-3/5 h-full"
+          style={{
+            backgroundImage: `url(${HERO_IMAGE})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'brightness(1.8)',
+          }}
+        />
+        {/* Gradient overlay from left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 via-40% to-transparent" />
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left content */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-7">
             {/* Label */}
             <div className="mb-8 animate-fade-in-up">
               <span className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700]">
@@ -62,17 +81,17 @@ export const Hero = ({ onCTAClick }) => {
             </div>
           </div>
 
-          {/* Right decorative element */}
-          <div className="lg:col-span-4 hidden lg:flex items-center justify-center">
+          {/* Right - stats box */}
+          <div className="lg:col-span-5 hidden lg:flex items-center justify-end">
             <div className="relative">
-              <div className="w-48 h-48 border border-white/10 flex items-center justify-center">
+              <div className="w-52 h-52 border border-white/20 backdrop-blur-sm bg-black/30 flex items-center justify-center">
                 <div className="text-[#FFD700] font-mono text-sm text-center">
-                  <div className="mb-2">6 AGENTES</div>
-                  <div className="text-4xl font-black">24/7</div>
-                  <div className="mt-2">ACTIVOS</div>
+                  <div className="mb-2 text-white/60">6 AGENTES</div>
+                  <div className="text-5xl font-black">24/7</div>
+                  <div className="mt-2 text-white/60">ACTIVOS</div>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-48 h-48 border border-[#FFD700]/20" />
+              <div className="absolute -top-4 -right-4 w-52 h-52 border border-[#FFD700]/30" />
             </div>
           </div>
         </div>
