@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Palette, Megaphone, BarChart3, Settings, Briefcase, ShoppingCart, X } from 'lucide-react';
+import { Palette, Megaphone, BarChart3, Settings, Briefcase, ShoppingCart, X, Headphones, Users, Calculator, Code, FileText, TrendingUp } from 'lucide-react';
 
 const agents = [
   {
@@ -61,6 +61,36 @@ const agents = [
     image: 'https://images.unsplash.com/photo-1669388178278-442a9f305f97?crop=entropy&cs=srgb&fm=jpg&q=85',
     skills: ['Lead Qualification', 'Sales Outreach', 'Follow-ups', 'Objection Handling', 'CRM Management'],
     description: 'Rock no descansa hasta cerrar. Califica leads, hace follow-ups y convierte prospectos en clientes.'
+  },
+  {
+    id: 'sofia',
+    name: 'SOFIA',
+    role: 'Agente de Soporte',
+    tagline: 'Tu customer success que enamora clientes',
+    icon: Headphones,
+    image: 'https://images.unsplash.com/photo-1769636929231-3cd7f853d038?crop=entropy&cs=srgb&fm=jpg&q=85',
+    skills: ['Customer Support', 'Ticket Management', 'Live Chat', 'FAQ Automation', 'NPS Tracking'],
+    description: 'Sofia convierte problemas en oportunidades. Responde consultas, resuelve tickets y mantiene a tus clientes felices 24/7.'
+  },
+  {
+    id: 'hugo',
+    name: 'HUGO',
+    role: 'Agente de RRHH',
+    tagline: 'Tu people manager que cuida el equipo',
+    icon: Users,
+    image: 'https://images.unsplash.com/photo-1764545973653-94c40d993495?crop=entropy&cs=srgb&fm=jpg&q=85',
+    skills: ['Recruiting', 'Onboarding', 'Employee Experience', 'HR Admin', 'Culture Building'],
+    description: 'Hugo gestiona el talento como nadie. Desde screening de CVs hasta onboarding, mantiene tu equipo humano en forma.'
+  },
+  {
+    id: 'tina',
+    name: 'TINA',
+    role: 'Agente de Finanzas',
+    tagline: 'Tu CFO que no deja pasar un número',
+    icon: Calculator,
+    image: 'https://images.unsplash.com/photo-1770894807442-108cc33c0a7a?crop=entropy&cs=srgb&fm=jpg&q=85',
+    skills: ['Bookkeeping', 'Expense Tracking', 'Financial Reports', 'Invoicing', 'Budget Control'],
+    description: 'Tina mantiene tus finanzas en orden. Procesa facturas, trackea gastos y genera reportes para que tomes mejores decisiones.'
   }
 ];
 
@@ -69,9 +99,7 @@ const AgentCard = ({ agent, onClick, index }) => {
   
   return (
     <div 
-      className={`group relative bg-[#050505] border border-white/5 hover:border-[#FFD700]/50 transition-all duration-500 cursor-pointer overflow-hidden animate-fade-in-up ${
-        index === 0 || index === 5 ? 'md:row-span-2' : ''
-      }`}
+      className={`group relative bg-[#050505] border border-white/5 hover:border-[#FFD700]/50 transition-all duration-500 cursor-pointer overflow-hidden animate-fade-in-up`}
       onClick={() => onClick(agent)}
       data-testid={`agent-card-${agent.id}`}
       style={{ animationDelay: `${index * 100}ms` }}
@@ -207,9 +235,9 @@ export const AgentsGrid = () => {
           </h2>
         </div>
 
-        {/* Bento Grid */}
+        {/* Bento Grid - 3x3 */}
         <div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px] md:auto-rows-[250px]"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[320px]"
           data-testid="agents-grid"
         >
           {agents.map((agent, index) => (
