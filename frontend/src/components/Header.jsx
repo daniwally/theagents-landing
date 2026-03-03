@@ -19,12 +19,14 @@ export const Header = ({ onTrialClick }) => {
           {/* Logo */}
           <a 
             href="/" 
-            className="flex items-center gap-3 group"
+            className="flex flex-col group"
             data-testid="logo-link"
           >
-            <span className="font-black text-xl tracking-tight">THE AGENTS</span>
-            <span className="text-neutral-500 font-light text-sm">by</span>
-            <span className="text-[#FFD700] font-black text-xl tracking-tight">WTF</span>
+            <span className="font-black text-xl tracking-tight leading-none">THE AGENTS</span>
+            <span className="flex items-center gap-1 mt-0.5">
+              <span className="text-neutral-500 font-light text-xs">by</span>
+              <span className="text-[#FFD700] font-black text-sm tracking-tight">WTF</span>
+            </span>
           </a>
 
           {/* Desktop Nav */}
