@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Agents — Tu próximo equipo no tiene LinkedIn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray-medium: #6c757d;
+            --gray-dark: #1a1a1a;
+            --accent: #00ff88; /* Green electric */
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .cta-button {
+            background: var(--black);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--accent);
+            color: var(--black);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+            background: var(--gray-light);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--gray-medium);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-button {
+            font-size: 18px;
+            padding: 16px 32px;
+        }
+
+        /* Agents Section */
+        .agents {
+            padding: 120px 0;
+        }
+
+        .agents h2 {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .agents .subtitle {
+            font-size: 18px;
+            color: var(--gray-medium);
+            text-align: center;
+            margin-bottom: 64px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 64px;
+        }
+
+        .agent-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .agent-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .agent-header {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .agent-emoji {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .agent-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .agent-role {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-bottom: 12px;
+        }
+
+        .agent-tagline {
+            font-size: 15px;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--black);
+        }
+
+        .agent-details {
+            padding: 0 24px 24px;
+            border-top: 1px solid #eee;
+            display: none;
+        }
+
+        .agent-card.expanded .agent-details {
+            display: block;
+        }
+
+        .agent-skills {
+            margin: 20px 0;
+        }
+
+        .agent-skills h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .agent-skills ul {
+            list-style: none;
+        }
+
+        .agent-skills li {
+            padding: 2px 0;
+            color: var(--gray-medium);
+            font-size: 13px;
+        }
+
+        .agent-skills li:before {
+            content: "→ ";
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 120px 0;
+            background: var(--gray-light);
+        }
+
+        .how-it-works h2 {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            background: var(--black);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 24px;
+        }
+
+        .step h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .step p {
+            color: var(--gray-medium);
+        }
+
+        /* Pricing Section - Dark Premium */
+        .pricing {
+            background: var(--black);
+            color: var(--white);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,255,136,0.03) 0%, rgba(0,0,0,0.97) 50%, rgba(0,255,136,0.02) 100%);
+            pointer-events: none;
+        }
+
+        .pricing .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .pricing-category {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--gray-medium);
+            margin-bottom: 16px;
+        }
+
+        .pricing-title {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .pricing-subtitle {
+            font-size: 18px;
+            color: var(--gray-medium);
+            font-weight: 300;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 40px 32px;
+            text-align: left;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.1);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: -12px;
+            right: 32px;
+            background: var(--accent);
+            color: var(--black);
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+
+        .pricing-tier {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+
+        .pricing-price {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .pricing-period {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-bottom: 32px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .pricing-cta {
+            background: var(--white);
+            color: var(--black);
+            width: 100%;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .pricing-cta:hover {
+            background: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .pricing-footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+        }
+
+        .pricing-footer-brand {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        .pricing-footer-tagline {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-top: 8px;
+            font-weight: 300;
+        }
+
+        /* Powered by WTF */
+        .powered-by {
+            padding: 60px 0;
+            background: var(--gray-dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .powered-by h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .powered-by p {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .wtf-logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .agents h2,
+            .how-it-works h2,
+            .pricing-title {
+                font-size: 32px;
+            }
+
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .pricing-card {
+                padding: 32px 24px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">The Agents</a>
+                <a href="#pricing" class="cta-button">Ver Precios</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tu próximo equipo<br>no tiene LinkedIn.</h1>
+            <p>Agentes IA especializados que trabajan 24/7 para tu empresa. Cada uno con personalidad, skills y experiencia única.</p>
+            <a href="#agents" class="cta-button">Conocé tu equipo</a>
+        </div>
+    </section>
+
+    <!-- Agents -->
+    <section id="agents" class="agents">
+        <div class="container">
+            <h2>12 Agentes. Infinitas Posibilidades.</h2>
+            <p class="subtitle">ESPECIALISTAS EN CADA ÁREA DE TU NEGOCIO</p>
+            <div class="agents-grid">
+                
+                <!-- CORE AGENTS -->
+                <!-- Vera - Diseño -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">🎨</div>
+                        <div class="agent-name">Vera</div>
+                        <div class="agent-role">Agente de Diseño</div>
+                        <div class="agent-tagline">"Tu directora de arte que nunca duerme."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Genera piezas gráficas con tu identidad de marca</li>
+                                <li>Adapta formatos: posts, stories, banners, ads</li>
+                                <li>Arma presentaciones comerciales y pitch decks</li>
+                                <li>Crea mockups de producto y packaging</li>
+                                <li>Mantiene brand book vivo y actualizado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milo - Comunicación -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">📣</div>
+                        <div class="agent-name">Milo</div>
+                        <div class="agent-role">Agente de Comunicación</div>
+                        <div class="agent-tagline">"Tu community manager con cerebro de estratega."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Redacta copies para todas las redes sociales</li>
+                                <li>Arma calendarios de contenido semanales</li>
+                                <li>Monitorea menciones y responde comentarios</li>
+                                <li>Escribe newsletters y email marketing</li>
+                                <li>Genera guiones para reels y videos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nora - Marketing -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">📊</div>
+                        <div class="agent-name">Nora</div>
+                        <div class="agent-role">Agente de Marketing</div>
+                        <div class="agent-tagline">"Tu CMO fraccionada que analiza todo."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Reporta métricas de todas las campañas</li>
+                                <li>Calcula ROI, CAC, LTV, ROAS automáticamente</li>
+                                <li>Investiga competencia y benchmarks</li>
+                                <li>Sugiere optimizaciones de budget</li>
+                                <li>Arma reportes visuales ejecutivos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Otto - Gestión -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">⚙️</div>
+                        <div class="agent-name">Otto</div>
+                        <div class="agent-role">Agente de Gestión</div>
+                        <div class="agent-tagline">"Tu project manager que no se olvida de nada."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Coordina proyectos entre equipos</li>
+                                <li>Agenda reuniones con contexto perfecto</li>
+                                <li>Hace follow-up automático inteligente</li>
+                                <li>Genera minutas y tracking de decisiones</li>
+                                <li>Alerta sobre cuellos de botella</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lena - Administración -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">💼</div>
+                        <div class="agent-name">Lena</div>
+                        <div class="agent-role">Agente de Administración</div>
+                        <div class="agent-tagline">"Tu back-office que procesa todo sin quejarse."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Procesa facturas y documentos legales</li>
+                                <li>Controla gastos y categoriza movimientos</li>
+                                <li>Gestiona inbox: clasifica y prioriza</li>
+                                <li>Genera reportes financieros periódicos</li>
+                                <li>Alerta vencimientos y obligaciones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rock - Ventas -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">🛒</div>
+                        <div class="agent-name">Rock</div>
+                        <div class="agent-role">Agente de Ventas</div>
+                        <div class="agent-tagline">"Tu closer que trabaja 24/7."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Responde leads al instante por WhatsApp</li>
+                                <li>Califica prospectos con preguntas inteligentes</li>
+                                <li>Follow-up automático personalizado</li>
+                                <li>Agenda demos y presenta propuestas</li>
+                                <li>Reporta pipeline y convierte leads</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPECIALIST AGENTS -->
+                <!-- Ana - Analytics -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">🎯</div>
+                        <div class="agent-name">Ana</div>
+                        <div class="agent-role">Agente de Analytics</div>
+                        <div class="agent-tagline">"Tu data scientist que convierte números en decisiones."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Crea dashboards y reportes automáticos</li>
+                                <li>Analiza comportamiento de usuarios</li>
+                                <li>Predice tendencias y oportunidades</li>
+                                <li>Optimiza embudo de conversión</li>
+                                <li>Reporta insights accionables semanales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safe - Compliance -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">🛡️</div>
+                        <div class="agent-name">Safe</div>
+                        <div class="agent-role">Agente de Compliance</div>
+                        <div class="agent-tagline">"Tu legal counsel que te mantiene protegido."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Monitorea cambios regulatorios</li>
+                                <li>Audita contratos y acuerdos</li>
+                                <li>Gestiona políticas de privacidad</li>
+                                <li>Alerta sobre riesgos legales</li>
+                                <li>Documenta compliance automático</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Link - Integración -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">🌐</div>
+                        <div class="agent-name">Link</div>
+                        <div class="agent-role">Agente de Integración</div>
+                        <div class="agent-tagline">"Tu integration specialist que conecta todo."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Conecta APIs y automatiza workflows</li>
+                                <li>Sincroniza datos entre plataformas</li>
+                                <li>Crea automations personalizadas</li>
+                                <li>Monitorea integraciones 24/7</li>
+                                <li>Debuggea y optimiza conexiones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice - Atención -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">📞</div>
+                        <div class="agent-name">Voice</div>
+                        <div class="agent-role">Agente de Atención</div>
+                        <div class="agent-tagline">"Tu customer success que nunca descansa."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Atiende consultas 24/7 por múltiples canales</li>
+                                <li>Resuelve issues técnicos comunes</li>
+                                <li>Escala casos complejos al equipo</li>
+                                <li>Trackea satisfacción de clientes</li>
+                                <li>Genera reportes de soporte detallados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spark - Innovation -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">💡</div>
+                        <div class="agent-name">Spark</div>
+                        <div class="agent-role">Agente de Innovación</div>
+                        <div class="agent-tagline">"Tu research lead que encuentra oportunidades."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Investiga tendencias y tecnologías emergentes</li>
+                                <li>Identifica oportunidades de mercado</li>
+                                <li>Analiza disruptores y competencia</li>
+                                <li>Propone nuevos productos/servicios</li>
+                                <li>Genera reportes de innovación mensual</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teach - Capacitación -->
+                <div class="agent-card" onclick="toggleAgent(this)">
+                    <div class="agent-header">
+                        <div class="agent-emoji">🎓</div>
+                        <div class="agent-name">Teach</div>
+                        <div class="agent-role">Agente de Capacitación</div>
+                        <div class="agent-tagline">"Tu learning & development que escala conocimiento."</div>
+                    </div>
+                    <div class="agent-details">
+                        <div class="agent-skills">
+                            <h4>Skills:</h4>
+                            <ul>
+                                <li>Crea programas de onboarding personalizados</li>
+                                <li>Genera documentación y tutoriales</li>
+                                <li>Evalúa competencias del equipo</li>
+                                <li>Diseña curricula de capacitación</li>
+                                <li>Trackea progreso y certifica skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Cómo funciona</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Elegís tus agentes</h3>
+                    <p>Uno solo o varios. Cada uno se especializa en lo que tu empresa necesita.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Los personalizamos</h3>
+                    <p>Cada agente aprende tu marca, tu tono, tus procesos. Como un onboarding real.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Se integran</h3>
+                    <p>Con tus herramientas: Gmail, WhatsApp, planillas, CRM. Todo conectado.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Arrancan a trabajar</h3>
+                    <p>En 5 días están operativos. Tu equipo creció sin contratar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <div class="pricing-category">AI AGENTS — 2026</div>
+                <h2 class="pricing-title">Tu propio agente inteligente</h2>
+                <p class="pricing-subtitle">Tecnología + expertise + personalización premium</p>
+            </div>
+            
+            <div class="pricing-grid">
+                
+                <!-- Starter -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">STARTER</div>
+                    <div class="pricing-price">$3,000</div>
+                    <div class="pricing-period">Setup único + mantenimiento mensual</div>
+                    <ul class="pricing-features">
+                        <li>1 agente especializado</li>
+                        <li>Personalidad y memoria persistente</li>
+                        <li>Integración básica (Email + WhatsApp)</li>
+                        <li>Onboarding personalizado</li>
+                        <li>Soporte por email</li>
+                        <li>Reportes semanales</li>
+                    </ul>
+                    <a href="#demo" class="pricing-cta">AGENDAR DEMO</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="pricing-card featured">
+                    <div class="pricing-tier">PRO</div>
+                    <div class="pricing-price">$6,000</div>
+                    <div class="pricing-period">Setup único + mantenimiento mensual</div>
+                    <ul class="pricing-features">
+                        <li>3 agentes coordinados</li>
+                        <li>Multi-canal (Email, WhatsApp, Slack)</li>
+                        <li>Integraciones avanzadas (CRM + herramientas)</li>
+                        <li>Automatizaciones personalizadas</li>
+                        <li>Dashboard de métricas</li>
+                        <li>Soporte prioritario + call mensual</li>
+                        <li>Actualizaciones trimestrales</li>
+                    </ul>
+                    <a href="#demo" class="pricing-cta">AGENDAR DEMO</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">ENTERPRISE</div>
+                    <div class="pricing-price">$12,000</div>
+                    <div class="pricing-period">Setup único + mantenimiento mensual</div>
+                    <ul class="pricing-features">
+                        <li>Equipo completo de agentes</li>
+                        <li>Ecosistema multicanal completo</li>
+                        <li>APIs e integraciones custom</li>
+                        <li>Workflows empresariales</li>
+                        <li>Account manager dedicado</li>
+                        <li>SLA garantizado</li>
+                        <li>Desarrollo a medida</li>
+                        <li>Capacitación del equipo</li>
+                    </ul>
+                    <a href="#demo" class="pricing-cta">AGENDAR DEMO</a>
+                </div>
+
+            </div>
+
+            <div class="pricing-footer">
+                <div class="pricing-footer-brand">WTF AGENCY</div>
+                <div class="pricing-footer-tagline">BRIEF DESTROYERS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Powered by WTF -->
+    <section class="powered-by">
+        <div class="container">
+            <h2>Powered by WTF Agency</h2>
+            <p>15 años creando marcas. Ahora creamos equipos.</p>
+            <div class="wtf-logo">WTF</div>
+        </div>
+    </section>
+
+    <script>
+        function toggleAgent(card) {
+            card.classList.toggle('expanded');
+        }
+    </script>
+
+</body>
+</html>
