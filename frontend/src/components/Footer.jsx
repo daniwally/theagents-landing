@@ -38,7 +38,7 @@ export const Footer = ({ onDemoClick }) => {
 
         {/* Powered by WTF Agency - Partnership Section */}
         <div className="mb-20 py-16 border-t border-b border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
             {/* Left - Logo and branding */}
             <div className="text-center md:text-left">
               <a 
@@ -78,6 +78,18 @@ export const Footer = ({ onDemoClick }) => {
                 <span>→</span>
               </a>
             </div>
+          </div>
+
+          {/* Client logos */}
+          <div className="mt-12">
+            <p className="font-bold text-xs tracking-[0.2em] uppercase text-neutral-600 text-center mb-6">
+              Marcas que confían en WTF Agency
+            </p>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/ypjvloxh_szya9zmc_Screenshot%202026-02-02%20at%2012.03.04%E2%80%AFPM.png" 
+              alt="Clientes de WTF Agency - Honda, Ford, Peugeot, Samsung, Lenovo, Motorola, Absolut, Quilmes y más"
+              className="w-full max-w-4xl mx-auto opacity-70 hover:opacity-90 transition-opacity duration-500"
+            />
           </div>
         </div>
 
