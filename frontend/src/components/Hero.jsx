@@ -2,11 +2,11 @@ import { ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const HERO_IMAGES = [
-  'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/4rnhs0kd_u2462154512_Low-angle_close-up_of_a_person_holding_a_transpar_98891fd1-56d2-4f49-9a89-e0f9a2d9ae83_0%20%281%29.png',
-  'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/hobchh69_u2462154512_Low-angle_close-up_of_a_person__snowflakes_caught_401be9d9-3c87-429f-a3ad-12c005df5ee7_0.png',
   'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/vz1tin0o_u2462154512_woman_modern_model_about_to_looking_on_a_vert_ram_bcb620c8-9935-4cd2-9411-6261f4d1c979_3%20%281%29.png',
   'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/1b4vz4ol_u2462154512_woman_blonde_modern_model_about_to_looking_on_a_v_69767286-611b-4d34-b76f-e0932459286a_0.png',
   'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/pz4a0246_u2462154512_woman_modern_model_about_to_looking_on_a_vert_ram_746021fc-e5da-4958-8e7d-66ab9b60d8ab_1.png',
+  'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/hobchh69_u2462154512_Low-angle_close-up_of_a_person__snowflakes_caught_401be9d9-3c87-429f-a3ad-12c005df5ee7_0.png',
+  'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/4rnhs0kd_u2462154512_Low-angle_close-up_of_a_person_holding_a_transpar_98891fd1-56d2-4f49-9a89-e0f9a2d9ae83_0%20%281%29.png',
 ];
 
 export const Hero = ({ onCTAClick }) => {
