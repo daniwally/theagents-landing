@@ -9,15 +9,15 @@ from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+from anthropic import Anthropic
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # MongoDB connection
-mongo_url = os.environ['MONGO_URL']
+mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
 client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+db = client[os.environ.get('DB_NAME', 'theagents')]
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -69,56 +69,41 @@ Tu objetivo es:
 2. Explicar cómo los agentes de The Agents pueden ayudar
 3. Guiar hacia agendar una demo o iniciar trial gratuito
 
-Los 6 agentes disponibles son:
+Los agentes disponibles son:
 - VERA: Agente de Diseño - Directora de arte 24/7
 - MILO: Agente de Comunicación - Community manager estratégico  
 - NORA: Agente de Marketing - CMO fraccionada
 - OTTO: Agente de Gestión - Project manager impecable
 - LENA: Agente de Administración - Back-office incansable
 - ROCK: Agente de Ventas - Closer 24/7 (vos mismo)
-
-Packs disponibles:
-- Pack Agencia: Milo + Nora + Otto
-- Pack E-commerce: Rock + Lena + Vera
-- Pack Profesionales: Otto + Lena
-- Pack Full: Los 6 agentes
+- SOFIA: Agente de Soporte - Customer success 24/7
+- HUGO: Agente de RRHH - People manager
+- TINA: Agente de Finanzas - CFO digital
 
 Mantené respuestas cortas y conversacionales (2-3 oraciones máximo). Siempre terminá con una pregunta para mantener la conversación."""
 
-# Chat sessions storage (in-memory for simplicity, persisted messages in MongoDB)
-chat_instances = {}
+# Chat sessions storage
+chat_sessions = {}
 
-async def get_or_create_chat(session_id: str) -> LlmChat:
-    """Get existing chat or create new one with message history from DB"""
-    if session_id not in chat_instances:
-        chat = LlmChat(
-            api_key=os.environ.get('EMERGENT_LLM_KEY'),
-            session_id=session_id,
-            system_message=ROCK_SYSTEM_PROMPT
-        ).with_model("anthropic", "claude-sonnet-4-5-20250929")
-        
-        # Load previous messages from DB
-        messages = await db.chat_messages.find(
-            {"session_id": session_id},
-            {"_id": 0}
-        ).sort("timestamp", 1).to_list(100)
-        
-        # Replay messages to rebuild context
-        for msg in messages:
-            if msg["role"] == "user":
-                user_msg = UserMessage(text=msg["content"])
-                # We need to add to history without re-calling the API
-                chat._messages.append({"role": "user", "content": msg["content"]})
-            elif msg["role"] == "assistant":
-                chat._messages.append({"role": "assistant", "content": msg["content"]})
-        
-        chat_instances[session_id] = chat
+def get_anthropic_client():
+    """Get Anthropic client with API key"""
+    api_key = os.environ.get('ANTHROPIC_API_KEY')
+    if not api_key:
+        raise HTTPException(status_code=500, detail="ANTHROPIC_API_KEY not configured")
+    return Anthropic(api_key=api_key)
+
+async def get_chat_history(session_id: str) -> list:
+    """Get chat history from MongoDB"""
+    messages = await db.chat_messages.find(
+        {"session_id": session_id},
+        {"_id": 0}
+    ).sort("timestamp", 1).to_list(50)
     
-    return chat_instances[session_id]
+    return [{"role": msg["role"], "content": msg["content"]} for msg in messages]
 
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "The Agents API - Powered by WTF Agency"}
 
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
@@ -131,7 +116,7 @@ async def create_status_check(input: StatusCheckCreate):
 
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
+    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(100)
     for check in status_checks:
         if isinstance(check['timestamp'], str):
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
@@ -166,7 +151,7 @@ async def create_trial_request(trial: TrialRequest):
 @api_router.get("/trials", response_model=List[TrialResponse])
 async def get_trial_requests():
     """Get all trial requests"""
-    trials = await db.trial_requests.find({}, {"_id": 0}).to_list(1000)
+    trials = await db.trial_requests.find({}, {"_id": 0}).to_list(100)
     return trials
 
 @api_router.post("/chat", response_model=ChatResponse)
@@ -175,7 +160,8 @@ async def chat_with_rock(chat_message: ChatMessage):
     session_id = chat_message.session_id or str(uuid.uuid4())
     
     try:
-        chat = await get_or_create_chat(session_id)
+        # Get Anthropic client
+        anthropic_client = get_anthropic_client()
         
         # Save user message to DB
         user_doc = {
@@ -186,23 +172,35 @@ async def chat_with_rock(chat_message: ChatMessage):
         }
         await db.chat_messages.insert_one(user_doc)
         
-        # Get response from Claude
-        response = await chat.send_message(UserMessage(text=chat_message.message))
+        # Get chat history
+        history = await get_chat_history(session_id)
+        
+        # Call Anthropic API
+        response = anthropic_client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=500,
+            system=ROCK_SYSTEM_PROMPT,
+            messages=history
+        )
+        
+        assistant_response = response.content[0].text
         
         # Save assistant response to DB
         assistant_doc = {
             "session_id": session_id,
             "role": "assistant",
-            "content": response,
+            "content": assistant_response,
             "timestamp": datetime.now(timezone.utc).isoformat()
         }
         await db.chat_messages.insert_one(assistant_doc)
         
-        return ChatResponse(response=response, session_id=session_id)
+        return ChatResponse(response=assistant_response, session_id=session_id)
         
     except Exception as e:
         logging.error(f"Chat error: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Error en el chat: {str(e)}")
+        # Return a fallback response if API fails
+        fallback = "¡Hola! Parece que tengo un problema técnico. ¿Podés escribir a hello@wtf-agency.com y te contactamos? 🙌"
+        return ChatResponse(response=fallback, session_id=session_id)
 
 # Include the router in the main app
 app.include_router(api_router)
