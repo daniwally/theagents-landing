@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { AgentsGrid } from "./components/AgentsGrid";
 import { HowItWorks } from "./components/HowItWorks";
+import { WhyUs } from "./components/WhyUs";
 import { Pricing } from "./components/Pricing";
 import { ChatDemo, ChatTrigger } from "./components/ChatDemo";
 import { TrialForm } from "./components/TrialForm";
@@ -36,6 +37,9 @@ function App() {
 
         {/* How it Works */}
         <HowItWorks />
+
+        {/* Why Us - 15 años */}
+        <WhyUs />
 
         {/* Pricing */}
         <Pricing onDemoClick={handleTrialClick} />
