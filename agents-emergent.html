@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Agents — Tu próximo equipo no tiene LinkedIn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .noise-overlay::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.02' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+        .bg-main { background: #000; }
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-main noise-overlay text-white overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">The Agents</div>
+            <button class="bg-white text-black px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-all">
+                Probá gratis
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center relative pt-20 pb-12 overflow-hidden">
+        <!-- Background image -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-0 right-0 w-full lg:w-3/5 h-full" 
+                 style="background-image: url('https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/4rnhs0kd_u2462154512_Low-angle_close-up_of_a_person_holding_a_transpar_98891fd1-56d2-4f49-9a89-e0f9a2d9ae83_0%20%281%29.png'); 
+                        background-size: cover; 
+                        background-position: center; 
+                        filter: brightness(1.8);"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/95 via-40% to-transparent"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl">
+                <div class="mb-6">
+                    <span class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm border border-white/20">
+                        <span class="mr-2">🚀</span>
+                        AI AGENTS — 2026
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+                    <span class="gradient-text">Tu próximo equipo</span><br>
+                    <span class="text-white">no tiene LinkedIn.</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl text-gray-300 mb-12 leading-relaxed max-w-2xl">
+                    Agentes IA especializados que trabajan 24/7 para tu empresa. Cada uno con personalidad, skills y experiencia única.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="document.getElementById('agents').scrollIntoView({behavior: 'smooth'})" class="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+                        Conocé tu equipo
+                    </button>
+                    <button class="border border-white/30 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-white/10 transition-all">
+                        Ver demo en vivo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+            <div class="animate-bounce">
+                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Grid -->
+    <section id="agents" class="py-24 bg-gray-950/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="gradient-text">12 Agentes.</span><br>
+                    <span class="text-white">Infinitas Posibilidades.</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Cada agente es un especialista en su área, trabajando en perfecta sincronía para potenciar tu negocio.
+                </p>
+            </div>
+
+            <!-- Core Agents -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-300">AGENTES CORE</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Vera -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h3 class="text-xl font-bold mb-2">Vera</h3>
+                        <p class="text-gray-400 mb-4">Agente de Diseño</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu directora de arte que nunca duerme."</p>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Genera piezas gráficas con tu identidad</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Adapta formatos: posts, stories, ads</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Arma presentaciones comerciales</div>
+                        </div>
+                    </div>
+
+                    <!-- Milo -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">📣</div>
+                        <h3 class="text-xl font-bold mb-2">Milo</h3>
+                        <p class="text-gray-400 mb-4">Agente de Comunicación</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu community manager con cerebro de estratega."</p>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Redacta copies para todas las redes</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Arma calendarios de contenido</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Monitorea menciones 24/7</div>
+                        </div>
+                    </div>
+
+                    <!-- Nora -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">📊</div>
+                        <h3 class="text-xl font-bold mb-2">Nora</h3>
+                        <p class="text-gray-400 mb-4">Agente de Marketing</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu CMO fraccionada que analiza todo."</p>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Reporta métricas de campañas</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Calcula ROI, CAC, LTV automático</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Investiga competencia y mercado</div>
+                        </div>
+                    </div>
+
+                    <!-- Otto -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold mb-2">Otto</h3>
+                        <p class="text-gray-400 mb-4">Agente de Gestión</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu project manager que no se olvida de nada."</p>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Coordina proyectos entre equipos</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Agenda reuniones con contexto</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Follow-up automático inteligente</div>
+                        </div>
+                    </div>
+
+                    <!-- Lena -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">💼</div>
+                        <h3 class="text-xl font-bold mb-2">Lena</h3>
+                        <p class="text-gray-400 mb-4">Agente de Administración</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu back-office que procesa todo sin quejarse."</p>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Procesa facturas y documentos</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Controla gastos automáticamente</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Gestiona inbox y prioriza</div>
+                        </div>
+                    </div>
+
+                    <!-- Rock -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">🛒</div>
+                        <h3 class="text-xl font-bold mb-2">Rock</h3>
+                        <p class="text-gray-400 mb-4">Agente de Ventas</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu closer que trabaja 24/7."</p>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Responde leads al instante</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Follow-up automático personalizado</div>
+                            <div class="flex items-start"><span class="text-green-400 mr-2">→</span> Reporta pipeline completo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialist Agents -->
+            <div>
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-300">AGENTES ESPECIALISTAS</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Ana -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold mb-2">Ana</h3>
+                        <p class="text-gray-400 mb-4">Agente de Analytics</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu data scientist que convierte números en decisiones."</p>
+                    </div>
+
+                    <!-- Safe -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">🛡️</div>
+                        <h3 class="text-xl font-bold mb-2">Safe</h3>
+                        <p class="text-gray-400 mb-4">Agente de Compliance</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu legal counsel que te mantiene protegido."</p>
+                    </div>
+
+                    <!-- Link -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <h3 class="text-xl font-bold mb-2">Link</h3>
+                        <p class="text-gray-400 mb-4">Agente de Integración</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu integration specialist que conecta todo."</p>
+                    </div>
+
+                    <!-- Voice -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">📞</div>
+                        <h3 class="text-xl font-bold mb-2">Voice</h3>
+                        <p class="text-gray-400 mb-4">Agente de Atención</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu customer success que nunca descansa."</p>
+                    </div>
+
+                    <!-- Spark -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-xl font-bold mb-2">Spark</h3>
+                        <p class="text-gray-400 mb-4">Agente de Innovación</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu research lead que encuentra oportunidades."</p>
+                    </div>
+
+                    <!-- Teach -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all group hover:transform hover:scale-105">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-xl font-bold mb-2">Teach</h3>
+                        <p class="text-gray-400 mb-4">Agente de Capacitación</p>
+                        <p class="text-sm text-gray-300 italic mb-4">"Tu learning specialist que escala conocimiento."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5"></div>
+        <div class="relative z-10 container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <span class="text-sm font-medium text-gray-400 tracking-widest">AI AGENTS — 2026</span>
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-light mb-6">
+                    <span class="gradient-text">Tu propio agente</span><br>
+                    <span class="text-white">inteligente</span>
+                </h2>
+                <p class="text-xl text-gray-400">Tecnología + expertise + personalización premium</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Starter -->
+                <div class="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-600 transition-all">
+                    <h3 class="text-green-400 font-semibold mb-2">STARTER</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">$3,000</span>
+                        <p class="text-gray-400 mt-2">Setup único + mantenimiento mensual</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> 1 agente especializado</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Personalidad y memoria persistente</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Integración básica (Email + WhatsApp)</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Onboarding personalizado</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Soporte por email</li>
+                    </ul>
+                    <button class="w-full bg-white text-black py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all">
+                        AGENDAR DEMO
+                    </button>
+                </div>
+
+                <!-- Pro -->
+                <div class="bg-gray-900/40 border-2 border-green-400 rounded-2xl p-8 backdrop-blur-sm relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-green-400 text-black px-4 py-1 rounded-full text-sm font-bold">POPULAR</span>
+                    </div>
+                    <h3 class="text-green-400 font-semibold mb-2">PRO</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">$6,000</span>
+                        <p class="text-gray-400 mt-2">Setup único + mantenimiento mensual</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> 3 agentes coordinados</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Multi-canal (Email, WhatsApp, Slack)</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Integraciones avanzadas</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Dashboard de métricas</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Soporte prioritario</li>
+                    </ul>
+                    <button class="w-full bg-green-400 text-black py-4 rounded-xl font-semibold hover:bg-green-300 transition-all">
+                        AGENDAR DEMO
+                    </button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-gray-900/40 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm hover:border-gray-600 transition-all">
+                    <h3 class="text-green-400 font-semibold mb-2">ENTERPRISE</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">$12,000</span>
+                        <p class="text-gray-400 mt-2">Setup único + mantenimiento mensual</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Equipo completo de agentes</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Ecosistema multicanal completo</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> APIs e integraciones custom</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Account manager dedicado</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✓</span> Desarrollo a medida</li>
+                    </ul>
+                    <button class="w-full bg-white text-black py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all">
+                        AGENDAR DEMO
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 pt-12 border-t border-gray-800">
+                <h3 class="text-2xl font-bold text-green-400 mb-2">WTF AGENCY</h3>
+                <p class="text-gray-400">BRIEF DESTROYERS</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-gray-950 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold mb-4">Powered by WTF Agency</h3>
+                <p class="text-gray-400 mb-8">15 años creando marcas. Ahora creamos equipos.</p>
+                <div class="text-4xl font-bold text-green-400">WTF</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
