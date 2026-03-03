@@ -29,11 +29,11 @@ const tiers = [
     priceType: 'setup único',
     maintenance: '$350',
     maintenanceDetail: '/mes por agente',
-    agents: '3 agentes',
+    agents: '2 agentes',
     icon: Crown,
     description: 'Para empresas en crecimiento',
     features: [
-      '3 agentes personalizados',
+      '2 agentes personalizados',
       'Integraciones avanzadas',
       'Soporte prioritario 24/7',
       'AWS hosting incluido',
@@ -52,11 +52,11 @@ const tiers = [
     priceType: 'setup único',
     maintenance: '$350',
     maintenanceDetail: '/mes por agente',
-    agents: 'Agentes ilimitados',
+    agents: 'Hasta 3 agentes',
     icon: Building2,
     description: 'Para empresas que quieren dominar',
     features: [
-      'Agentes ilimitados',
+      'Hasta 3 agentes personalizados',
       'Integraciones enterprise',
       'Account manager dedicado',
       'AWS hosting incluido',
@@ -203,6 +203,43 @@ export const Pricing = ({ onDemoClick }) => {
               </div>
             );
           })}
+        </div>
+
+        {/* Integrations banner */}
+        <div className="mb-16 p-8 border border-white/10 bg-[#080808]">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <h3 className="font-black text-2xl md:text-3xl tracking-tight mb-2">
+                +500 integraciones
+              </h3>
+              <p className="font-light text-neutral-400">
+                Los mejores empleados que existen, conectados con todas tus herramientas
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+                Gmail
+              </div>
+              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+                Odoo
+              </div>
+              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+                Slack
+              </div>
+              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+                HubSpot
+              </div>
+              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+                Notion
+              </div>
+              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+                WhatsApp
+              </div>
+              <div className="px-4 py-2 bg-[#FFD700]/10 border border-[#FFD700]/30 text-sm font-bold text-[#FFD700]">
+                + cientos más
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Footer */}
