@@ -115,27 +115,27 @@ const AgentCard = ({ agent, onClick, index }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-end min-h-[300px] md:min-h-[400px]">
+      <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-end min-h-[340px] md:min-h-[380px]">
         {/* Icon */}
-        <div className="mb-4">
-          <Icon className="text-[#FFD700] group-hover:scale-110 transition-transform duration-300" size={32} />
+        <div className="mb-3">
+          <Icon className="text-[#FFD700] group-hover:scale-110 transition-transform duration-300" size={28} />
         </div>
 
         {/* Name & Role */}
-        <h3 className="font-black text-2xl md:text-3xl tracking-tight mb-1">
+        <h3 className="font-black text-xl md:text-2xl tracking-tight mb-1">
           {agent.name}
         </h3>
-        <p className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-3">
+        <p className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-2">
           {agent.role}
         </p>
 
         {/* Tagline */}
-        <p className="font-light text-sm md:text-base text-neutral-300">
+        <p className="font-light text-sm text-neutral-300 leading-relaxed">
           {agent.tagline}
         </p>
 
         {/* View more indicator */}
-        <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-[#FFD700] font-mono text-xs">
             Click para ver más →
           </span>
@@ -237,7 +237,7 @@ export const AgentsGrid = () => {
 
         {/* Bento Grid - 3x3 */}
         <div 
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[320px]"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[380px]"
           data-testid="agents-grid"
         >
           {agents.map((agent, index) => (
