@@ -36,25 +36,48 @@ export const Footer = ({ onDemoClick }) => {
           </div>
         </div>
 
-        {/* Supported by WTF Agency */}
-        <div className="mb-16">
-          <p className="font-bold text-xs tracking-[0.2em] uppercase text-neutral-600 text-center mb-8">
-            Supported by
-          </p>
-          <div className="flex justify-center">
-            <a 
-              href="https://www.wtf-agency.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group flex items-center gap-6 p-6 border border-white/10 hover:border-[#FFD700]/50 transition-all duration-300"
-              data-testid="wtf-agency-link"
-            >
-              <img 
-                src="https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/tvusoxyn_logo-wtf.png" 
-                alt="WTF Agency - Brief Destroyers"
-                className="h-16 md:h-20 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
-              />
-            </a>
+        {/* Powered by WTF Agency - Partnership Section */}
+        <div className="mb-20 py-16 border-t border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left - Logo and branding */}
+            <div className="text-center md:text-left">
+              <a 
+                href="https://www.wtf-agency.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block group"
+                data-testid="wtf-agency-link"
+              >
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/tvusoxyn_logo-wtf.png" 
+                  alt="WTF Agency - Brief Destroyers"
+                  className="h-20 md:h-24 w-auto opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                />
+              </a>
+            </div>
+
+            {/* Right - Story */}
+            <div>
+              <p className="font-bold text-xs tracking-[0.2em] uppercase text-[#FFD700] mb-4">
+                Una empresa de WTF Agency
+              </p>
+              <h3 className="font-black text-2xl md:text-3xl tracking-tight mb-4">
+                15 años creando marcas.<br />
+                <span className="font-thin text-neutral-400">Ahora creamos equipos.</span>
+              </h3>
+              <p className="font-light text-neutral-400 leading-relaxed mb-6">
+                The Agents nace de la experiencia de WTF Agency trabajando con las marcas más exigentes de Latinoamérica. Cada agente está diseñado con el mismo nivel de estrategia y creatividad que aplicamos a nuestros clientes.
+              </p>
+              <a 
+                href="https://www.wtf-agency.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#FFD700] font-bold text-sm uppercase tracking-wider hover:text-white transition-colors"
+              >
+                Conocé WTF Agency
+                <span>→</span>
+              </a>
+            </div>
           </div>
         </div>
 
