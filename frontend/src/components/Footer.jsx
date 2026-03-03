@@ -80,10 +80,10 @@ export const Footer = ({ onDemoClick }) => {
             {/* Links */}
             <div className="flex items-center gap-8">
               <a 
-                href="mailto:hola@theagents.wtf" 
+                href="mailto:hello@wtf-agency.com" 
                 className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm font-light"
               >
-                hola@theagents.wtf
+                hello@wtf-agency.com
               </a>
               <span className="text-neutral-700">|</span>
               <span className="text-neutral-500 text-sm font-light">
