@@ -1,14 +1,5 @@
 export const Footer = ({ onDemoClick }) => {
   const currentYear = new Date().getFullYear();
-  
-  // Placeholder logos - rectangles representing client logos
-  const clientLogos = [
-    { name: 'Cliente 1' },
-    { name: 'Cliente 2' },
-    { name: 'Cliente 3' },
-    { name: 'Cliente 4' },
-    { name: 'Cliente 5' },
-  ];
 
   return (
     <footer 
@@ -45,21 +36,25 @@ export const Footer = ({ onDemoClick }) => {
           </div>
         </div>
 
-        {/* Client logos */}
+        {/* Supported by WTF Agency */}
         <div className="mb-16">
           <p className="font-bold text-xs tracking-[0.2em] uppercase text-neutral-600 text-center mb-8">
-            Confían en nosotros
+            Supported by
           </p>
-          <div className="flex flex-wrap justify-center gap-8 opacity-40">
-            {clientLogos.map((logo, i) => (
-              <div 
-                key={i}
-                className="w-24 h-8 bg-white/20 flex items-center justify-center"
-                data-testid={`client-logo-${i}`}
-              >
-                <span className="text-xs font-mono text-neutral-500">LOGO</span>
-              </div>
-            ))}
+          <div className="flex justify-center">
+            <a 
+              href="https://www.wtf-agency.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-6 p-6 border border-white/10 hover:border-[#FFD700]/50 transition-all duration-300"
+              data-testid="wtf-agency-link"
+            >
+              <img 
+                src="https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/tvusoxyn_logo-wtf.png" 
+                alt="WTF Agency - Brief Destroyers"
+                className="h-16 md:h-20 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              />
+            </a>
           </div>
         </div>
 
@@ -86,9 +81,14 @@ export const Footer = ({ onDemoClick }) => {
                 hello@wtf-agency.com
               </a>
               <span className="text-neutral-700">|</span>
-              <span className="text-neutral-500 text-sm font-light">
-                6 oficinas en Latam
-              </span>
+              <a 
+                href="https://www.wtf-agency.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm font-light"
+              >
+                wtf-agency.com
+              </a>
             </div>
           </div>
 
