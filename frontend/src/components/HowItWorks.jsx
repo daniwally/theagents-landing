@@ -88,12 +88,17 @@ export const HowItWorks = () => {
           <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-[#FFD700]/30 to-transparent" />
           
           <div className="relative bg-[#050505] py-12 text-center">
-            <p className="font-black text-3xl md:text-5xl lg:text-6xl tracking-tight uppercase mb-4">
+            <p className="font-black text-3xl md:text-5xl lg:text-6xl tracking-tight uppercase mb-6">
               Tu competencia<br className="md:hidden" /> 
               <span className="text-[#FFD700]">ya lo tiene.</span>
             </p>
-            <p className="font-thin text-2xl md:text-4xl tracking-tight text-white/80">
-              ¿Vas a esperar?
+            <p className="font-black text-4xl md:text-6xl lg:text-7xl tracking-tight uppercase">
+              <span className="text-white/30">¿Vas a</span>{" "}
+              <span className="relative inline-block">
+                <span className="text-[#FFD700]">esperar</span>
+                <span className="absolute -bottom-2 left-0 right-0 h-1 bg-[#FFD700]"></span>
+              </span>
+              <span className="text-white/30">?</span>
             </p>
           </div>
         </div>
