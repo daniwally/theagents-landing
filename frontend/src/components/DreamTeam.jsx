@@ -17,9 +17,11 @@ export const DreamTeam = ({ onCTAClick }) => {
             El equipo que<br />
             <span className="font-thin text-neutral-400">siempre soñaste.</span>
           </h2>
-          <p className="font-light text-lg text-neutral-400 max-w-2xl mx-auto">
-            Experiencia senior global al alcance de tu mano.{' '}
-            <span className="text-white">Disponibles 24/7, sin vacaciones, sin excusas.</span>
+          <p className="font-light text-lg text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+            Imaginá tener un equipo de especialistas senior trabajando para vos las 24 horas del día, los 365 días del año.{' '}
+            <span className="text-white font-medium">Sin reuniones innecesarias. Sin licencias. Sin rotación. Sin excusas.</span>{' '}
+            Cada agente domina su área como un director con 15 años de experiencia: tu diseñadora entrega campañas a las 3AM, tu CFO analiza números mientras dormís, tu closer cierra ventas en feriados.{' '}
+            <span className="text-[#FFD700]">Es el equipo que las Fortune 500 tienen, pero al alcance de tu empresa.</span>
           </p>
         </div>
 
