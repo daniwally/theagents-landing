@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
-from anthropic import Anthropic
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -85,12 +85,12 @@ Mantené respuestas cortas y conversacionales (2-3 oraciones máximo). Siempre t
 # Chat sessions storage
 chat_sessions = {}
 
-def get_anthropic_client():
-    """Get Anthropic client with API key"""
-    api_key = os.environ.get('ANTHROPIC_API_KEY')
+def get_llm_key():
+    """Get Emergent LLM key"""
+    api_key = os.environ.get('EMERGENT_LLM_KEY')
     if not api_key:
-        raise HTTPException(status_code=500, detail="ANTHROPIC_API_KEY not configured")
-    return Anthropic(api_key=api_key)
+        raise HTTPException(status_code=500, detail="EMERGENT_LLM_KEY not configured")
+    return api_key
 
 async def get_chat_history(session_id: str) -> list:
     """Get chat history from MongoDB"""
@@ -160,8 +160,7 @@ async def chat_with_rock(chat_message: ChatMessage):
     session_id = chat_message.session_id or str(uuid.uuid4())
     
     try:
-        # Get Anthropic client
-        anthropic_client = get_anthropic_client()
+        api_key = get_llm_key()
         
         # Save user message to DB
         user_doc = {
@@ -172,18 +171,25 @@ async def chat_with_rock(chat_message: ChatMessage):
         }
         await db.chat_messages.insert_one(user_doc)
         
-        # Get chat history
+        # Get prior chat history (excludes the message we just saved)
         history = await get_chat_history(session_id)
         
-        # Call Anthropic API
-        response = anthropic_client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=500,
-            system=ROCK_SYSTEM_PROMPT,
-            messages=history
-        )
+        # Build initial_messages with system prompt + all prior messages except the latest user msg
+        initial_msgs = [{"role": "system", "content": ROCK_SYSTEM_PROMPT}]
+        for msg in history[:-1]:
+            initial_msgs.append({"role": msg["role"], "content": msg["content"]})
         
-        assistant_response = response.content[0].text
+        # Create LlmChat instance with history pre-loaded
+        chat = LlmChat(
+            api_key=api_key,
+            session_id=session_id,
+            system_message=ROCK_SYSTEM_PROMPT,
+            initial_messages=initial_msgs
+        ).with_model("anthropic", "claude-sonnet-4-20250514")
+        
+        # Send the latest user message
+        user_msg = UserMessage(text=chat_message.message)
+        assistant_response = await chat.send_message(user_msg)
         
         # Save assistant response to DB
         assistant_doc = {
@@ -198,8 +204,7 @@ async def chat_with_rock(chat_message: ChatMessage):
         
     except Exception as e:
         logging.error(f"Chat error: {str(e)}")
-        # Return a fallback response if API fails
-        fallback = "¡Hola! Parece que tengo un problema técnico. ¿Podés escribir a hello@wtf-agency.com y te contactamos? 🙌"
+        fallback = "¡Hola! Parece que tengo un problema técnico. ¿Podés escribir a hello@wtf-agency.com y te contactamos?"
         return ChatResponse(response=fallback, session_id=session_id)
 
 # Include the router in the main app
