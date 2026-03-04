@@ -233,6 +233,10 @@ export const AgentsGrid = () => {
             Múltiples Agentes.<br />
             <span className="font-thin">Infinitas posibilidades.</span>
           </h2>
+          <p className="font-light text-lg md:text-xl text-neutral-400 mt-6 max-w-3xl leading-relaxed">
+            Armá tu propio equipo de expertos en cada área, que trabajan juntos y se comunican entre ellos.{' '}
+            <span className="text-white font-normal">Ahorrá costos de manera inmediata</span> sin perder calidad ni capacidad de respuesta.
+          </p>
         </div>
 
         {/* Bento Grid - 3x3 */}
