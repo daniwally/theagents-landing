@@ -206,38 +206,79 @@ export const Pricing = ({ onDemoClick }) => {
         </div>
 
         {/* Integrations banner */}
-        <div className="mb-16 p-8 border border-white/10 bg-[#080808]">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="font-black text-2xl md:text-3xl tracking-tight mb-2">
-                +500 integraciones
-              </h3>
-              <p className="font-light text-neutral-400">
-                Los mejores empleados que existen, conectados con todas tus herramientas
-              </p>
+        <div className="mb-16 p-8 md:p-12 border border-white/10 bg-[#080808]">
+          <div className="text-center mb-8">
+            <h3 className="font-black text-3xl md:text-4xl tracking-tight mb-3">
+              +500 integraciones
+            </h3>
+            <p className="font-light text-lg text-neutral-400 max-w-2xl mx-auto">
+              Tus nuevos empleados ya conocen todas tus herramientas.{' '}
+              <span className="text-white">Se conectan al instante y empiezan a trabajar.</span>
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Gmail
             </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
-                Gmail
-              </div>
-              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
-                Odoo
-              </div>
-              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
-                Slack
-              </div>
-              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
-                HubSpot
-              </div>
-              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
-                Notion
-              </div>
-              <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
-                WhatsApp
-              </div>
-              <div className="px-4 py-2 bg-[#FFD700]/10 border border-[#FFD700]/30 text-sm font-bold text-[#FFD700]">
-                + cientos más
-              </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Google Calendar
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Odoo
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Slack
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              HubSpot
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Notion
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              WhatsApp
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Salesforce
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Trello
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Asana
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Shopify
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              WooCommerce
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Zapier
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Stripe
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              MercadoLibre
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Instagram
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Facebook
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              LinkedIn
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Mailchimp
+            </div>
+            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
+              Zoom
+            </div>
+            <div className="px-4 py-2 bg-[#FFD700]/10 border border-[#FFD700]/30 text-sm font-bold text-[#FFD700]">
+              + cientos más
             </div>
           </div>
         </div>
