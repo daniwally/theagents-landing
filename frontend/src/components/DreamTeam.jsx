@@ -1,4 +1,4 @@
-const TEAM_IMAGE = 'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/wrazgd2a_u2462154512_Prompt_THE_AGENTS_by_WTF_hero_campaign_visual_age_ba281ea8-2d95-4348-9f46-af1fb3517bed_2.png';
+const TEAM_IMAGE = 'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/7pse4orn_u2462154512_THE_AGENTS_by_WTF_hero_campaign_visual._Next-gene_5aeeebb1-1eef-43f6-8788-bc94d794c165_3.png';
 
 export const DreamTeam = ({ onCTAClick }) => {
   return (
@@ -18,8 +18,8 @@ export const DreamTeam = ({ onCTAClick }) => {
             <span className="font-thin text-neutral-400">siempre soñaste.</span>
           </h2>
           <p className="font-light text-lg text-neutral-400 max-w-2xl mx-auto">
-            Profesionales digitales de élite, disponibles 24/7, sin vacaciones, sin excusas.{' '}
-            <span className="text-white">Listos para trabajar para vos.</span>
+            Experiencia senior global al alcance de tu mano.{' '}
+            <span className="text-white">Disponibles 24/7, sin vacaciones, sin excusas.</span>
           </p>
         </div>
 
