@@ -1,4 +1,4 @@
-const TEAM_IMAGE = 'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/7pse4orn_u2462154512_THE_AGENTS_by_WTF_hero_campaign_visual._Next-gene_5aeeebb1-1eef-43f6-8788-bc94d794c165_3.png';
+const TEAM_IMAGE = 'https://customer-assets.emergentagent.com/job_9f3a9b77-23e8-4a65-b4a7-2e2c2ccb6b8d/artifacts/80p267wd_u2462154512_THE_AGENTS_by_WTF_hero_campaign_visual._Next-gene_c463292a-55b9-4724-8b63-28d867a8d9c8_0%20%281%29.png';
 
 export const DreamTeam = ({ onCTAClick }) => {
   return (
