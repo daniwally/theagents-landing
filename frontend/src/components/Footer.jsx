@@ -24,15 +24,6 @@ export const Footer = ({ onDemoClick }) => {
             >
               Agendar demo
             </button>
-            <a 
-              href="https://calendly.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-secondary"
-              data-testid="footer-cta-calendly"
-            >
-              Ver en Calendly
-            </a>
           </div>
         </div>
 

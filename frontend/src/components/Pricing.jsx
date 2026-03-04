@@ -221,9 +221,6 @@ export const Pricing = ({ onDemoClick }) => {
               Gmail
             </div>
             <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
-              Google Calendar
-            </div>
-            <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
               Odoo
             </div>
             <div className="px-4 py-2 bg-white/5 border border-white/10 text-sm font-light text-neutral-300">
