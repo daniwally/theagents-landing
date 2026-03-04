@@ -79,9 +79,9 @@ export const Hero = ({ onCTAClick }) => {
               className="max-w-xl mb-12 animate-fade-in-up delay-200"
               data-testid="hero-subtitle"
             >
-              <p className="bg-[#FFD700] text-black px-4 py-3 font-medium text-base md:text-lg leading-relaxed inline">
+              <span className="bg-[#FFD700] text-black px-4 py-3 font-semibold text-base md:text-lg leading-loose inline box-decoration-clone">
                 Agentes IA especializados que trabajan 24/7 para tu empresa o para vos. Cada uno con personalidad, skills y experiencia única.
-              </p>
+              </span>
             </div>
 
             {/* CTAs */}
