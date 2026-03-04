@@ -9,7 +9,14 @@ from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+
+# Try emergentintegrations first (Emergent preview), fall back to anthropic SDK (Railway)
+try:
+    from emergentintegrations.llm.chat import LlmChat, UserMessage
+    USE_EMERGENT = True
+except ImportError:
+    from anthropic import Anthropic
+    USE_EMERGENT = False
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -86,11 +93,17 @@ Mantené respuestas cortas y conversacionales (2-3 oraciones máximo). Siempre t
 chat_sessions = {}
 
 def get_llm_key():
-    """Get Emergent LLM key"""
-    api_key = os.environ.get('EMERGENT_LLM_KEY')
-    if not api_key:
-        raise HTTPException(status_code=500, detail="EMERGENT_LLM_KEY not configured")
-    return api_key
+    """Get API key - Emergent key or Anthropic key"""
+    if USE_EMERGENT:
+        api_key = os.environ.get('EMERGENT_LLM_KEY')
+        if not api_key:
+            raise HTTPException(status_code=500, detail="EMERGENT_LLM_KEY not configured")
+        return api_key
+    else:
+        api_key = os.environ.get('ANTHROPIC_API_KEY')
+        if not api_key:
+            raise HTTPException(status_code=500, detail="ANTHROPIC_API_KEY not configured")
+        return api_key
 
 async def get_chat_history(session_id: str) -> list:
     """Get chat history from MongoDB"""
@@ -171,25 +184,34 @@ async def chat_with_rock(chat_message: ChatMessage):
         }
         await db.chat_messages.insert_one(user_doc)
         
-        # Get prior chat history (excludes the message we just saved)
+        # Get prior chat history
         history = await get_chat_history(session_id)
         
-        # Build initial_messages with system prompt + all prior messages except the latest user msg
-        initial_msgs = [{"role": "system", "content": ROCK_SYSTEM_PROMPT}]
-        for msg in history[:-1]:
-            initial_msgs.append({"role": msg["role"], "content": msg["content"]})
-        
-        # Create LlmChat instance with history pre-loaded
-        chat = LlmChat(
-            api_key=api_key,
-            session_id=session_id,
-            system_message=ROCK_SYSTEM_PROMPT,
-            initial_messages=initial_msgs
-        ).with_model("anthropic", "claude-sonnet-4-20250514")
-        
-        # Send the latest user message
-        user_msg = UserMessage(text=chat_message.message)
-        assistant_response = await chat.send_message(user_msg)
+        if USE_EMERGENT:
+            # Emergent preview: use emergentintegrations
+            initial_msgs = [{"role": "system", "content": ROCK_SYSTEM_PROMPT}]
+            for msg in history[:-1]:
+                initial_msgs.append({"role": msg["role"], "content": msg["content"]})
+            
+            chat = LlmChat(
+                api_key=api_key,
+                session_id=session_id,
+                system_message=ROCK_SYSTEM_PROMPT,
+                initial_messages=initial_msgs
+            ).with_model("anthropic", "claude-sonnet-4-20250514")
+            
+            user_msg = UserMessage(text=chat_message.message)
+            assistant_response = await chat.send_message(user_msg)
+        else:
+            # Railway: use anthropic SDK directly
+            anthropic_client = Anthropic(api_key=api_key)
+            response = anthropic_client.messages.create(
+                model="claude-sonnet-4-20250514",
+                max_tokens=500,
+                system=ROCK_SYSTEM_PROMPT,
+                messages=history
+            )
+            assistant_response = response.content[0].text
         
         # Save assistant response to DB
         assistant_doc = {
