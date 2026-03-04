@@ -6,6 +6,7 @@ import { AgentsGrid } from "./components/AgentsGrid";
 import { HowItWorks } from "./components/HowItWorks";
 import { WhyUs } from "./components/WhyUs";
 import { Pricing } from "./components/Pricing";
+import { DreamTeam } from "./components/DreamTeam";
 import { ChatDemo, ChatTrigger } from "./components/ChatDemo";
 import { TrialForm } from "./components/TrialForm";
 import { Footer } from "./components/Footer";
@@ -43,6 +44,9 @@ function App() {
 
         {/* Pricing */}
         <Pricing onDemoClick={handleTrialClick} />
+
+        {/* Dream Team */}
+        <DreamTeam onCTAClick={handleTrialClick} />
 
         {/* Footer */}
         <Footer onDemoClick={handleTrialClick} />
