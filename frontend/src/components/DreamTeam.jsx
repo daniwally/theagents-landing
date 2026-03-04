@@ -1,8 +1,4 @@
-const TEAM_IMAGES = [
-  'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/5mz2fzfl_u2462154512_Prompt_THE_AGENTS_by_WTF_hero_campaign_visual_age_e01577c8-ca48-42d8-ac46-67d0ba948029_0.png',
-  'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/z65jdgdx_u2462154512_Prompt_THE_AGENTS_by_WTF_hero_campaign_visual_age_2eddbadc-5cd7-4694-b45b-7a201925ab18_0.png',
-  'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/8ih76s33_u2462154512_Prompt_THE_AGENTS_by_WTF_hero_campaign_visual_age_ba281ea8-2d95-4348-9f46-af1fb3517bed_2.png',
-];
+const TEAM_IMAGE = 'https://customer-assets.emergentagent.com/job_agent-team-demo/artifacts/wrazgd2a_u2462154512_Prompt_THE_AGENTS_by_WTF_hero_campaign_visual_age_ba281ea8-2d95-4348-9f46-af1fb3517bed_2.png';
 
 export const DreamTeam = ({ onCTAClick }) => {
   return (
@@ -27,21 +23,15 @@ export const DreamTeam = ({ onCTAClick }) => {
           </p>
         </div>
 
-        {/* Images Grid */}
-        <div className="space-y-6 mb-12">
-          {TEAM_IMAGES.map((img, index) => (
-            <div 
-              key={index}
-              className="relative overflow-hidden group"
-            >
-              <img 
-                src={img} 
-                alt={`Equipo digital ${index + 1}`}
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-          ))}
+        {/* Single Image */}
+        <div className="mb-12">
+          <div className="relative overflow-hidden group">
+            <img 
+              src={TEAM_IMAGE} 
+              alt="Tu equipo de agentes digitales"
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
         </div>
 
         {/* CTA */}
