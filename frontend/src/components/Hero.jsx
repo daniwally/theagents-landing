@@ -79,7 +79,7 @@ export const Hero = ({ onCTAClick }) => {
               className="max-w-xl mb-12 animate-fade-in-up delay-200"
               data-testid="hero-subtitle"
             >
-              <span className="bg-[#FFD700] text-black px-4 py-3 font-semibold text-base md:text-lg leading-loose inline box-decoration-clone">
+              <span className="text-neutral-300 font-light text-base md:text-lg leading-relaxed">
                 Agentes IA especializados que trabajan 24/7 para tu empresa o para vos. Cada uno con personalidad, skills y experiencia única.
               </span>
             </div>
