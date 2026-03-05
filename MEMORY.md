@@ -36,6 +36,8 @@
 - Reposicionamiento: sistema creativo amplificado por IA
 - Revenue actual: $16K/mes (Motorola $10K + 3 chicos ~$2K)
 - Meta: $50-60K/mes. Plan completo armado con pricing, revenue, benchmark.
+- **NUEVO MODELO:** "No hacemos más campañas, hacemos sistemas" — Full IA pipeline
+- **PRIMER CLIENTE SISTEMA IA:** Diablo Pisco Rosé (Chile) - "No es un color, es una actitud"
 - Email Wally: wally@wtf-agency.com
 - Archivos clave: wtf-plan-final.md, wtf-revenue-model.md, wtf-benchmark.md
 - Estética visual: editorial, fashion, cool. Referencia Droga5 + Vogue. NO oscuro ni gritty. Premium, aspiracional.
@@ -51,6 +53,7 @@
 - Colegio Calu: scms@aranceles.com.ar — resumen + pronto pago si hay descuento
 - Sheet: "Finanzas Wally 2026" (id: 1SbmBealwfHCBWCr5lOILMUYMbsfbslMj81cIhv9qb2g)
 - Columnas: Fecha | Banco/Fuente | Tarjeta | Concepto | Monto | Vencimiento | Mes
+- **REGLA VENCIMIENTOS:** Siempre avisar a Wally un día antes de cualquier vencimiento
 - Crédito 1 Supervielle: $30M, 48 cuotas, pagas 18, quedan 30 (hasta jul 2028), cuota ~$1.5M
 - Crédito 2 Supervielle: $13M, 48 cuotas, pagas 12, quedan 36 (hasta feb 2029), cuota ~$700K
 - Detalle cuotas guardado en memory/creditos-supervielle.md

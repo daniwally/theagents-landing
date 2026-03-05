@@ -1,0 +1,219 @@
+# DIABLO PISCO ROSÉ - ESTRATEGIA 4 SEMANAS
+## Sistema Full IA - "No es un color, es una actitud"
+
+---
+
+## 🎯 **SEMANA 1: DISRUPTION & AWARENESS**
+### Objetivo: Romper preconceptos del rosé
+
+**ESTRATEGIA:**  
+Generar conversación controversial pero inteligente. Posicionar Diablo como la marca que dice lo que nadie se anima.
+
+**AUDIENCE PRIMARIA:**
+- Hombres 25-40 que evitan rosé por estigma
+- Mujeres 28-45 hartas del marketing "pink washing"
+- Early adopters de marcas premium chilenas
+
+**KEY MESSAGES:**
+- "El rosé no es género, es carácter"
+- "300 años de tradición chilena > estereotipos modernos"  
+- "Diablo rompe las reglas que otros siguen"
+
+**CONTENT PILLARS:**
+1. **LUNES:** Hero Manifesto - "Mientras otros siguen reglas..."
+2. **MARTES:** Myth Busting - 5 mitos del rosé destruidos
+3. **MIÉRCOLES:** Testimoniales masculinos - "Por qué elijo rosé"
+4. **JUEVES:** Heritage Story - Valle del Elqui, tradición, craft
+5. **VIERNES:** Weekend Warriors - "El fin no empieza en viernes"
+6. **SÁBADO:** UGC Challenge - #RoséRebels
+7. **DOMINGO:** Premium Positioning - "Decisiones conscientes"
+
+**ACTIVACIONES:**
+- **"Rosé Roulette"** en 5 bares Santiago: Mesa especial, next round gratis si elegís rosé
+- **PR Stunt:** "Pisco Rosé Academy" para prensa + bartenders top
+- **Micro Influencers (8):** "Mi momento rebelde rosé"
+
+**MÉTRICAS OBJETIVO:**
+- Reach: 200K cuentas únicas
+- Brand Mention Sentiment: 75%+ positivo
+- UGC: 150+ posts #RoséRebels
+- Share of Voice rosé: +15%
+
+---
+
+## 🚀 **SEMANA 2: AMPLIFICATION & SOCIAL PROOF**  
+### Objetivo: Viralizar el concepto + construir comunidad
+
+**ESTRATEGIA:**  
+Escalar el buzz inicial con social proof real. Mostrar que "los rebeldes" ya eligieron.
+
+**AUDIENCE EXPANSION:**
+- Seguidores de bartenders/chefs reconocidos
+- Millennials aspiracionales (25-38)
+- Turistas y extranjeros en Chile
+- Food & beverage enthusiasts
+
+**KEY MESSAGES:**
+- "Los que saben, ya eligieron"
+- "Santiago se volvió rebelde"
+- "La revolución rosé empezó"
+
+**CONTENT EVOLUTION:**
+1. **LUNES:** "Rosé Rebels Santiago" - Testimoniales de los early adopters
+2. **MARTES:** Product Deep Dive - "Anatomy of Attitude" (técnico premium)
+3. **MIÉRCOLES:** User Stories - Best moments #RoséRebels curados
+4. **JUEVES:** Mixología Experta - "3 ways to serve your attitude"  
+5. **VIERNES:** Community Showcase - Grid de rebeldes + sus momentos
+6. **SÁBADO:** Live Event - "Rosé Rebellion Night" (50 VIPs)
+7. **DOMINGO:** Consolidation - "2 semanas cambiando mentes"
+
+**ACTIVACIONES:**
+- **"Rosé Rebellion Night":** Evento exclusivo 50 personas, livestream
+- **Bartender Takeovers:** 3 bartenders famosos crean cocktails Diablo
+- **Ambassador Program:** 15 micro influencers become "Rosé Rebels"
+
+**MÉTRICAS OBJETIVO:**
+- Reach: 350K cuentas únicas acumulado
+- Engagement Rate: 8%+ promedio
+- UGC: 400+ posts totales
+- Event Attendance: 100% sold out + waitlist
+
+---
+
+## 💎 **SEMANA 3: PREMIUM POSITIONING & EXPANSION**
+### Objetivo: Elevar percepción de marca + expandir geográficamente
+
+**ESTRATEGIA:**  
+Consolidar como marca premium aspiracional. Empezar expansión a otras ciudades chilenas.
+
+**AUDIENCE PREMIUM:**
+- Alto poder adquisitivo 30-50
+- Profesionales exitosos
+- Coleccionistas de spirits premium
+- Influencers lifestyle de lujo
+
+**KEY MESSAGES:**
+- "La elección de quienes definen tendencias"
+- "Premium por tradición, rebelde por elección"  
+- "De Santiago para Chile, de Chile para el mundo"
+
+**CONTENT ELEVATION:**
+1. **LUNES:** "Craft Masters" - Maestros pisqueros + proceso artesanal
+2. **MARTES:** "Taste of Rebellion" - Maridajes gourmet + chefs top
+3. **MIÉRCOLES:** "Viña Valparaíso" - Extensión a segunda ciudad
+4. **JUEVES:** "Premium Collection" - Limited edition bottles/packaging
+5. **VIERNES:** "Rebels of Success" - Empresarios/creatives que eligen Diablo
+6. **SÁBADO:** "Underground Santiago" - Speakeasies exclusivos
+7. **DOMINGO:** "Global Mindset" - "Desde Valle del Elqui al mundo"
+
+**ACTIVACIONES:**
+- **"Diablo Craft Experience":** Tour Valle del Elqui + cata premium
+- **"Viña/Valparaíso Expansion":** Launch en 10 venues nuevos
+- **"Chef Collaborations":** 5 chefs top crean maridajes signature
+- **"Limited Edition":** Packaging especial numerado (500 unidades)
+
+**MÉTRICAS OBJETIVO:**  
+- Reach: 500K cuentas únicas acumulado
+- Premium Brand Perception: +40%
+- Geographic Expansion: 2 ciudades más
+- Price Point Acceptance: Tracking premium positioning
+
+---
+
+## 🌍 **SEMANA 4: LEGACY & FUTURE VISION**
+### Objetivo: Establecer long-term vision + preparar crecimiento sostenible
+
+**ESTRATEGIA:**  
+Posicionar como marca que trasciende el pisco. Crear ecosystem de "actitud rebelde" aplicable a otros productos.
+
+**AUDIENCE VISIONARY:**
+- Inversores y partners potenciales
+- Media internacional
+- Export markets prospects  
+- Franquicia/licensing interests
+
+**KEY MESSAGES:**
+- "Diablo trasciende el pisco, define una generación"
+- "La actitud rebelde se exporta"
+- "4 semanas, una revolución cultural"
+
+**CONTENT LEGACY:**
+1. **LUNES:** "Revolución en Números" - Data storytelling del impacto
+2. **MARTES:** "International Eyes" - Press coverage internacional
+3. **MIÉRCOLES:** "Next Generation" - Gen Z embracing the movement  
+4. **JUEVES:** "Export Vision" - "Desde Chile, actitud global"
+5. **VIERNES:** "Community Impact" - Cómo cambió la percepción del rosé
+6. **SÁBADO:** "Future of Rebellion" - Teasing próximos productos
+7. **DOMINGO:** "Mes 1 Complete" - Milestone celebration + what's next
+
+**ACTIVACIONES:**
+- **"Global Rebellion":** Envío muestras a 20 países para testing
+- **"Documentary Project":** Mini-doc "La Revolución Rosé" (15 min)
+- **"Rebel Academy":** Programa educativo para bartenders LATAM
+- **"Next Chapter Teasing":** Announcement próximo producto category
+
+**MÉTRICAS OBJETIVO:**
+- Total Reach: 750K+ cuentas únicas
+- Brand Establishment: Top 3 awareness pisco rosé Chile
+- International Inquiries: 50+ export interests  
+- Community Size: 2,000+ active "Rosé Rebels"
+
+---
+
+## 🤖 **TECH STACK FULL IA - 4 SEMANAS**
+
+### **GENERACIÓN DE CONTENIDO:**
+- **Nano Banana Pro:** 280+ imágenes únicas (10 por día)
+- **OpenAI Image Gen:** 400+ assets gráficos/templates
+- **Claude Copy Engine:** 2,000+ líneas de copy optimizado
+- **ElevenLabs TTS:** 60+ audios/voiceovers
+- **Runway Video:** 28+ videos generated (1 por día)
+
+### **OPTIMIZACIÓN CONTINUA:**
+- **Performance AI:** A/B testing copy automático
+- **Trend Analysis:** Daily Chilean social media insights
+- **Audience AI:** Segmentation optimization real-time
+- **Content AI:** Best performing format auto-detection
+
+### **AUTOMATION PIPELINE:**
+- **Scheduling AI:** Optimal posting times per audience
+- **Response AI:** Community management automatizada
+- **Hashtag AI:** Trending detection + implementation
+- **Analytics AI:** Daily performance reports + recommendations
+
+---
+
+## 📊 **INVESTMENT & SCALING PROGRESSION**
+
+**SEMANA 1:** $12M CLP (Awareness + Foundation)  
+**SEMANA 2:** $18M CLP (Amplification + Events)  
+**SEMANA 3:** $25M CLP (Premium + Expansion)  
+**SEMANA 4:** $15M CLP (Legacy + Future)  
+
+**TOTAL 4 SEMANAS:** $70M CLP (~USD 75K)
+
+**PROJECTED ROI:**  
+- Brand Value Creation: +$200M CLP equivalent
+- Market Share Rosé: +25% en Chile
+- Export Opportunities: 5+ confirmed markets
+- System Replicability: 100% para siguiente producto
+
+---
+
+## 🚀 **SUCCESS FRAMEWORK**
+
+**SEMANA 1:** Disrupción exitosa = 75%+ sentiment positivo  
+**SEMANA 2:** Viralización confirmada = 8%+ engagement sostenido  
+**SEMANA 3:** Premium achievement = Price acceptance + expansion  
+**SEMANA 4:** Legacy established = Internacional interest + long-term vision
+
+**CADA SEMANA SE AUTOJUSTIFICA:**  
+Métricas claras, ROI medible, sistema escalable, IA optimización continua.
+
+**EL SISTEMA ES REPLICABLE PARA CUALQUIER MARCA EN EL PORTFOLIO.**
+
+---
+
+**STATUS:** Strategy Framework Complete  
+**NEXT STEP:** ¿Desarrollamos el sistema IA específico para Semana 1?  
+**TIMELINE:** Ready to launch Lunes próximo
