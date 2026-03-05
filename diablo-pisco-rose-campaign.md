@@ -1,0 +1,192 @@
+# DIABLO PISCO ROSÉ - CAMPAÑA LAUNCH
+## "No es un color, es una actitud"
+
+**CLIENTE:** Diablo Pisco Rosé  
+**MERCADO:** Chile  
+**CONCEPTO:** Sistema de contenido que reposiciona el rosé como elección de actitud, no género  
+**DURACIÓN:** Primeras 2 semanas  
+
+---
+
+## 📅 CONTENT CALENDAR SEMANA 1
+
+### **LUNES 1 - HERO LAUNCH**
+**POST PRINCIPAL:** Video 30" "Manifiesto Rosé"
+- **COPY:** "Mientras unos siguen reglas, nosotros elegimos actitud. Diablo Pisco Rosé. Porque no es un color, es una rebeldía."
+- **VISUAL REF:** Plano cenital botella sobre fondo negro mate, iluminación dramática, manos masculinas/femeninas diversas tomando la botella
+- **MÚSICA:** Bass profundo + elementos electrónicos, atmosférico
+
+### **MARTES 2 - EDUCACIÓN**
+**CARRUSEL:** "5 Mitos del Rosé que Rompemos"
+- **COPY:** 
+  - Slide 1: "MITO: El rosé es solo para mujeres. REALIDAD: Es para quien tiene personalidad."
+  - Slide 2: "MITO: Es bebida de verano. REALIDAD: La actitud no tiene estación."
+  - Slide 3: "MITO: Es dulce y simple. REALIDAD: Diablo es complejo y audaz."
+  - Slide 4: "MITO: No es serio. REALIDAD: Es la elección más consciente."
+  - Slide 5: "¿Listo para cambiar tu perspectiva? #ActitudRosé"
+- **VISUAL REF:** Tipografía bold blanca sobre fondos degradados rosé/negro, iconografía minimal
+
+### **MIÉRCOLES 3 - LIFESTYLE**
+**STORIES SERIE:** "Rosé Moments" (5 historias)
+- **COPY:** 
+  - "3PM meeting. Attitude: Rosé"
+  - "Sunset dinner. Choice: Diablo"
+  - "After work. Mindset: Rebel"
+  - "Weekend prep. Energy: Rosé"
+  - "Night out. Vibe: Unapologetic"
+- **VISUAL REF:** Lifestyle shots urbanos, Santiago/Valparaíso, lighting natural, filtros cálidos
+
+### **JUEVES 4 - BEHIND THE SCENES**
+**VIDEO:** "Craft & Attitude" (60")
+- **COPY:** "Cada gota de Diablo lleva 300 años de tradición chilena. No es solo pisco rosé, es herencia líquida con actitud moderna."
+- **VISUAL REF:** Viñedos Valle del Elqui, proceso destilación, manos artesanales, contraste tradición/modernidad
+
+### **VIERNES 5 - WEEKEND MOOD**
+**POST ESTÁTICO:** Weekend Mantra
+- **COPY:** "El weekend no empieza en viernes. Empieza cuando elegís tener actitud. #DiabloWeekend #ActitudRosé"
+- **VISUAL REF:** Botella sobre mesa de mármol, copas, lighting dorado hour, composición editorial tipo Wallpaper Magazine
+
+### **SÁBADO 6 - UGC TRIGGER**
+**STORIES + POSTS:** "Rosé Rebels Challenge"
+- **COPY:** "¿Cuál es tu momento Rosé? Mostranos tu actitud con #RoséRebels y taggeá a quien tenga la misma energía"
+- **VISUAL REF:** Template para que usuarios completen "Mi actitud rosé es..." con filtro de marca
+
+### **DOMINGO 7 - PREMIUM POSITIONING**
+**POST REFLEXIVO:** Sunday Premium
+- **COPY:** "Domingo: día para decisiones conscientes. Elegir Diablo no es solo sabor, es declarar quién sos. #DomingoConActitud"
+- **VISUAL REF:** Still life minimalista, copa con Diablo, luz natural suave, aesthetic Kinfolk
+
+---
+
+## 📅 CONTENT CALENDAR SEMANA 2
+
+### **LUNES 8 - TESTIMONIAL HERO**
+**VIDEO:** "Rosé Rebels Santiago" (45")
+- **COPY:** "Conocé a los rebeldes que ya eligieron actitud. Sus historias, una sola elección: Diablo."
+- **CASTING:** Bartender Providencia, chef, diseñadora, músico indie
+- **VISUAL REF:** Portraits cinematográficos, cada persona con su frase + copa Diablo
+
+### **MARTES 9 - PRODUCT FOCUS**
+**CARRUSEL TÉCNICO:** "Anatomy of Attitude"
+- **COPY:**
+  - "COLOR: Rosa natural, sin artificios como nuestra actitud"
+  - "AROMA: Frutas rojas chilenas + carácter"  
+  - "SABOR: Equilibrio perfecto, como una personalidad auténtica"
+  - "FINISH: Persistente, como una buena decisión"
+- **VISUAL REF:** Product shots macro, detalles líquido, paleta científica elegante
+
+### **MIÉRCOLES 10 - LOCAL PRIDE**
+**STORIES SERIE:** "Pisco Chileno, Actitud Global"
+- **COPY:** "Desde Valle del Elqui para el mundo. Orgullo chileno en cada sorbo. ¿Dónde llevás tu Diablo hoy?"
+- **VISUAL REF:** Maps, ubicaciones icónicas Chile, usuarios taggeando locations
+
+### **JUEVES 11 - MIXOLOGÍA**
+**VIDEO:** "Diablo Mix Lab" (30")
+- **COPY:** "Tres maneras de servir tu actitud: Neat (puro carácter), On rocks (cool como vos), Cocktail (creativo como tu personalidad)"
+- **VISUAL REF:** Bartender experto, 3 serves diferentes, técnica impecable, lighting dramático
+
+### **VIERNES 12 - WEEKEND 2.0**
+**POST COLLAGE:** "Weekend Warriors"
+- **COPY:** "Segunda semana, misma energía. Los que eligieron actitud no paran en viernes. #DiabloWarriors"
+- **VISUAL REF:** Grid de momentos weekend users + Diablo, curated UGC aesthetic
+
+### **SÁBADO 13 - EVENTO/ACTIVACIÓN**
+**COBERTURA EN VIVO:** "Rosé Rebellion Night"
+- **COPY:** "EN VIVO desde [Rooftop Santiago]: La primera Rosé Rebellion Night. Solo para rebeldes."
+- **MECÁNICA:** Evento exclusivo 50 personas, cada invitado debe justificar "su actitud rosé"
+
+### **DOMINGO 14 - CONSOLIDACIÓN**
+**VIDEO RESUMEN:** "Two Weeks of Attitude" (90")
+- **COPY:** "14 días cambiando mentes. Gracias a todos los rebeldes que se sumaron. Esto recién empieza. #RoséRevolution"
+- **VISUAL REF:** Best moments campaña, testimoniales, métricas, call-to-action futuro
+
+---
+
+## 🎯 ACTIVACIONES PARALELAS
+
+### **RETAIL ACTIVATION:**
+**"Rosé Roulette"** en 5 bares premium Santiago:
+- Providencia: Rooftop bar
+- Las Condes: Wine bar
+- Ñuñoa: Cocktail speakeasy  
+- Vitacura: Restaurant premium
+- Bellavista: Artisan bar
+
+**MECÁNICA:** Mesa especial Diablo, si elegís rosé = next round gratis + kit rebelde (copa + pin)
+
+### **INFLUENCER STRATEGY:**
+**"Rebel Roster"** - 8 micro influencers chilenos (10-50K):
+- Chef indie
+- Bartender reconocido  
+- Diseñador/artista
+- Músico emergente
+- Travel blogger
+- Food photographer
+- Lifestyle creator
+- Sommelier joven
+
+**BRIEF:** Un post + 3 stories mostrando "su momento actitud rosé", autenticidad total
+
+### **PR ACTIVATION:**
+**"Pisco Rosé Academy"** - Masterclass exclusiva para prensa:
+- Historia pisco chileno
+- Por qué el rosé es tendencia
+- Cata dirigida Diablo
+- Cocktails signature
+- Kit prensa personalizado
+
+---
+
+## 📊 MÉTRICAS SEMANA 1-2
+
+**REACH:** 150K+ cuentas únicas  
+**ENGAGEMENT:** 8%+ promedio  
+**UGC:** 200+ posts #RoséRebels  
+**BRAND MENTIONS:** 500+ orgánicas  
+**SENTIMENT:** 85%+ positivo  
+
+---
+
+## 🎨 PALETA & ESTILO
+
+**COLORES:**
+- Rosa Diablo (branded)
+- Negro mate
+- Blanco puro  
+- Dorado accent
+
+**TIPOGRAFÍA:**
+- Headlines: Bold sans-serif
+- Copy: Clean, legible
+- Quotes: Script elegante
+
+**PHOTOGRAPHY STYLE:**
+- Lighting dramático
+- Composiciones asimétricas
+- Texturas contrastantes
+- Color grading cinematográfico
+
+**TONE OF VOICE:**
+- Confident pero no arrogante
+- Inclusivo pero premium
+- Chileno pero universal
+- Rebelde pero sofisticado
+
+---
+
+## 💰 BUDGET ESTIMATE (2 SEMANAS)
+
+**CONTENIDO:**
+- Video production: $8.000.000 CLP
+- Photography: $3.500.000 CLP  
+- Activaciones: $5.000.000 CLP
+- Influencers: $2.500.000 CLP
+- Media buy: $15.000.000 CLP
+
+**TOTAL:** $34.000.000 CLP (~USD 35K)
+
+---
+
+**STATUS:** Draft v1 - Pending Wally approval  
+**NEXT:** Desarrollar scripts detallados + moodboards  
+**DEADLINE:** Launch Lunes 1
