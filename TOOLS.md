@@ -40,7 +40,7 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ### Home Assistant
 - URL: https://txvwuijdnbiukjd5gbmsszghyrouz8jq.ui.nabu.casa
 - Instance: We Rock House (HA Green, 2026.2.2, Nabu Casa)
-- Token: en .env (HA_TOKEN)
+- Token: Long-lived access token (válido 10 años), en .env (HA_TOKEN)
 - 442 entidades: 57 luces, 17 switches, 111 sensores, 6 media players, 18 automatizaciones
 - Zonas principales: Living, Comedor, Cocina, Dormitorio, Playroom, Estudio, Cuarto Calu, Cochera, Jardín, Exterior/Galería, Pileta, Balcón
 - Media: Sonos Living Room, Samsung The Frame 75 (living), Samsung 65 (cocina), Samsung 75 (dormitorio), FlowBox Z3
@@ -51,5 +51,10 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ### Automatizaciones frecuentes
 - "Prendé las luces de adentro/interior" → `automation.a_luces_atarceder_interior_on` (trigger)
 - "Apagá las luces de adentro/interior" → `automation.b` (Luces interior Off, trigger)
+
+### Scripts disponibles
+- `luces on` → Prende luces interior (alias + script en workspace)
+- `luces off` → Apaga luces interior  
+- `./luces on|off` → Script directo sin alias
 
 Add whatever helps you do your job. This is your cheat sheet.

@@ -51,9 +51,16 @@
 - Formato: mensaje con total + vencimiento por tarjeta, acumulado mensual
 - Gastos manuales: Wally los manda por Telegram, se suman igual
 - Colegio Calu: scms@aranceles.com.ar — resumen + pronto pago si hay descuento
-- Sheet: "Finanzas Wally 2026" (id: 1SbmBealwfHCBWCr5lOILMUYMbsfbslMj81cIhv9qb2g)
+- **AIRTABLE:** "Finanzas Wally 2026" (Base ID: appK3sEL2Z2NLcQnA, Table ID: tbl8B9PKPUnYcW4Va) ✅ SISTEMA PRINCIPAL
+  - Campos: Name, Fecha_Recibimiento, Fecha_Vencimiento, Monto ($), Banco (select), Status, Notes
+- Sheet: "Finanzas Wally 2026" (id: 1SbmBealwfHCBWCr5lOILMUYMbsfbslMj81cIhv9qb2g) → backup solamente
 - Columnas: Fecha | Banco/Fuente | Tarjeta | Concepto | Monto | Vencimiento | Mes
-- **REGLA VENCIMIENTOS:** Siempre avisar a Wally un día antes de cualquier vencimiento
+- **REGLA VENCIMIENTOS:** ✅ AUTOMATIZADO - Airtable API check via check-vencimientos.sh
+- **SKILL FINANZAS-WALLY:** ✅ COMPLETAMENTE EMPAQUETADA (finanzas-wally.skill)
+  - ⚡ Sistema completo documentado y distribuible
+  - 📦 4 scripts + 2 referencias + documentación principal
+  - 🔄 Instalación: Ver INSTALL-FINANZAS-SKILL.md
+  - 🎯 NUNCA MÁS perder configuración ni preguntar montos ya procesados
 - Crédito 1 Supervielle: $30M, 48 cuotas, pagas 18, quedan 30 (hasta jul 2028), cuota ~$1.5M
 - Crédito 2 Supervielle: $13M, 48 cuotas, pagas 12, quedan 36 (hasta feb 2029), cuota ~$700K
 - Detalle cuotas guardado en memory/creditos-supervielle.md
