@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Script para controlar luces Home Assistant
+# Usage: ./luces on|off
+
+HA_URL="https://txvwuijdnbiukjd5gbmsszghyrouz8jq.ui.nabu.casa"
+HA_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxNWQwNGQwZmE3ZDk0NmI2OTMzNjFjNGY4NTc5MTAwNCIsImlhdCI6MTc3MTEyNTYxMywiZXhwIjoyMDg2NDg1NjEzfQ.UPkfJHpTGRVJgPbDSU-0R3BtaQc1vUMz6slIFne8Z4E"
+
+case "$1" in
+    "on")
+        echo "💡 Prendiendo luces interior..."
+        curl -s -X POST \
+          "$HA_URL/api/services/automation/trigger" \
+          -H "Authorization: Bearer $HA_TOKEN" \
+          -H "Content-Type: application/json" \
+          -d '{"entity_id": "automation.a_luces_atarceder_interior_on"}'
+        echo "✅ Luces prendidas"
+        ;;
+    "off")
+        echo "🌙 Apagando luces interior..."
+        curl -s -X POST \
+          "$HA_URL/api/services/automation/trigger" \
+          -H "Authorization: Bearer $HA_TOKEN" \
+          -H "Content-Type: application/json" \
+          -d '{"entity_id": "automation.b"}'
+        echo "✅ Luces apagadas"
+        ;;
+    *)
+        echo "Usage: $0 on|off"
+        exit 1
+        ;;
+esac
