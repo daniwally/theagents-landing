@@ -43,13 +43,6 @@ export const Header = ({ onTrialClick }) => {
             >
               Cómo funciona
             </button>
-            <button 
-              onClick={onTrialClick}
-              className="btn-primary text-sm"
-              data-testid="header-cta-trial"
-            >
-              Probá gratis
-            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -80,13 +73,6 @@ export const Header = ({ onTrialClick }) => {
                 className="text-neutral-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest text-left py-2"
               >
                 Cómo funciona
-              </button>
-              <button 
-                onClick={onTrialClick}
-                className="btn-primary text-sm mt-4"
-                data-testid="mobile-cta-trial"
-              >
-                Probá gratis
               </button>
             </div>
           </nav>
