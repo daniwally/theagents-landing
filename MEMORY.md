@@ -2,6 +2,7 @@
 
 ## Wally
 - Emprendedor y director creativo argentino, base Buenos Aires.
+- **Historia familiar:** Descendiente de inmigrantes suizos. Tataranieto de Jorge Eduardo Wallingre (relojero suizo que migró 1877-1879 desde Saint-Imier, Jura bernés a Villa Libertad, Entre Ríos). Línea: Jorge Eduardo → Juan Bautista → **Rodolfo Wallingre** (1919-1972) → **Oscar Eusebio Wallingre** (padre, Chajarí) → **Wally**. Primo de Noemí Wallingre (autora libro genealógico). Genealogía completa: memory/wallingre-genealogia-libro.md
 - Perfil híbrido creativo–empresarial: visión creativa + negociación comercial + gestión financiera + construcción de ecosistemas de marca.
 - Fundador y Creative Director de WTF Agency — "Brief Destroyers". Modelo inspirado en Droga5.
 - Licenciatario de marca SHAQ (Shaquille O'Neal) en Argentina vía Sobrepatas S.A.S. — calzado, retail, e-commerce, activaciones.
@@ -29,6 +30,7 @@
 - OpenAI API key configurada (audios + imágenes).
 - Playwright + ffmpeg instalados para generar gráficos.
 - Skills: nano-banana-pro, openai-image-gen, goplaces, summarize, nano-pdf, ai-ppt-generator, gog, shopify-admin-api.
+- **BACKUP COMPLETO:** memory/apis-configuraciones-completas.md (APIs, tokens, configuraciones), memory/skills-inventory-completo.md (skills completos), backup nocturno 02:00 AM con 30 días retención.
 
 ## WTF Agency
 - Agencia de Wally, 15 años, 6 oficinas (BA, Madrid, Santiago, Asunción, Lima, CDMX)
