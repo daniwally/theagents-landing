@@ -1,0 +1,27 @@
+{
+  "taskMonitoringWidgets": [
+    {
+      "type": "custom-api",
+      "title": "OpenClaw Active Tasks",
+      "endpoint": "http://127.0.0.1:18789/api/sessions/active",
+      "refreshInterval": 10,
+      "displayMode": "list",
+      "fields": ["sessionKey", "status", "lastActivity", "model"]
+    },
+    {
+      "type": "system-log", 
+      "title": "Command Execution Log",
+      "logFile": "/home/ubuntu/.openclaw/logs/commands.log",
+      "refreshInterval": 5,
+      "maxLines": 20,
+      "filterPattern": "exec|read|write|web_search"
+    },
+    {
+      "type": "process-monitor",
+      "title": "Background Tasks", 
+      "processes": ["node", "python", "openclaw"],
+      "refreshInterval": 15,
+      "showDetails": ["pid", "cpu", "memory", "command"]
+    }
+  ]
+}
