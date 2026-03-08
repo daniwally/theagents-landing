@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "lobsterboard": "^0.3.2",
     "playwright": "^1.58.2"
   }
 }

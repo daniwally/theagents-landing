@@ -1,0 +1,15 @@
+{
+  "id": "process-monitor",
+  "type": "custom-shell", 
+  "title": "Active Tasks",
+  "x": 40,
+  "y": 760,
+  "width": 600,
+  "height": 200,
+  "properties": {
+    "command": "ps aux | grep -E '(openclaw|node|dora|oscar)' | grep -v grep",
+    "refreshInterval": 15,
+    "maxLines": 10,
+    "fontSize": "12px"
+  }
+}
