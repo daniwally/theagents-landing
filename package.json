@@ -1,6 +1,46 @@
 {
+  "name": "the-agents-image-generator",
+  "version": "1.0.0",
+  "description": "🎨 Generador automático de imágenes con headlines dinámicos y Google Fonts para The Agents by WTF Agency",
+  "main": "image-generator-example.js",
+  "scripts": {
+    "start": "node image-generator-example.js",
+    "example": "node image-generator-example.js --example",
+    "test": "echo \"Run npm run example to test\" && exit 1",
+    "install-fonts": "node -e \"console.log('Google Fonts se cargan automáticamente via CDN')\""
+  },
+  "bin": {
+    "agents-image-gen": "./image-generator-example.js"
+  },
+  "keywords": [
+    "image-generation",
+    "google-fonts",
+    "puppeteer",
+    "creative",
+    "automation",
+    "wtf-agency",
+    "typography",
+    "design"
+  ],
+  "author": "WTF Agency - The Agents",
+  "license": "MIT",
   "dependencies": {
-    "lobsterboard": "^0.3.2",
-    "playwright": "^1.58.2"
-  }
+    "puppeteer": "^22.0.0",
+    "handlebars": "^4.7.8",
+    "sharp": "^0.33.0"
+  },
+  "optionalDependencies": {
+    "google-font-installer": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wtf-agency/the-agents-image-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wtf-agency/the-agents-image-generator/issues"
+  },
+  "homepage": "https://github.com/wtf-agency/the-agents-image-generator#readme"
 }
