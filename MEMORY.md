@@ -30,6 +30,10 @@
 - OpenAI API key configurada (audios + imágenes).
 - Playwright + ffmpeg instalados para generar gráficos.
 - Skills: nano-banana-pro, openai-image-gen, goplaces, summarize, nano-pdf, ai-ppt-generator, gog, shopify-admin-api.
+- **GMAIL ENTERPRISE:** Service accounts configurados para todos los agentes. OAuth timeout RESUELTO definitivamente (mar 10, 2026).
+  - **SKILL PRESERVADO:** gmail-service-accounts.skill - Configuración completa empaquetada para no perder el setup
+  - **Arquitectura dual-domain:** @wtf-agency.com + @theagents.wtf con service accounts separados
+  - **Branding profesional:** Signature HTML configurada - "Dora - WTF Agency 🗺️" en todos los emails
 - **BACKUP COMPLETO:** memory/apis-configuraciones-completas.md (APIs, tokens, configuraciones), memory/skills-inventory-completo.md (skills completos), backup nocturno 02:00 AM con 30 días retención.
 
 ## WTF Agency
