@@ -2,9 +2,9 @@
 
 ## Checks
 - [x] ~~Verificar si Luciana aceptó la invitación~~ ✅ Aceptó. Wally notificado.
-- [ ] **VIERNES 6 MAR**: 🔥 REMINDER → Wally debe enviar presupuesto compañía forwarding (redes B2B, Instagram, web nueva, LinkedIn strategy). Ver memory/reminder-forwarding-company.md
-- [ ] **VIERNES 6 MAR**: 📅 REUNIÓN → 10:30 hs en Barugel (recordar 30 min antes). Ver memory/2026-03-06-reunion-barugel.md
-- [ ] **VIERNES 6 MAR**: 🚀 REUNIÓN CENSUS → 15:00 hs mostrar sistema IA WTF (recordar 30 min antes). Ver memory/2026-03-06-reunion-census-ia.md
+- [x] ~~VIERNES 6 MAR: Presupuesto forwarding~~ ✅ Fechas vencidas
+- [x] ~~VIERNES 6 MAR: Reunión Barugel~~ ✅ Fechas vencidas
+- [x] ~~VIERNES 6 MAR: Reunión Census IA~~ ✅ Fechas vencidas
 - [ ] **Vencimientos próximos:** ✅ AIRTABLE COMPLETO → check-vencimientos-completo.sh (incluye cuota alimentaria día 10)
 - [ ] Disco: alertar si espacio libre baja del 15% (`df -h /`)
 - [ ] AWS: revisar mails de AWS sobre créditos. Alertar a Wally si bajan de $20.

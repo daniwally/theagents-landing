@@ -105,6 +105,14 @@
 ## Reglas operativas
 - Cron de monitoreo: informar costo al usuario, correr con Haiku, fijar duración límite. (Excepción: Dora no tiene duración límite ni máxima.)
 
+## Sistema de Token Monitoring (12 Mar 2026)
+- **Configurado:** Automatic token monitoring con alerts automáticas
+- **Alerts:** 80% warning, 90% critical, 95% emergency
+- **Haiku para:** Monitoreo Gmail, recordatorios, tareas automáticas rutinarias
+- **Sonnet 4 para:** Complex analysis, creative work, strategic thinking
+- **Archivo:** TOKEN-MONITOR.md con configuración completa
+- **Objetivo:** Optimizar costs vs performance, switching inteligente de modelos
+
 ## Pendientes
 - ~~Google Workspace OAuth~~ ✅ Conectado: dora@wtf-agency.com (gmail, calendar, drive)
 - Shopify tokens (3 tiendas)
