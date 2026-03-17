@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Marzo 2026 - Wally</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2d3748;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .main-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            background: #f8fafc;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-card.total { border-left: 5px solid #10b981; }
+        .stat-card.paid { border-left: 5px solid #3b82f6; }
+        .stat-card.pending { border-left: 5px solid #ef4444; }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        .breakdown {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .breakdown h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .category {
+            margin-bottom: 25px;
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        
+        .category-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .category-amount {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #059669;
+        }
+        
+        .items {
+            padding-left: 20px;
+        }
+        
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 8px 0;
+            border-bottom: 1px dotted #e2e8f0;
+        }
+        
+        .item:last-child { border-bottom: none; }
+        
+        .item-name { color: #64748b; }
+        .item-amount { font-weight: 500; }
+        
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+        
+        .status-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Finanzas Marzo 2026</h1>
+            <div class="subtitle">Estado Financiero Completo - Wally Wallingre</div>
+        </div>
+        
+        <div class="main-stats">
+            <div class="stat-card total">
+                <div class="stat-number" style="color: #10b981;">$8.41M</div>
+                <div class="stat-label">Total Marzo</div>
+            </div>
+            <div class="stat-card paid">
+                <div class="stat-number" style="color: #3b82f6;">$8.41M</div>
+                <div class="stat-label">Pagado (100%)</div>
+            </div>
+            <div class="stat-card pending">
+                <div class="stat-number" style="color: #10b981;">$0</div>
+                <div class="stat-label">Pendiente</div>
+            </div>
+        </div>
+        
+        <div class="status-banner">
+            🎉 MARZO 2026 - 100% COMPLETO Y AL DÍA
+        </div>
+        
+        <div class="content">
+            <div class="breakdown">
+                <h3>📊 Breakdown por Categoría</h3>
+                
+                <div class="category">
+                    <div class="category-header">
+                        <span class="category-name">🏫 Colegio + Calu</span>
+                        <span class="category-amount">$3.05M</span>
+                    </div>
+                    <div class="items">
+                        <div class="item">
+                            <span class="item-name">Arancel Calu - Marzo</span>
+                            <span class="item-amount">$1.28M</span>
+                        </div>
+                        <div class="item">
+                            <span class="item-name">Cumple Calu - Animación</span>
+                            <span class="item-amount">$500K</span>
+                        </div>
+                        <div class="item">
+                            <span class="item-name">Computadora Calu</span>
+                            <span class="item-amount">$850K</span>
+                        </div>
+                        <div class="item">
+                            <span class="item-name">Otros (cotillón, bolso, ropa)</span>
+                            <span class="item-amount">$411K</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-header">
+                        <span class="category-name">🏦 Bancos</span>
+                        <span class="category-amount">$4.20M</span>
+                    </div>
+                    <div class="items">
+                        <div class="item">
+                            <span class="item-name">Supervielle Mastercard</span>
+                            <span class="item-amount">$1.56M</span>
+                        </div>
+                        <div class="item">
+                            <span class="item-name">Supervielle Crédito 1</span>
+                            <span class="item-amount">$1.56M</span>
+                        </div>
+                        <div class="item">
+                            <span class="item-name">Supervielle Crédito 2</span>
+                            <span class="item-amount">$699K</span>
+                        </div>
+                        <div class="item">
+                            <span class="item-name">Macro Visa Signature</span>
+                            <span class="item-amount">$378K</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-header">
+                        <span class="category-name">💰 Cuota Alimentaria</span>
+                        <span class="category-amount">$1.17M</span>
+                    </div>
+                    <div class="items">
+                        <div class="item">
+                            <span class="item-name">Marzo 2026 (+ inflación 2.4%)</span>
+                            <span class="item-amount">$1.17M</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 style="margin-bottom: 25px; color: #1e293b;">📈 Distribución por Categoría</h3>
+                <canvas id="pieChart" width="400" height="400"></canvas>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <h4 style="color: #1e293b; margin-bottom: 15px;">✅ Timeline de Pagos</h4>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: #f1f5f9; border-radius: 8px;">
+                            <span>2 Mar - Macro Visa</span>
+                            <span style="font-weight: 600;">$378K</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: #f1f5f9; border-radius: 8px;">
+                            <span>5 Mar - Créditos Supervielle</span>
+                            <span style="font-weight: 600;">$2.25M</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: #f1f5f9; border-radius: 8px;">
+                            <span>9 Mar - Mastercard Supervielle</span>
+                            <span style="font-weight: 600;">$1.56M</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: #f1f5f9; border-radius: 8px;">
+                            <span>10 Mar - Cuota Alimentaria</span>
+                            <span style="font-weight: 600;">$1.17M</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 10px; background: #f1f5f9; border-radius: 8px;">
+                            <span>13-15 Mar - Colegio + Calu</span>
+                            <span style="font-weight: 600;">$3.05M</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Generado por Dora 🗺️ | WTF Agency | ${new Date().toLocaleDateString('es-AR')}
+        </div>
+    </div>
+    
+    <script>
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Colegio + Calu', 'Bancos', 'Cuota Alimentaria'],
+                datasets: [{
+                    data: [3.05, 4.20, 1.17],
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#8b5cf6', 
+                        '#10b981'
+                    ],
+                    borderWidth: 3,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                },
+                elements: {
+                    arc: {
+                        borderRadius: 8
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
