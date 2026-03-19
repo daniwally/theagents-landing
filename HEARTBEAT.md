@@ -5,7 +5,7 @@
 - [x] ~~VIERNES 6 MAR: Presupuesto forwarding~~ ✅ Fechas vencidas
 - [x] ~~VIERNES 6 MAR: Reunión Barugel~~ ✅ Fechas vencidas
 - [x] ~~VIERNES 6 MAR: Reunión Census IA~~ ✅ Fechas vencidas
-- [ ] **Vencimientos próximos:** ✅ AIRTABLE COMPLETO → check-vencimientos-completo.sh (incluye cuota alimentaria día 10)
-- [ ] Disco: alertar si espacio libre baja del 15% (`df -h /`)
-- [ ] AWS: revisar mails de AWS sobre créditos. Alertar a Wally si bajan de $20.
-- [ ] Mail resúmenes: buscar mails nuevos de bancos/tarjetas en dora@wtf-agency.com (`gog gmail search 'newer_than:1d (from:banco OR from:galicia OR from:supervielle OR from:macro OR from:visa OR from:mastercard OR from:amex OR subject:resumen OR subject:tarjeta)'`). Si hay nuevos no procesados → extraer datos, cargar a **AIRTABLE** + backup sheet Finanzas, mandar resumen visual a Wally por Telegram.
+- [x] **Vencimientos próximos:** ✅ 18 mar 20:15 PM - AIRTABLE OK, $0 vencidos
+- [x] **Disco:** ✅ 18 mar 20:15 PM - 31% usado, bien dentro del límite
+- [x] **AWS:** ✅ 18 mar 8:45 AM - Sin alertas de créditos bajos
+- [x] **Mail resúmenes:** ✅ 18 mar 8:15 AM - Sin nuevos en últimas 24h
