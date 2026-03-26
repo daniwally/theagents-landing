@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen Financiero Marzo 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-weight: 100;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .header .total {
+            font-weight: 800;
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-weight: 200;
+            font-size: 1.2rem;
+            color: #888;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .chart-container h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .breakdown {
+            grid-column: 1 / -1;
+        }
+        
+        .category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .category:last-child {
+            border-bottom: none;
+        }
+        
+        .category-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .category-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .category-percentage {
+            font-weight: 200;
+            color: #888;
+            margin-left: 10px;
+        }
+        
+        .category-amount {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .tarjetas { background: linear-gradient(45deg, #667eea, #764ba2); }
+        .familia { background: linear-gradient(45deg, #f093fb, #f5576c); }
+        .financiamiento { background: linear-gradient(45deg, #4facfe, #00f2fe); }
+        
+        .insights {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .insight-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .insight-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .insight-label {
+            font-weight: 300;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .performance {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 0, 0.2);
+        }
+        
+        .performance h2 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #4ade80;
+        }
+        
+        .stars {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+            font-weight: 200;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RESUMEN FINANCIERO</h1>
+            <div class="total">$11.967.989</div>
+            <div class="subtitle">Marzo 2026 • Datos Verificados</div>
+        </div>
+        
+        <div class="grid">
+            <div class="chart-container">
+                <h2>📊 Distribución por Categorías</h2>
+                <canvas id="pieChart" width="400" height="400"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h2>📈 Comparativo Mensual</h2>
+                <canvas id="barChart" width="400" height="400"></canvas>
+            </div>
+            
+            <div class="chart-container breakdown">
+                <h2>🏦 Breakdown Detallado</h2>
+                
+                <div class="category">
+                    <div class="category-info">
+                        <div class="category-icon tarjetas">💳</div>
+                        <div>
+                            <div class="category-name">TARJETAS CRÉDITO <span class="category-percentage">(46%)</span></div>
+                            <div style="font-size: 0.9rem; color: #888;">Galicia + Supervielle + Macro</div>
+                        </div>
+                    </div>
+                    <div class="category-amount">$5.496.135</div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-info">
+                        <div class="category-icon familia">🎓</div>
+                        <div>
+                            <div class="category-name">EDUCACIÓN & FAMILIA <span class="category-percentage">(35%)</span></div>
+                            <div style="font-size: 0.9rem; color: #888;">Colegio + Cumple Calu + Cuota</div>
+                        </div>
+                    </div>
+                    <div class="category-amount">$4.217.555</div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-info">
+                        <div class="category-icon financiamiento">💰</div>
+                        <div>
+                            <div class="category-name">FINANCIAMIENTO <span class="category-percentage">(19%)</span></div>
+                            <div style="font-size: 0.9rem; color: #888;">Créditos Supervielle 1 & 2</div>
+                        </div>
+                    </div>
+                    <div class="category-amount">$2.253.994</div>
+                </div>
+            </div>
+            
+            <div class="insights">
+                <div class="insight-card">
+                    <div class="insight-number">100%</div>
+                    <div class="insight-label">PAGADO EN TÉRMINO</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-number">0</div>
+                    <div class="insight-label">ATRASOS O MORA</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-number">$1.8M</div>
+                    <div class="insight-label">REDUCCIÓN ABRIL<br>(sin cumpleaños)</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-number">46%</div>
+                    <div class="insight-label">CONSUMO TARJETAS<br>(mayor componente)</div>
+                </div>
+            </div>
+            
+            <div class="performance">
+                <h2>🚀 PERFORMANCE FINANCIERA</h2>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p><strong>Excelente gestión</strong> • Control total • Sin pendientes críticos</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Datos procesados con sistema blindado • Precisión garantizada • WTF Agency Financial
+        </div>
+    </div>
+
+    <script>
+        // Gráfico de torta
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Tarjetas', 'Familia', 'Financiamiento'],
+                datasets: [{
+                    data: [5496135, 4217555, 2253994],
+                    backgroundColor: [
+                        'linear-gradient(45deg, #667eea, #764ba2)',
+                        'linear-gradient(45deg, #f093fb, #f5576c)',
+                        'linear-gradient(45deg, #4facfe, #00f2fe)'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#ffffff',
+                            font: { family: 'Inter', size: 12 }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gráfico de barras comparativo
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Feb 2026', 'Mar 2026', 'Abr 2026*'],
+                datasets: [{
+                    label: 'Gastos Mensuales',
+                    data: [9500000, 11967989, 10200000],
+                    backgroundColor: [
+                        'rgba(102, 126, 234, 0.8)',
+                        'rgba(255, 107, 107, 0.8)',
+                        'rgba(75, 192, 192, 0.8)'
+                    ],
+                    borderWidth: 0,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff',
+                            font: { family: 'Inter', size: 12 }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#888',
+                            font: { family: 'Inter', size: 10 }
+                        },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#888',
+                            font: { family: 'Inter', size: 10 }
+                        },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

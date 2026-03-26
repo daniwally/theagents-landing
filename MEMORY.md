@@ -67,8 +67,17 @@
   - 📦 4 scripts + 2 referencias + documentación principal
   - 🔄 Instalación: Ver INSTALL-FINANZAS-SKILL.md
   - 🎯 NUNCA MÁS perder configuración ni preguntar montos ya procesados
-- Crédito 1 Supervielle: $30M, 48 cuotas, pagas 18, quedan 30 (hasta jul 2028), cuota ~$1.5M
-- Crédito 2 Supervielle: $13M, 48 cuotas, pagas 12, quedan 36 (hasta feb 2029), cuota ~$700K
+- **PROCESO BLINDADO:** ✅ Implementado mar 2026 tras falla crítica
+  - Script único: `resumen-mensual-completo.sh YYYY MM`
+  - Verificación automática por banco (alertas si falta data)
+  - Zero-trust policy: verificar SIEMPRE antes de reportar
+  - Template: memory/2026-03-25-resumen-financiero-marzo-final.md
+- **RESUMEN MARZO 2026:** ✅ COMPLETADO - $11.967.989 total
+  - Tarjetas 46% ($5.496.135), Familia 35% ($4.217.555), Financiamiento 19% ($2.253.994)
+  - 100% pagado, 0 atrasos, ⭐⭐⭐⭐⭐ performance
+  - Gráfico final: 2026-03-26-00-18-total-achicado.png (pasteles, flat design)
+- Crédito 1 Supervielle: $30M, 48 cuotas, pagas 20, quedan 28 (hasta jul 2028), cuota ~$1.5M
+- Crédito 2 Supervielle: $13M, 48 cuotas, pagas 13, quedan 35 (hasta feb 2029), cuota ~$700K
 - Detalle cuotas guardado en memory/creditos-supervielle.md
 
 ## New Shoes
