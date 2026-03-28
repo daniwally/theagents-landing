@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "@/App.css";
+import { LanguageProvider } from "./context/LanguageContext";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { AgentsGrid } from "./components/AgentsGrid";
@@ -24,48 +25,30 @@ function App() {
   };
 
   return (
-    <div className="App bg-main noise-overlay" data-testid="app-container">
-      {/* Header */}
-      <Header onTrialClick={handleTrialClick} />
-
-      {/* Main content */}
-      <main>
-        {/* Hero Section */}
-        <Hero onCTAClick={handleTrialClick} />
-
-        {/* Agents Grid */}
-        <AgentsGrid />
-
-        {/* How it Works */}
-        <HowItWorks />
-
-        {/* Why Us - 15 años */}
-        <WhyUs />
-
-        {/* Pricing */}
-        <Pricing onDemoClick={handleTrialClick} />
-
-        {/* Dream Team */}
-        <DreamTeam onCTAClick={handleTrialClick} />
-
-        {/* Footer */}
-        <Footer onDemoClick={handleTrialClick} />
-      </main>
-
-      {/* Chat Demo */}
-      {isChatOpen ? (
-        <ChatDemo isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
-      ) : (
-        <ChatTrigger onClick={handleChatToggle} />
-      )}
-
-      {/* Trial Form Modal */}
-      <TrialForm 
-        isOpen={isTrialOpen} 
-        onClose={() => setIsTrialOpen(false)}
-        selectedPack={null}
-      />
-    </div>
+    <LanguageProvider>
+      <div className="App bg-main noise-overlay" data-testid="app-container">
+        <Header onTrialClick={handleTrialClick} />
+        <main>
+          <Hero onCTAClick={handleTrialClick} />
+          <AgentsGrid />
+          <HowItWorks />
+          <WhyUs />
+          <Pricing onDemoClick={handleTrialClick} />
+          <DreamTeam onCTAClick={handleTrialClick} />
+          <Footer onDemoClick={handleTrialClick} />
+        </main>
+        {isChatOpen ? (
+          <ChatDemo isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+        ) : (
+          <ChatTrigger onClick={handleChatToggle} />
+        )}
+        <TrialForm 
+          isOpen={isTrialOpen} 
+          onClose={() => setIsTrialOpen(false)}
+          selectedPack={null}
+        />
+      </div>
+    </LanguageProvider>
   );
 }
 
