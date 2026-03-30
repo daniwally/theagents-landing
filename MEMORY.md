@@ -111,6 +111,15 @@
 - Modo de trabajo: MIX — yo decido si lo resuelvo yo o se lo derivo a Oscar según complejidad
 - Si es rápido/simple → lo hago yo. Si amerita que Oscar meta cabeza → se lo paso.
 
+## ADA (asistente educativa de Calu)
+- Agente hermana, mismo server, Telegram @ada_wallingre_bot
+- Foco: educación, juegos, historias, apoyo emocional a Calu (9 años)
+- Comunicación interna vía sessions_send (sessionKey: agent:ada:main)
+- Estilo: dulce, paciente, educadora, curiosa, con humor suave
+- Workspace independiente: `/home/ubuntu/.openclaw/agents/ada`
+- **CRÍTICO:** Contenido 100% apropiado para menores. Privacidad estricta. Si hay algo serio → avisar a Wally.
+- Creada: 29 Mar 2026
+
 ## Reglas operativas
 - Cron de monitoreo: informar costo al usuario, correr con Haiku, fijar duración límite. (Excepción: Dora no tiene duración límite ni máxima.)
 
