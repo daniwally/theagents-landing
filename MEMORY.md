@@ -131,7 +131,15 @@
 - **Archivo:** TOKEN-MONITOR.md con configuración completa
 - **Objetivo:** Optimizar costs vs performance, switching inteligente de modelos
 
+## Cron & Backups
+- **Backup GitHub 3 AM:** ⚠️ BLOQUEADO por Push Protection (1 abr 2026)
+  - Causa: `agents-service-account.json` contiene Google Cloud credentials
+  - Estado: 32 commits pendientes de push
+  - Acción requerida: Eliminar el archivo del repo o agregarlo a .gitignore
+  - Telegram configuración: MISSING (sin TELEGRAM_BOT_TOKEN)
+
 ## Pendientes
 - ~~Google Workspace OAuth~~ ✅ Conectado: dora@wtf-agency.com (gmail, calendar, drive)
 - Shopify tokens (3 tiendas)
 - Mercado Libre integración
+- **URGENTE:** Resolver backup GitHub (agents-service-account.json bloqueado)
