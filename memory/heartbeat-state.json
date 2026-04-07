@@ -1,7 +1,8 @@
 {
   "lastChecks": {
-    "email": 1744061400,
-    "calendar": 1744061400,
+    "email": 1744005720,
+    "calendar": 1744005720,
     "weather": null
-  }
+  },
+  "notes": "Gmail service account 401 error - unauthorized_client. Revisar con Wally. No hay vencimientos hoy según Airtable."
 }
