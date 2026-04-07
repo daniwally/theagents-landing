@@ -1,12 +1,12 @@
 # HEARTBEAT.md
 
-## Checks
-- [x] ~~Verificar si Luciana aceptó la invitación~~ ✅ Aceptó. Wally notificado.
-- [x] ~~VIERNES 6 MAR: Presupuesto forwarding~~ ✅ Fechas vencidas
-- [x] ~~VIERNES 6 MAR: Reunión Barugel~~ ✅ Fechas vencidas
-- [x] ~~VIERNES 6 MAR: Reunión Census IA~~ ✅ Fechas vencidas
-- [x] **Vencimientos próximos:** ✅ 25 mar 13:22 - $0 vencidos, próxima fecha 01/abril (saldo a favor)
-- [x] **Resúmenes mensuales:** ✅ 25 mar 13:15 - MARZO COMPLETADO ($11.967.989 verificado, proceso blindado)
-- [x] **Disco:** ✅ 18 mar 20:15 PM - 31% usado, bien dentro del límite
-- [x] **AWS:** ✅ 18 mar 8:45 AM - Sin alertas de créditos bajos
-- [x] **Mail resúmenes:** ✅ 18 mar 8:15 AM - Sin nuevos en últimas 24h
+## Checks recurrentes (siempre activos, nunca marcar como done)
+
+- **Mail resúmenes tarjetas:** Buscar nuevos mails de Galicia, Macro, Supervielle. Si hay → cargar en Airtable y alertar a Wally.
+- **Vencimientos próximos:** Correr check-vencimientos-final.sh. Si hay algo venciendo hoy o mañana → alertar SIEMPRE aunque Airtable diga $0.
+- **Cuota alimentaria:** Vence día 10 de cada mes ~$1.1M
+- **Créditos Supervielle:** Vencen día 5 de cada mes (~$2.2M entre los dos)
+- **Colegio Calu (SCMS):** Vence día 13 ~$1.3M, pronto pago hasta día 27 con descuento
+
+## Regla crítica
+Si no hay datos en Airtable para el mes en curso → NO asumir que está todo bien. Buscar en Gmail primero.
