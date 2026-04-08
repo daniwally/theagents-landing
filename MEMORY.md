@@ -122,6 +122,13 @@
 
 ## Reglas operativas
 - Cron de monitoreo: informar costo al usuario, correr con Haiku, fijar duración límite. (Excepción: Dora no tiene duración límite ni máxima.)
+- **FINANZAS:** Siempre incluir el TOTAL al final de cualquier resumen o listado de pagos pendientes, en **negrita**. Sin excepción.
+- **FINANZAS:** Pagos recurrentes mensuales que NUNCA pueden faltar en el resumen:
+  - Supervielle Crédito 1 (~$1.555.390) → vence día 5
+  - Supervielle Crédito 2 (~$698.604) → vence día 5
+  - Cuota alimentaria (~$1.211.638) → vence día 10
+  - Colegio Calu (~$1.471.369) → vence día 13 (pronto pago hasta día 27)
+- **FINANZAS:** Estado abril 2026 guardado en memory/2026-04-08.md
 
 ## Sistema de Token Monitoring (12 Mar 2026)
 - **Configurado:** Automatic token monitoring con alerts automáticas
