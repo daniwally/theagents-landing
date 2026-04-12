@@ -1,9 +1,9 @@
 {
   "lastChecks": {
-    "email": 1744112000,
+    "email": 1744381980,
     "calendar": 1744099800,
     "weather": null,
-    "vencimientos": 1744315380
+    "vencimientos": 1744381980
   },
-  "notes": "10/04 18:03 (BA): Alerta vencimientos enviada a Wally. Supervielle Crédito 1 ($1.555.390) y 2 ($698.604) vencidos el 5/4 sin confirmar. Colegio Calu ($1.471.369) vence lunes 13/4. Cuota alimentaria Done. Pendiente confirmación de Wally."
+  "notes": "11/04 11:33 (BA): Sin mails nuevos. Total pendiente Airtable: $8.775.365. Colegio Calu $1.471.369 vence lunes 13/4. Supervielle Créditos 1+2 y Macro AMEX sin confirmar. Telegram bot token MISSING - alertas no se pueden enviar."
 }
