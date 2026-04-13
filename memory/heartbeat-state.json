@@ -1,9 +1,9 @@
 {
   "lastChecks": {
-    "email": 1744381980,
+    "email": 1744488180,
     "calendar": 1744099800,
     "weather": null,
-    "vencimientos": 1744381980
+    "vencimientos": 1744511613
   },
-  "notes": "11/04 11:33 (BA): Sin mails nuevos. Total pendiente Airtable: $8.775.365. Colegio Calu $1.471.369 vence lunes 13/4. Supervielle Créditos 1+2 y Macro AMEX sin confirmar. Telegram bot token MISSING - alertas no se pueden enviar."
+  "notes": "13/04 03:33 UTC (00:33 BA): Arancel Calu $1.471.369 vence HOY 13/4. Madrugada - no alertar. Total pendiente: $10.246.734. Alertar en próximo heartbeat horario razonable (08:00+ BA)."
 }
